@@ -70,7 +70,8 @@
 								<!-- DAY 1 -->
 								<h3>Monday, November 28th</h3>
 								<p>On monday, my work consisted mainly of management, getting all aspects of the project, and our team up to date. We had some issues 
-								with the design of the tutorial, so I got busy reworking it. I then spent some time making flowcharts for gameplay and screen flow.
+								with the design of the tutorial, so I got busy reworking it in preparation for the basic demonstration we wanted to have by Friday. 
+								I then spent some time making flowcharts for gameplay and screen flow to clarify how the game should function logically. 
 								<br><br>
 								David continued working on the room system, Anton kept doing AI behaviour and André implemented multiple weapon support. 
 								Felicia worked on the final enemy model, Ellinor worked on environments and Victor created two game ready rooms. 
@@ -80,8 +81,9 @@
 								<!-- DAY 2 -->
 								<hr>
 								<h3>Tuesday, November 29th</h3>
-								<p>I started the day off making room designs for the tutorial in engine for the artists to fill with assets. 
-									I then quickly got a system for doors working in Unreal blueprints. 
+								<p>I started the day off making room designs for the tutorial part of the game in engine for the artists to fill with assets. 
+								These would be used in the basic demo for Friday. I then quickly got a system for doors working in Unreal blueprints, 
+								so the player can move between rooms. 
 								<br><br>
 								David kept making progress on coding the rooms and doors while Anton made ranged enemies be able to attack the player. 
 								Ellinor kept working on environments, Victor created two new rooms and Oskar worked on omnidirectional movement for 
@@ -91,13 +93,25 @@
 								<!-- DAY 3 -->
 								<hr>
 								<h3>Wednesday, November 30th</h3>
-								<p>The first thing I worked on was getting the sound system fully set up with reverberations, which took me a while to
-								figure out. Once I had finished the sound system I got to work finding royalty free sounds for them, and implemented
-								some basic randomized shooting sounds for all the guns. I then made player footsteps make sounds when they impact the
-								floor. Some aspects of the HUD were not entirely implemented, such as displaying numbers for health and the like, so I
-								spent some time getting all of it game ready. We needed a temporary trigger for winning the game ready before the test
-								on Friday, so I created a simple blueprint for a collision box that the player can enter to win. I then created an
-								effect that fades the screen to black and back when the player dies and respawns.</p>
+								<p>The first thing I worked on was getting the sound system fully set up with reverberations, which took me a while to 
+								figure out. Once I had finished the sound system I got to work finding royalty free sounds for them, and implemented 
+								some basic randomized shooting sounds for all the guns. I then made player footsteps make sounds when they impact the 
+								floor. Some aspects of the HUD were not entirely implemented, such as displaying numbers for health and the like, so I 
+								spent some time getting all of it game ready. We needed a temporary trigger for winning the game ready before the test 
+								on Friday, so I created a simple blueprint for a collision box that the player can enter to win. I then created an 
+								effect that fades the screen to black and back when the player dies and respawns, giving the game a slightly more polished feel.
+								<br>
+								We also had a slight scare as the artists who had been working on levels had created them in a way that was not planned for, 
+								building outside the footprint boundry that had been supplied. This would be problematic as the rooms would not be able to 
+								tile correctly with eachother. We needed to find a quick and efficient fix for this, so I took the oppertunity to suggest an 
+								addition that I had been pondering for some time. There would be short corridors connecting the rooms to eachother instead of 
+								a door leading straight into the next room. This way we can limit the player's field of view and fade rooms in and out more smoothly.
+								<br><br>
+								Victor adjusted the rooms to support corridors, Oscar did animation work, and Ellinor kept working on environment props. 
+								Anton made good progress with the ranged enemy behaviour, as they can now spawn, take damage and die, as well as 
+								moving around the level and attacking the player. David got doors working in the room system, nicely on schedule for the playtest, 
+								and André helped around across the team. Hari sadly had to leave in the morning as he was not well enough to stay in school.
+								</p>
 								<a class="image fit"><img src="images/day13.png" alt="" /></a>
 								<!-- DAY 4 -->
 								<hr>
