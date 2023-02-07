@@ -46,7 +46,7 @@
 							<article id="intro">
 								<h2 class="major">About me</h2>
 								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>I am Linus Jernström, a game design student at <a href="https://www.playgroundsquad.com/">Playgroundsquad</a>, class of 2022. Feel free to check out my <a href="#work">work</a> and my <a href="dev_diary/index.html">developer diary</a>.</p>
+								<p>I am Linus Jernström, a game design student at <a href="https://www.playgroundsquad.com/" class="linkto">Playgroundsquad</a>, class of 2022. Feel free to check out my <a href="#work" class="linkto">work</a> and my <a href="dev_diary/index.html" class="linkto">developer diary</a>.</p>
 								<p></p>
 							</article>
 
@@ -58,11 +58,12 @@
                   box-sizing: border-box;
                 }
 
-                /* Create two equal columns that floats next to each other */
+                /* Create three equal columns that floats next to each other */
                 .column {
                   float: left;
                   width: 33%;
                   padding: 10px;
+				  min-width: 200px;
                 }
 
                 /* Clear floats after the columns */
@@ -71,15 +72,34 @@
                   display: table;
                   clear: both;
                 }
+
+				.linkto {
+					color:rgb(255, 177, 177);
+				}
+				.linkto:hover {
+					color:rgb(255, 58, 58);
+				}
+
+				.linkto:disabled {
+				pointer-events: none;
+				cursor: default;
+				opacity: 0.25;
+				}
                 </style>
 									<div class="row">
 										<div class="column">
-											<p>My diploma project, from when I was graduating from Karlfeldtgymnasiet in 2022.<br>
-											<a href="documents/Gymnasial_Project_in_Unity.docx">Gymnasial Project in Unity</a></p>
+											<div style="padding:10px; background-color: rgba(55, 55, 55, 0.275); border-radius: 4px;">
+												<p>My diploma project, from when I was graduating from Karlfeldtgymnasiet in 2022.</p>
+												<a href="documents/Gymnasial_Project_in_Unity.docx" class="linkto">Gymnasial Project in Unity</a>
+											</div>
 										</div>
 										<div class="column">
-											<p>The first actual webpage I coded from scratch, the final assignment for a web development course.<br>
-											<a href="https://importantstuff.000webhostapp.com/index.html">Basic webpage coded my me</a></p>
+											<div style="padding:10px; background-color: rgba(55, 55, 55, 0.275); border-radius: 4px;">
+												<p style="font-size:2em">Morris: Mortality Rate</p>
+												<p>The first game project I was a part of at <a href="https://playgroundsquad.com" class="linkto">playgroundsquad</a>. My role was lead designer.
+												You can read about it in my <a href="dev_diary/game_project_one.html" class="linkto">developer diary</a> or check it out on our
+												<a href="https://linujern.itch.io/morris" class="linkto">itch page!</a></p>
+											</div>
 										</div>
 									</div>
 							</article>
