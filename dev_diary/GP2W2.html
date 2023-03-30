@@ -76,7 +76,7 @@
 								<!-- DAY 1 -->
 								<h3>Monday, March 27th</h3>
 								<p>The first day of week two, I startd off by researching some unreal capabilities and looking into upcoming updates to the software. 
-								I also looked briefly at the requirements of the VR system and how it would apply to the UI implementation. I then spent a little time
+								I also looked briefly at the requirements of the VR system and how it would apply to the UI implementation. I then spent a little time 
 								familiarizing myself with the new UEFN engine and downloading it, before working on moodboards and asset lists for the level. Finally, 
 								I spent a few hours in documents explaining the functionality of the UI and the assets it will rely upon.
 								</p>
@@ -86,16 +86,51 @@
 								and some finished environmental props.</p>
 								<!-- DAY 2 -->
 								<hr>
-								<h3>Tuesday, </h3>
-								<p>Description.</p>
-								<!--<a class="image fit"><img src="burglar_pics/day07.png" alt="" /></a>-->
+								<h3>Tuesday, March 28th</h3>
+								<p>On Tuesday, I started working on a prototype for the settings menu and level information. Both of these menus will be shown in the same 
+								diegetic game element. I want to use diegetic UI to increase the immersion, as I believe it is vital for the enjoyability of our game. 
+								I combine the two menus into one element for ease of use to the player. This way, they will have fewer objects to keep track of.
+								<br><br>
+								The game element that they are placed on is going to be a clipboard with a page relating to each of the settings menus. On these pages will 
+								be sliders, checkboxes and such which can be interacted with and which will look like pencil markings. The pages will be animated to flip 
+								and fold over, contorting and deforming from its original shape, just like a clipboard or book would. Because we are working in VR, 
+								the player will be able to see every angle of the clipboard, meaning I have to create a system which keeps every page looking as it should 
+								even when the player is't interacting with it. We don't want text on a page to suddenly disappear when the page starts flipping over, as 
+								it would likely make players more disconnected from the game. I want to pay attention to such details for this project.
+								<br><br>
+								I started working within a fresh Unreal Project, trying to get a prototype up and running. I tried a method which relied on the 
+								Draw Material to Render Target to update the material on a page (a plane mesh) in accordance with how a menu (a user widget) changed. 
+								I wrestled with this method for the duration of the day, learning a lot of useful things but not accomplishing my goal.
+								</p>
+								<a class="image fit" alt="" style="display: flex; flex-direction: row; flex-wrap: nowrap;">
+									
+									<img src="burglar_pics/day07G.gif" alt="" style="flex-shrink: 1; flex-grow: 1; flex-basis: 50%; width: 50%;" />
+									<img src="burglar_pics/day07H.gif" alt="" style="flex-shrink: 1; flex-grow: 1; flex-basis: 50%; width: 50%;" />
+									
+								</a>
+								<p>Above are a couple of small GIF displaying the procedural carpet material and procedural stone wall material made by our 
+								lead environment artist Lucas using parallax mapping.</p>
 								<!-- DAY 3 -->
 								<hr>
-								<h3>Wednesday, </h3>
-								<p>Description.</p>
+								<h3>Wednesday, March 29th</h3>
+								<p>I kept working on the prototype for our clipboard during the eighth day of the project. For a few hours, I debugged the system I had built 
+								the previous day before eventually coming to the realiziation that the method I had been trying would not work for my needs.
+								<br><br>
+								I would need a UI element (a widget), which are projected on a flat plane, to be placed up against the page while the page is being interacted with.
+								A page will be interactable only while it is at the front of the clipboard, at which time it will also be flat. As the page then flips, I need to remove 
+								the widget as it would not bend along with the page. This is because a widget placed in game space is on a flat plane. But when the page turns, I need it 
+								to keep looking as it did with the widget on it even as the widget is removed. A way of accomplishing this is by capturing a snapshot of the widget's 
+								appearance and turning this into a texture. Then, you need simply apply that texture to a dynamic material which you in turn apply to the page's mesh.
+								<br><br>
+								To accomplish this, I make use of the Scene Capture Component 2D object, basically a camera which feeds whatever it sees into a rendertarget. I can then use 
+								the rendertarget's texture to update the page dynamically. I managed to implement this to the point where I can live update a page (plane mesh) to 
+								perfectly mirror a widget.
+								</p>
+								<a class="image fit"><img src="burglar_pics/day08.png" alt="" /></a>
+								<p></p>
 								<!-- DAY 4 -->
 								<hr>
-								<h3>Thursday, </h3>
+								<h3>Thursday, March 30th</h3>
 								<p>Description.</p>
 								<!-- DAY 5 -->
 								<hr>
