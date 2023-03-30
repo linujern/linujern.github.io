@@ -129,7 +129,29 @@
 								<!-- DAY 4 -->
 								<hr>
 								<h3>Thursday, March 30th</h3>
-								<p>Description.</p>
+								<p>Thursday went along similarly. I spent the day trying to create functionality for several clipboard pages. I thought about a few different ways of 
+								accomplishing this before I started working. 
+								<br><br>
+								One idea was to have a SceneCaptureComponent2D (or SCC2D for short) for each of the pages, and place a Widget under it. 
+								That way, there would always be a camera pointing to each page, updating it's contents whenever needed. As a page was turned, the SCC2D and its Widget would be 
+								teleported away to some remote location and be replaced with the new page's SCC2D, which is ready to recieve inputs. For this method I would create all the neeed 
+								assets (like materials, rendertargets and more) manually for each page, making it somewhat inflexible and leaving it very cluttered.
+								<br><br>
+								The idea I instead implemented was one which employs but a single SCC2D with a single Widget attached to it. I preferred this way as it required much fewer components. 
+								I let the SCC2D camera capture an orthographic view 
+								with a width of 200 units, and capture Final Colour LDR in RGB. I place the Widget very slightly below the SCC2D (just 0,1 units was enough), and very slightly above 
+								the page underneath it (again, 0,1 units). I use these small distances so that the camera can capture exactly the right view (the Widget) and so the Widget is neither 
+								placed inside the page nor too far above it so it would appear floating. 
+								<br>
+								For each of the different pages, I created a dedicated Widget with the appropriate contents. Through blueprints I create one Render Target 2D and one Dynamic Material 
+								for every page. I then allow the Dynamic Material of the first page to take the texture of it's Render Target 2D, which in turn gets a texture from the SCC2D.
+								<br>
+								When I "flip" a page, I move the currently selected page out of the way and move the SCC2D (and by extension the Widget) down to again be very near the top page. 
+								I also let the SCC2D broadcast its view to the Render Target 2D of the Dynamic Material belonging to the new top page, which makes the page mirror the Widget. 
+								As I flip back, I basically run the same sequence but in reverse. So far, there is no animation implemented, and I just move the page out of the way.
+								</p>
+								<a class="image fit"><img src="burglar_pics/day09G.gif" alt="" /></a>
+								<p>A basic version of the clipboard mirroring the displayed Widget.</p>
 								<!-- DAY 5 -->
 								<hr>
 								<h3>Friday, </h3>
