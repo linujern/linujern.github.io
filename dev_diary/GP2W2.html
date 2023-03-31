@@ -154,8 +154,25 @@
 								<p>A basic version of the clipboard mirroring the displayed Widget.</p>
 								<!-- DAY 5 -->
 								<hr>
-								<h3>Friday, </h3>
-								<p>Description.</p>
+								<h3>Friday, March 31st</h3>
+								<p>I spent most of my time during the Friday wrestling with Unreal, trying to make the clipboard work. I still had to make it work using actual page models, and with 
+								animations, not to mention making it interactable for the player. First and foremost, I started working on getting the page skeletal mesh to work, replacing the simple 
+								planes I had been using prior. This proved to be quite a challenge. After a bit of debugging I found that the issue was in my material, and swiftly fixed the issue. 
+								I then got to work implementing the animation for the skeletal meshes. 
+								<br>Unreal did not seem to like that.
+								<br><br>
+								There was an issue in that the imported animation was 100x too small, eventhough its mesh was sized correctly. As soon as the animation was played, the mesh instantly 
+								shrank down to little more than a speck of sand. I worked for a good while trying to scale the animation in the engine and reimporting it with different settings, but to no 
+								avail. Then one time as I was testing to see if the problem had been resolved, the pages had stopped rendering. I did not, and still do not, know why this happened. My 
+								best guess is that something in the project became corrupted.
+								<br><br>
+								So, I created a new project and quickly got back to where I had left off. Though the projects looked identical, this one worked! I decided to use a workaround for the 
+								animation instead of meddling with artist shenanigans, waiting instead for an artist to create a more functional mesh and animation down the line. For now, this simple 
+								prototype would do. I also started planning how to handle inputs from the player, and got a basic plan down for when that time comes.
+								</p>
+								<a class="image fit"><img src="burglar_pics/day10G.gif" alt="" /><img src="burglar_pics/day10.png" alt="" /></a>
+								<p>In the above GIF, the newly implemented animation support of the clipboard is being shown off. As there is no animation for the page flipping back, it is for now 
+								teleported to its original position instead. Below it, a door made by Wille, a van made by Loke and finally, a refridegrator by Ellinor.</p>
 								<footer class="major">
 									<ul class="actions special">
 										<li><a href="GP2.html" class="button">Back to Week Overview</a></li>
