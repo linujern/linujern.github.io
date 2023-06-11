@@ -72,6 +72,12 @@ function scrollFunction() {
     }
 }
 
+$(".enlarge-button").click(function () {
+    $(".cv-doc").toggleClass('enlarged');
+});
+
+
+
 
 /* Opacity for sections */
 /* not working
