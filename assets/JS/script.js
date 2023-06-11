@@ -35,8 +35,13 @@ window.addEventListener('hashchange', function () {
         sections[i].style.display = 'none';
     }
 
-    document.getElementById(hash).style.display = 'block';
+    var activeSection = document.getElementById(hash);
+    activeSection.style.display = 'block';
+
+    // Scroll to top of active section
+    activeSection.scrollIntoView({ behavior: "smooth", block: "start" });
 });
+
 window.location.hash = '#home';
 
 
@@ -60,7 +65,7 @@ function toggleNav() {
     }
 }
 
-/* Navbar scroll */
+/* Navbar color on scroll */
 
 window.onscroll = function () { scrollFunction() };
 
@@ -72,6 +77,8 @@ function scrollFunction() {
     }
 }
 
+
+/* Enlarge CV */
 $(".enlarge-button").click(function () {
     $(".cv-doc").toggleClass('enlarged');
 });
