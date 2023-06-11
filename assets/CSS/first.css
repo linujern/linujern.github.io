@@ -468,8 +468,13 @@ section {
     margin: 20px;
     top: 128px;
     position: absolute;
-    align-self: center;
-    width: max-content;
+    width: 98%;
+}
+
+.flexer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .contact-icons {
@@ -478,8 +483,9 @@ section {
     margin: 0;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 16px;
-    position: absolute;
+    position: relative;
 }
 
 .contact-icons img {
