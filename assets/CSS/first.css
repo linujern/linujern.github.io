@@ -443,14 +443,14 @@ section {
 
 .about-canvas h1 {
     font-size: 16em;
-    line-height: 1;
+    line-height: 1em;
     margin: -20px;
     color: white;
 }
 
 .about-canvas h2 {
     font-size: 2em;
-    line-height: 1;
+    line-height: 1em;
     margin: 0;
     margin-top: 10px;
     color: white;
@@ -680,6 +680,7 @@ a:hover .portfolio-link {
 
 .morris-canvas h1 {
     font-size: 2.5em;
+    line-height: 1em;
     color:white;
     margin-bottom: 64px;
 }
