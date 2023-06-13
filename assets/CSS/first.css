@@ -515,8 +515,182 @@ section {
     transition: 0.5s;
 }
 
+/*--- Allgames Section ---*/
+
+.allgames-canvas {
+    margin: 0;
+    padding-top: 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/*  game section  */
+.game-section-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.game-section {
+    width: 1280px;
+    text-align: left;
+}
+
+@media screen and (max-width: 1420px) {
+    .game-section {
+        max-width: 90vw;
+    }
+    .game-section-container {
+        flex-direction: column-reverse;
+    }
+}
+
+.half-section {
+    flex-shrink: 1;
+    width: auto;
+    flex-basis: 50%;
+}
+
+.game-section img {
+    width: 500px;
+}
+
+
+.game-section p {
+    color: white;
+}
+
+
+.team-display {
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 64px;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+}
+
+.team-display a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.team-display p {
+    position: absolute;
+    text-align: center;
+    margin: 0;
+    bottom: -32px;
+}
+
+.team-img:hover {
+    filter: blur(4px);
+    transition: 0.5s;
+}
+
+a:hover .portfolio-link {
+    opacity: 80%;
+    transition: 0.5s;
+}
+
+.team-img {
+    border-radius: 50%;
+    width: 256px !important;
+    height: 256px;
+    top: 24px;
+    transition: 0.5s;
+}
+
+.portfolio-link {
+    width: 64px !important;
+    position: absolute;
+    margin:0;
+    transition: 0.5s;
+    pointer-events: none;
+    opacity: 0%;
+}
+
+.team-logo {
+    align-self: center; 
+    width: 512px !important;
+}
+
+@media screen and (max-width: 1420px) {
+    .team-img {
+        width: 128px !important;
+        height: 128px;
+    }
+    .team-logo {
+        width: 80vw !important;
+    }
+}
+
 /*--- Morris Game ---*/
 
+.morris-canvas {
+    margin: 20px;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+}
+
+.morris-canvas video {
+    max-width: 1280px;
+    height: auto;
+}
+
+@media screen and (max-width: 1420px) {
+    .morris-canvas video {
+        max-width: 90vw;
+    }
+}
+
+.game-logo {
+    padding: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+    .game-logo {
+        width: 80vw;
+    }
+}
+
+.morrisnarrow {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 540px) {
+    .morrisnarrow img{
+        width: 90vw !important;
+    }
+    .button {
+        font-size: 5.8vw;
+    }
+}
+
+.morris-canvas h1 {
+    font-size: 2.5em;
+    color:white;
+    margin-bottom: 64px;
+}
+
+.morris-canvas h2 {
+    color: rgb(255, 64, 50);
+    font-size: 2em;
+}
+
+.morris-canvas .highlight {
+    font-weight: bold;
+}
 
 /*--- CV Section ---*/
 
