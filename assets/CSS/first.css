@@ -386,6 +386,7 @@ section {
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
+    transition: 1s;
 }
 
 .button:hover {
