@@ -441,17 +441,25 @@ section {
 }
 
 .about-canvas h1 {
-    font-size: 16em;
+    font-size: 12em;
     line-height: 1em;
-    margin: -20px;
+    margin: -16px;
     color: white;
 }
 
 .about-canvas h2 {
-    font-size: 2em;
+    font-size: 1.5em;
     line-height: 1em;
     margin: 0;
     margin-top: 10px;
+    color: white;
+}
+
+.about-canvas h3 {
+    font-size: 1em;
+    line-height: 1em;
+    margin: 0;
+    margin-top: 20px;
     color: white;
 }
 
@@ -460,6 +468,10 @@ section {
     font-size: 1em;
     line-height: 1.2em;
     color: white;
+}
+
+.games-i-like {
+    margin-top: 60px;
 }
 
 /*--- Contact Section ---*/
