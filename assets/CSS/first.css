@@ -126,7 +126,6 @@ h1, h2, h3, a:-webkit-any-link {
 
 /* Phone Adjust */
 
-
 .icon {
     display: none;
     transform: translate(-0%, -20%);
@@ -214,7 +213,6 @@ h1, h2, h3, a:-webkit-any-link {
     cursor: pointer;
 }
 
-
 /*--- Sections ---*/
 /*
 section {
@@ -283,7 +281,6 @@ section {
         left: calc(5vw + (100vw - 1200px) / 3);
     }
 }
-
 
 #muteButton {
     width: 50px;
@@ -539,8 +536,6 @@ section {
     justify-content: center;
 }
 
-
-
 /*  game section  */
 .game-section-container {
     display: flex;
@@ -757,7 +752,6 @@ a:hover .portfolio-link {
     height: 32px;
     transition: 0.2s;
 }
-
 
 .enlarge-button:hover {
     top: 12px;
