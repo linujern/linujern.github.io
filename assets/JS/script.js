@@ -1,31 +1,24 @@
-/* Mute Functionality
-function muteUnmute() {
-    var video = document.getElementById('background-video');
-    var button = document.getElementById('muteButton');
+/* Move to new section */
 
-    if (video.muted) {
-        video.muted = false;
-        button.style.backgroundImage = "url('images/volume-down.png')";
-    } else {
-        video.muted = true;
-        button.style.backgroundImage = "url('images/volume-mute.png')";
+function handleSectionDisplay() {
+    var hash = window.location.hash.substr(1) || 'home';
+    
+    var sections = document.getElementsByTagName('section');
+    for (var i = 0; i < sections.length; i++) {
+        sections[i].style.display = hash === sections[i].id ? 'block' : 'none';
+    }
+
+    var activeSection = document.getElementById(hash);
+    
+    // Scroll to top of active section
+    if (activeSection) {
+        activeSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 }
-
- Mute Position 
-window.onresize = adjustButtonPosition;
-
-function adjustButtonPosition() {
-    var video = document.getElementById('background-video');
-    var button = document.getElementById('muteButton');
-
-    button.style.bottom = (window.innerHeight - video.getBoundingClientRect().bottom) + video.getBoundingClientRect().bottom/30 + 'px'; // The '40' should be replaced with the desired distance from the bottom of the video
-    button.style.width = (video.getBoundingClientRect().bottom / 20) + 'px';
-    button.style.height = button.style.width;
-}*/
-
-
-/* Move to new section */
+// handle the display when the page loads
+document.addEventListener('DOMContentLoaded', handleSectionDisplay);
+// handle the display when the hash changes
+window.addEventListener('hashchange', handleSectionDisplay);
 
 window.addEventListener('hashchange', function () {
     var hash = window.location.hash.substr(1);
