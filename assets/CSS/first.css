@@ -661,12 +661,12 @@ a:hover .portfolio-link {
     }
 }
 
-.game-logo {
+.morris-logo {
     padding: 40px;
 }
 
 @media screen and (max-width: 1000px) {
-    .game-logo {
+    .morris-logo {
         width: 80vw;
     }
 }
@@ -698,6 +698,71 @@ a:hover .portfolio-link {
 }
 
 .morris-canvas .highlight {
+    font-weight: bold;
+}
+
+/*--- Burglar Game ---*/
+
+.burglar-canvas {
+    margin: 20px;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+}
+
+.burglar-canvas video {
+    max-width: 1280px;
+    height: auto;
+}
+
+@media screen and (max-width: 1420px) {
+    .burglar-canvas video {
+        max-width: 90vw;
+    }
+}
+
+.burglar-logo {
+    padding: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+    .burglar-logo {
+        width: 80vw;
+    }
+}
+
+.burglarnarrow {
+    display: flex;
+    justify-content: center;
+    height: 760px;
+}
+
+@media screen and (max-width: 540px) {
+    .burglarnarrow img {
+        width: 90vw !important;
+    }
+
+    .button {
+        font-size: 5.8vw;
+    }
+}
+
+.burglar-canvas h1 {
+    font-size: 2.5em;
+    line-height: 1em;
+    color: white;
+    margin-bottom: 64px;
+}
+
+.burglar-canvas h2 {
+    color: rgb(42, 54, 214);
+    font-size: 2em;
+}
+
+.burglar-canvas .highlight {
     font-weight: bold;
 }
 
