@@ -7,6 +7,10 @@
     font-family: Lato;
     src: url("../fonts/Lato/Lato-Regular.ttf");
 }
+@font-face {
+    font-family: Nunito;
+    src: url("../fonts/Nunito/NunitoSans_7pt-Light.ttf");
+}
 
 body {
     margin: 0;
@@ -417,33 +421,63 @@ section {
 
 /*--- About Section ---*/
 
+.about-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 98%;
+}
+
 .about-canvas {
     margin: 20px;
     top: 128px;
     position: absolute;
-    width: 98%;
-    justify-content: center;
+    max-width: 1060px;
+}
+
+.about-header {
+    padding: 0;
+    background-color: rgb(18, 218, 191);
+    height: 300px;
+    padding-left: 128px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    border-radius: 150px;
+    position: relative;
+    z-index: 2;
+}
+
+.about-header img {
+    max-height: 90%;
+    width: auto;
+    border-radius: 50%;
+    margin: 1.8%;
 }
 
 .about-text {
-    justify-content: left;
-    max-width: 1060px;
-    padding: 0;
     margin: 0;
+    margin-top: -128px;
+    justify-content: left;
+    padding: 128px;
+    padding-top: 172px;
+    padding-bottom: 64px;
+    border-radius: 150px;
+    background-color: #5c5c5c;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-@media screen and (max-width: 1200px) {
-    .about-text {
-        max-width: 720px;
-    }
-}
 
 .about-canvas h1 {
-    font-size: 12em;
+    font-size: 3.5em;
     line-height: 1em;
-    margin: -16px;
     color: white;
+    margin: 0;
+    font-family: "Nunito";
 }
 
 .about-canvas h2 {
@@ -452,6 +486,7 @@ section {
     margin: 0;
     margin-top: 10px;
     color: white;
+    font-family: "Nunito";
 }
 
 .about-canvas h3 {
@@ -460,19 +495,98 @@ section {
     margin: 0;
     margin-top: 20px;
     color: white;
+    font-family: "Nunito";
 }
 
 .about-canvas p {
     margin-top: 16px;
     font-size: 1em;
-    line-height: 1.2em;
+    line-height: 1.3em;
     color: white;
+    font-weight: lighter;
+    font-family: "Nunito";
+}
+
+.clicker {
+    background-color: rgb(66, 66, 66);
+    box-shadow: 0px 16px 0px 0px rgb(255 255 255 / 40%) !important;
+    margin-top: 0px !important;
+    margin-bottom: 16px !important;
+}
+.clicker:hover {
+    background-color: rgb(15, 15, 15);
+    color: rgb(224, 228, 23) !important;
+    box-shadow: 0px 12px 0px 0px rgb(255 255 255 / 40%) !important;
+    margin-top: 4px !important;
+    margin-bottom: 12px !important;
+    border-radius: 16px !important;
+}
+.clicker:active {
+    background-color: rgb(15, 15, 15);
+    color: rgb(224, 228, 23) !important;
+    box-shadow: 0px 2px 0px 0px rgb(255 255 255 / 40%) !important;
+    margin-top: 14px !important;
+    margin-bottom: 2px !important;
+    border-radius: 16px !important;
+    transition: 0.2s;
 }
 
 .games-i-like {
-    margin-top: 64px;
-    margin-bottom: 64px;
+    margin: 0;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    justify-content: left;
+    padding: 128px;
+    border-radius: 150px;
+    background-color: #5c5c5c;
+    position: relative;
 }
+
+@media screen and (max-width: 1200px) {
+    .about-canvas {
+        max-width: 720px;
+    }
+    .about-header {
+        height: 200px;
+        border-radius: 100px;
+        padding-left: 64px;
+    }
+    .about-text {
+        border-radius: 100px;
+        padding: 64px;
+        margin-top: -112px;
+        padding-top: 128px;
+    }
+    .games-i-like {
+        border-radius: 100px;
+        padding: 64px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .about-canvas h1 {
+        font-size: 8vw;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .about-header {
+        padding-left: 32px;
+        height: 100px;
+        border-radius: 50px;
+    }
+    .about-text {
+        padding: 32px;
+        border-radius: 50px;
+        margin-top: -32px;
+        padding-top: 48px;
+    }
+    .games-i-like {
+        padding: 32px;
+        border-radius: 50px;
+    }
+}
+
 
 /*--- Contact Section ---*/
 
@@ -529,13 +643,108 @@ section {
 
 /*--- Allgames Section ---*/
 
-.allgames-canvas {
+.allgames-container {
     margin: 0;
     padding-top: 96px;
+    position: absolute;
+    width: 98%;
+}
+
+.allgames-canvas {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 64px;
+}
+
+.game-display {
+    background-color: #141414;
+    max-width: 400px;
+    padding: 32px;
+    border-radius: 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    position: relative;
+}
+
+.game-display a {
+    width: 90%;
+    border-radius: 10px;
+    position: relative;
+}
+
+.game-display #game-wide {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border-style: dashed;
+    border-color: white;
+    border-width: 2px;
+    transition: 0.5s;
+}
+
+.game-display #game-wide:hover {
+    transition: 0.5s;
+    filter: blur(2px);
+    border-color: rgba(0, 0, 0, 0.2)
+}
+
+.game-display .project-length, .game-display .team-size {
+    position: absolute;
+    padding: 5px 20px 5px 20px;
+    background-color: #444444;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 4px;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.game-display .project-length {
+    right: 0px;
+    top: 0px;
+    transform: translate(20% , -35%);
+}
+.game-display .team-size {
+    left: 0px;
+    bottom: 0px;
+    transform: translate(-20% , 10%);
+}
+.game-display .team-size img{
+    height: 24px;
+    width: 24px;
+}
+
+.game-display p {
+    position: relative;
+    margin: 0;
+}
+
+#flavor-text {
+    padding-top: 32px;
+}
+
+.game-display h3 {
+    margin: 0;
+    opacity: 0;
+    transition: 0.5s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.game-display img:hover + h3 {
+    opacity: 100%;
+    transition: 0.5s;
 }
 
 /*  game section  */
@@ -550,12 +759,19 @@ section {
     text-align: left;
 }
 
+.game-logo {
+    height: auto;
+}
+
 @media screen and (max-width: 1420px) {
     .game-section {
         max-width: 90vw;
     }
     .game-section-container {
         flex-direction: column-reverse;
+    }
+    .game-logo {
+        max-width: 90%;
     }
 }
 
@@ -699,6 +915,14 @@ a:hover .portfolio-link {
     font-size: 2em;
 }
 
+.morris-canvas h4 {
+    color: rgb(248, 250, 112);
+    font-size: 1em;
+    margin-top: 48px;
+    margin-bottom: -20px;
+}
+
+
 .morris-canvas .highlight {
     font-weight: bold;
 }
@@ -836,7 +1060,6 @@ a:hover .portfolio-link {
 
 #cv .button {
     position: relative;
-    margin-top: 32px;
     flex-grow: none;
     max-width: 300px;
     align-self: center;

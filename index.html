@@ -81,35 +81,39 @@
 
     <section id="about">
         <!-- Content for About page -->
-        <div class="about-canvas">
-            <div class="about-text">
-                <h1>
-                    Hi!
-                </h1>
-                <h3>
-                    I'm Linus Jernström, a technical game designer studying at PlaygroundSquad in Falun, Sweden.
-                </h3>
-                <p>
-                    My journey into game design began with a childhood love for video games, sparked by watching my dad's playthroughs of Diablo 3 
-                    and Age of Empires 3 over his shoulder. Those memories ignited a passion in me that's been growing ever since.
-                    <br><br>
-                    Today, that passion is channelled into my studies and personal projects. I enjoy the process of learning and exploring new concepts in game design. 
-                    I am driven not only by my curiosity about all aspects of the industry, but also by a love for problem-solving that constantly challenges me to grow. 
-                    My approach to game design involves a hands-on, immersive experience. I spend a significant amount of my time working directly within the engines, 
-                    implementing and programming, always with an eye towards the best user experience.
-                    <br><br>
-                    On the team front, I value collaboration highly. My experience at PlaygroundSquad has shown me the importance of trusting team members and 
-                    the power of diverse skills in creating quality projects. Further, I have found that cultivating an environment where making games is fun and 
-                    exciting for the whole team always shines through to the final product. Being fluent in English and Swedish has also greatly helped in ensuring 
-                    clear communication within the teams I've worked with.
-                    <br><br>
-                    Outside of game design, I maintain a balance in life with activities that keep me grounded. Whether it's rising early for a morning run, 
-                    stretching to maintain flexibility, cooking a new recipe, swimming in lakes, or even taking a cold shower just for the gruelling experience, 
-                    each activity shapes me, enhancing my life and reflecting back into my work.
-                    <br><br>
-                    In essence, I am someone who cherishes the process of learning, loves the challenge of problem-solving, 
-                    and is always excited to bring ideas to life through game design.
-                </p>
+        <div class="about-container">
+            <div class="about-canvas">
+                <div class="about-header">
+                    <h1>Hi! I'm Linus!</h1>
+                    <img src="images/linus_headshot.jpg">
+                </div>
+                <div class="about-text">
+                    <p>
+                        My name is Linus Jernström, and I'm a technical game designer studying at PlaygroundSquad in Falun, Sweden.
+                        <br><br>
+                        My journey into game design began with a childhood love for video games, sparked by watching my dad's playthroughs of Diablo 3 
+                        and Age of Empires 3 over his shoulder. Those memories ignited a passion in me that's been growing ever since.
+                        <br><br>
+                        Today, that passion is channelled into my studies and personal projects. I enjoy the process of learning and exploring new concepts in game design. 
+                        I am driven not only by my curiosity about all aspects of the industry, but also by a love for problem-solving that constantly challenges me to grow. 
+                        My approach to game design involves a hands-on, immersive experience. I spend a significant amount of my time working directly within the engines, 
+                        implementing and programming, always with an eye towards the best user experience.
+                        <br><br>
+                        As far as teams go, I value collaboration highly. My experience at PlaygroundSquad has shown me the importance of trusting team members and 
+                        the power of diverse skills in creating quality projects. Further, I have found that cultivating an environment where making games is fun and 
+                        exciting for the whole team always shines through to the final product. Being fluent in English and Swedish has also greatly helped in ensuring 
+                        clear communication within the teams I've worked with.
+                        <br><br>
+                        Outside of game design, I maintain a balance in life with activities that keep me grounded. Whether it's rising early for a morning run, 
+                        stretching to maintain flexibility, cooking a new recipe, swimming in lakes, or even taking a cold shower just for the gruelling experience, 
+                        each activity shapes me, enhancing my life and reflecting back into my work.
+                        <br><br>
+                        In essence, I am someone who cherishes the process of learning, loves the challenge of problem-solving, 
+                        and is always excited to bring ideas to life through game design.
+                    </p>
+                    <a class="button clicker" href="#contact">Contact Me!</a>
+                </div>
+                
                 <div class="games-i-like">
                     <h2>
                         Games I adore and the reasons why
@@ -129,8 +133,7 @@
                     </h3>
                 </div>
             </div>
-        </div>
-        
+        </div>   
     </section>
     
     <section id="contact">
@@ -163,10 +166,69 @@
         </div>
     </section>
     
+    <section id="allgames">
+        <div class="allgames-container"> 
+            <div class="allgames-canvas">
+            <!-- Content for All Games page -->
+            <div class="game-display">
+                <a href="#morris">
+                    <img id="game-wide" src="images/MorrisWide.png">
+                    <h3>Learn More</h3>
+                    <div class="project-length">
+                        <p>6 Weeks</p>
+                    </div>
+                    <div class="team-size">
+                        <p>9</p><img src="images/people-icon.png">
+                    </div>
+                </a>
+                <p id="flavor-text">
+                    Morris: Mortality Rate is an isometric roguelite shoot-em-up crawler with procedurally generated levels. 
+                    <br><br>
+                    For this project, I had the role of lead designer.
+                </p>
+            </div>
+            <div class="game-display">
+                <a href="#burglar">
+                    <img id="game-wide" src="images/BurglarWide.png">
+                    <h3>Learn More</h3>
+                    <div class="project-length">
+                        <p>9 Weeks</p>
+                    </div>
+                    <div class="team-size">
+                        <p>18</p><img src="images/people-icon.png">
+                    </div>
+                </a>
+                <p id="flavor-text">
+                    Burglar is a VR stealth game with horror elements where you break into homes and steal valuables.
+                    <br><br>
+                    My main responsibility was UX and UI design.
+                </p>
+            </div>
+            <div class="game-display">
+                <a href="#eod">
+                    <img id="game-wide" src="images/EoDWide.png">
+                    <h3>Learn More</h3>
+                    <div class="project-length">
+                        <p>4 Weeks</p>
+                    </div>
+                    <div class="team-size">
+                        <p>1</p><img src="images/people-icon.png">
+                    </div>
+                </a>
+                <p id="flavor-text">
+                    Edge of Divinity is a top-down game all about maximizing your momentum with precise inputs.
+                    <br><br>
+                    I made (nearly) everything myself!
+                </p>
+            </div>
+        </div>
+        <p> </p>
+    </section>
+
     <section id="morris">
         <div class="morris-canvas">
             <!-- Content for Morris page -->
-            <img src="images/sidesplatter.png" style="position: absolute; top: 0; right: 0; z-index: -2; transform: scaleX(1); filter: blur(2px) opacity(75%);">
+            <!--<img src="images/sidesplatter.png" style="position: absolute; top: 0; right: 0; z-index: -2; transform: scaleX(1); filter: blur(2px) opacity(75%);">-->
             <video autoplay controls muted>
                 <source src="images/MorrisVideo.mp4" type="video/mp4">
             </video>
@@ -206,6 +268,49 @@
             </div>
             <div class="game-section">
                 <h2>My Contributions</h2>
+                <p>
+                    The journey of our six-week game project was as much an exploration of teamwork and collaboration as it was about creating a 
+                    fun and engaging game. My role in this venture saw me wearing many hats, each one challenging yet rewarding in its own unique way. 
+                    While I'm immensely proud of the results, the joy of the process and the learnings along the way are equally fulfilling.
+                </p>
+                <h4>Game Design</h4>
+                <p>
+                    The project began with a blank canvas and the excitement of possibility. I was entrusted with the responsibility of designing 
+                    the game from scratch and writing the Game Design Document (GDD). It was a humbling experience to see our team rally behind my design, 
+                    and it was incredibly rewarding to watch our game take shape. My co-designer Hari created most of the rooms used in the level, and I did
+                    pretty much everything else as far as design goes, like designing and balancing all of the 37 guns that we have in the game.
+                </p>
+                <h4>Project Management</h4>
+                <p>
+                    In the role of project manager, I found myself in the position of a guiding hand, ensuring the team remained focused and efficient. I was the scrum leader every morning, 
+                    and I also handled the task of balancing resources, managing timelines, and coordinating efforts with humility and respect for each team member's unique contributions.
+                </p>
+                <h4>Gameplay Mechanics and User Interface</h4>
+                <p>
+                    Diving into gameplay mechanics and UI design allowed me to bring a bit of creativity to problem-solving. 
+                    I helped devise a functioning door system, contributed to an immersive sound system, and designed an intuitive HUD, 
+                    all of which significantly enhanced our gameplay. I was particularly pleased with our collective decision to use corridors 
+                    connecting rooms when an unexpected challenge arose. This collaboration truly epitomized the team's problem-solving spirit.
+                </p>
+                <h4>Testing and Debugging</h4>
+                <p>
+                    Quietly crucial in its role, testing and debugging became an area where I could contribute significantly to the game's polish. 
+                    Spotting and fixing bugs, ensuring that our final product was as seamless as possible, was a rewarding, behind-the-scenes role that I was proud to fill.
+                </p>
+                <h4>Sound Design and Dialogue Writing</h4>
+                <p>
+                    Finally, my explorations in sound design and dialogue writing were quite the adventure. Curating a collection of sounds and 
+                    even writing the voice lines for our shopkeeper NPC felt like another step in giving life to our game. 
+                    Seeing (and hearing!) these elements in the final product was a joyous moment for me.
+                </p>
+                <h4>Conclusion</h4>
+                <p>
+                    All in all, my contributions to the project have been as much about the collective effort as they were about my individual role. 
+                    I ended up having to take a lot of responsibility for the game, stepping in to help wherever we were struggling in the process. 
+                    The satisfaction and pride I feel are less about the specific tasks I accomplished, and more about the successful result of 
+                    our teamwork and the rewarding journey we embarked on together.
+                </p>
+                <a class="button clicker">Read More!</a>
             </div>
             <hr style="width: 85vw; margin: 64px;">
             <div class="game-section">
@@ -280,8 +385,6 @@
     <section id="burglar">
         <div class="burglar-canvas">
             <!-- Content for Burglar page -->
-            <img src="images/sidesplatter.png"
-                style="position: absolute; top: 0; right: 0; z-index: -2; transform: scaleX(1); filter: blur(2px) opacity(75%);">
             <video autoplay controls muted>
                 <source src="images/BurglarTrailer.mp4" type="video/mp4">
             </video>
@@ -407,18 +510,6 @@
         <!-- Content for Edge of Divinity page -->
     </section>
 
-    <section id="allgames">
-        <div class="allgames-canvas">
-            <div class="allgames-div">
-                <!-- Content for All Games page -->
-                <a class="button" href="#morris">Morris</a>
-                <a class="button" href="#burglar">Burglar</a>
-                <a class="button" href="#momentumblade">Momentum Blade</a>
-                <a class="button" href="#spacetram">Space Tram</a>
-            </div>
-        </div>
-    </section>
-
     <section id="spacestram">
         <!-- Content for Spacetram -->
     </section>
@@ -432,11 +523,10 @@
                     <img src="images/enlarge-icon.png">
                 </a>
             </div>
-            <a class="button" href="documents/linusjernstromcv.pdf" download>Download</a>
+            <p></p>
+            <a class="button clicker" href="documents/linusjernstromcv.pdf" download>Download</a>
             <p></p>
         </div>
     </section>
-
-    
 </body>
 </html>
