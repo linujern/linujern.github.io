@@ -845,7 +845,7 @@ a:hover .portfolio-link {
 
 .team-logo {
     align-self: center; 
-    width: 512px !important;
+    max-width: 512px !important;
 }
 
 @media screen and (max-width: 1420px) {
@@ -990,9 +990,40 @@ a:hover .portfolio-link {
     font-size: 2em;
 }
 
+.burglar-canvas h4 {
+    color: rgb(195, 112, 250);
+    font-size: 1em;
+    margin-top: 48px;
+    margin-bottom: -20px;
+}
+
 .burglar-canvas .highlight {
     font-weight: bold;
 }
+
+.burglar-show {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 64px;
+}
+
+.burglar-show video{
+    max-width: 400px !important;
+    margin-top: 32px;
+}
+
+@media screen and (max-width: 1000px) {
+    .burglar-show {
+        flex-direction: column;
+        gap: 0px;
+    }
+    .burglar-show video{
+        width: 80% !important;
+    }
+}
+
+
 
 /*--- CV Section ---*/
 
