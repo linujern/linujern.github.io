@@ -544,6 +544,11 @@ section {
     position: relative;
 }
 
+.games-i-like h3 {
+    color:rgb(18, 218, 191);
+    font-size: 1.3em;
+}
+
 @media screen and (max-width: 1200px) {
     .about-canvas {
         max-width: 720px;
