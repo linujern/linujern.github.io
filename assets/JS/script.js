@@ -70,7 +70,7 @@ function scrollFunction() {
     }
 }
 
-/* Expand/Hide p Section */
+/* Show/Hide p Section */
 $(document).ready(function(){
     $(".collapse-button").click(function(){
       var paragraph = $(this).parent().next();
