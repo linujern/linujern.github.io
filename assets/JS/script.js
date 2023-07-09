@@ -33,6 +33,10 @@ window.addEventListener('hashchange', function () {
 
     // Scroll to top of active section
     activeSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    var videos = document.getElementsByTagName('video');
+    for (var i = 0; i < videos.length; i++) {
+        videos[i].pause();
+    }
 });
 
 window.location.hash = '#home';
