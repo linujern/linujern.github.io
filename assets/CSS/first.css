@@ -545,11 +545,37 @@ section {
     border-radius: 150px;
     background-color: #5c5c5c;
     position: relative;
+    transition: 0.5s;
 }
+
+.collapse-button {
+    background-color: #242424;
+    border: none;
+    color: white;
+    padding: 4px 24px;
+    text-align: center;
+    text-decoration: none; /* No underline */
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.5s ease;
+  }
+  
+  .collapse-button:hover {
+    background-color: #ffffff;
+    color: #242424;
+    text-decoration: underline;
+  }
 
 .games-i-like h3 {
     color:rgb(18, 218, 191);
     font-size: 1.3em;
+}
+
+.games-i-like p {
+    display: none;
 }
 
 @media screen and (max-width: 1200px) {

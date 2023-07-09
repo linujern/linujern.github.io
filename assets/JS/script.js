@@ -70,6 +70,19 @@ function scrollFunction() {
     }
 }
 
+/* Expand/Hide p Section */
+$(document).ready(function(){
+    $(".collapse-button").click(function(){
+      var paragraph = $(this).parent().next();
+      paragraph.toggle();
+      if (paragraph.is(":visible")) {
+        $(this).text("Hide");
+      } else {
+        $(this).text("Show");
+      }
+    });
+  });
+  
 
 /* Enlarge CV */
 $(".enlarge-button").click(function () {
