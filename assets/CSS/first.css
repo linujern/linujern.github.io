@@ -642,7 +642,7 @@ section {
 .contact-icons {
     justify-content: left;
     padding: 0;
-    margin: 0;
+    margin: 20px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -665,16 +665,34 @@ section {
     z-index: -1;
 }
 
+.contact-icons a {
+    text-decoration: none;
+}
+
 .contact-icons img:hover {
     filter: blur(2px);
     color: #2c2c2c;
     transition: 0.5s;
 }
 
-.contact-icons img:hover + p {
-    opacity: 100%;
-    top: 64px;
-    transition: 0.5s;
+@media screen and (min-width: 1420px) {
+    .contact-icons img:hover + p {
+        opacity: 100%;
+        top: 64px;
+        transition: 0.5s;
+    }
+}
+
+@media screen and (max-width: 1420px) {
+    .contact-icons {
+        flex-direction: column;
+    }
+    .contact-icons p {
+        opacity: 100%;
+        left: 72px;
+        margin-top: -64px;
+        position: relative;
+    }
 }
 
 /*--- Allgames Section ---*/
