@@ -186,6 +186,8 @@ h1, h2, h3, a:-webkit-any-link {
     color: #818181;
     display: block;
     transition: 0.3s;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .sidenav a:hover {
@@ -200,6 +202,7 @@ h1, h2, h3, a:-webkit-any-link {
     display: block;
     transition: 0.3s;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 .sidenav .closebtn {
