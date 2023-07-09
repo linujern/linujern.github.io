@@ -254,6 +254,7 @@
                     <br><br>
                     For this project, I had the role of lead designer.
                 </p>
+                <a class="button" href="#morris">Read More</a>
             </div>
             <div class="game-display">
                 <a href="#burglar">
@@ -271,13 +272,14 @@
                     <br><br>
                     My main responsibility was UX and UI design.
                 </p>
+                <a class="button" href="#burglar">Read More</a>
             </div>
             <div class="game-display">
                 <a href="#eod">
                     <img id="game-wide" src="images/EoDWide.png">
                     <h3>Learn More</h3>
                     <div class="project-length">
-                        <p>4 Weeks</p>
+                        <p>Ongoing</p>
                     </div>
                     <div class="team-size">
                         <p>1</p><img src="images/people-icon.png">
@@ -288,6 +290,7 @@
                     <br><br>
                     I made (nearly) everything myself!
                 </p>
+                <a class="button" href="#eod">Read More</a>
             </div>
         </div>
         <p> </p>
@@ -651,11 +654,9 @@
     <section id="eod">
         <div class="eod-canvas">
             <!-- Content for Edge of Divinity page -->
-            <video autoplay controls muted>
-                <source src="images/MorrisVideo.mp4" type="video/mp4">
-            </video>
-            <img src="images/EoDLogoShort.png" class="game-logo">
-            
+            <img src="images/EoDWide.png" class="eod-canvas-img">
+            <!-- <img src="images/EoDLogoShort.png" class="game-logo"> -->
+            <h1>Edge of Divinity</h1>
             <h1>2D Movement Game</h1>
             <div class="game-section-container game-section">
                 <div class="half-section">
@@ -666,7 +667,9 @@
                         precise sword swinging to damage enemies. The amount of damage inflicted by the sword is determined by 
                         the velocity and momentum of the swing, creating a deeply satisfying and skill-based gameplay experience.
                         <br><br>
-                        
+                        During the whole process of creating this game, my focus has been on refining the core mechanic, that of 
+                        momentum-based swordplay. My goal was to make it look, feel and behave just how I wanted it, to make sure 
+                        that the foundation was incredibly solid. I am very pleased with what I have thus far been able to put together!
                     </p>
                     <h2>Project Breakdown</h2>
                     <p>Ongoing Project</p>
@@ -674,16 +677,82 @@
                     <p>Powered by Unreal Engine 5</p>
                     <p>Platforms: Windows</p>
                 </div>
-                <div class="half-section morrisnarrow">
-                    <img src="images/MorrisNarrow.png">
+                <div class="half-section eodnarrow">
+                    <img src="images/EodNarrow.png">
                 </div>
             </div>
             <hr style="width: 85vw; margin: 64px;">
+            <a class="button clicker" href="#how-to-eod">Learn how to play!</a>
+            <hr style="width: 85vw; margin: 64px;">
             <div class="game-section">
                 <h2>An ongoing project</h2>
-                <p></p>
+                <h4>Concept</h4>
+                <p>
+                    Edge of Divinity is an intense top-down 2D game where players must maintain their momentum to exceed. The game puts players in control of a character armed with a sword, with the core mechanic focusing on precise sword swinging to damage enemies. The amount of damage inflicted by the sword is determined by the velocity and momentum of the swing, creating a deeply satisfying and skill-based gameplay experience.
+                </p>
+                <h4>My Plan</h4>
+                <p>
+                    First and foremost, I wanted to put my time into making the main mechanic behave and feel the way I wanted it to. I expected the biggest challenge in this would be making the momentum change feel impactful and satisfying to the player, which turned out to be correct. Once I was satisfied with the feel of core mechanics, I would look into adding more content where I felt it would improve the experience.
+                </p>
+                <h4>Thought Process</h4>
+                <p>
+                    My core philosophy throughout the project has been trying to minimize the complexity of the game whilst maximizing the skill ceiling and skill expression. I want the gist of the gameplay to be easily understood within your first minute of playing, but I want your tenth hour of playing to still feel satisfying and captivating.
+                    <br><br>
+                    The main mechanic of the game is a somewhat novel mouse-based movement system which I have found to be quickly understood even by uninitiated players. It’s simple enough to pick up on the fly and understand, and reliable enough to perform how the player expects it to. The nature of the game itself, putting a lot of emphasis on momentum, makes gameplay fast-paced and requires the player to act on split-second decisions to perform optimally. 
+                    <br><br>
+                    The playtesters I’ve been lucky enough to have aiding me through this process have given me a lot of suggestions for additions to the game. “What if you could keep a combo up even after a dash by using the Pivot ability”, “You should make slashing enemy bullets should also activate the lunge”, “Couldn’t the walls bounce you back when you dash into them?”, etc. I have carefully considered these suggestions but ultimately only implemented a select few of them. 
+                    <br><br>
+                    I considered things such as <span class="highlight">consistency</span>: making sure that the game behaves how the player expects it to, <span class="highlight">encouraging playmaking</span>: being careful to reward specifically non-stale play, which keeps the game exciting, and <span class="highlight">quality of life</span>: trying to keep a smooth and satisfying experience for the player.
+                    <br><br>
+                    Returning to a previous example, let’s say that slashing enemy projectiles gave the same effect as slashing an enemy (the ability to lunge). This change might be <span class="highlight">consistent</span> with the notion that slashing things activates the lunge, <span class="underscore">but</span> it would also be <span class="highlight">encouraging</span> the player to keep projectile enemies alive, as doing so would result in greater manoeuvrability and speed, both of which are highly desirable.
+                    <br>
+                    I decided that I did not want keeping enemies alive to be the most effective way to play the game, and so I made the decision not to include this particular change.
+                    <br><br>
+                    Through the playtesting, a lot of players expressed that the game felt highly satisfying… until you missed a strike. Doing so left you barreling toward who-knows-where, unable to do anything to rectify the unfortunate situation. While the goal of the game is of course not to make the player feel <span class="underscore">unsatisfied</span>, I was also struggling to find a good solution for this. If messing up had no consequence, good play would feel less rewarding as a result. This is where the suggestion of bouncy walls surrounding the arena presented a <span class="highlight">great quality of life</span> improvement. Though this is not <span class="highlight">consistent</span> with the other walls, giving these specific walls a different look let players know that there was something special about them. I didn’t want to <span class="highlight">encourage</span> the player to go for hail marys across the stage, so I made you lose 20% of your speed when you bounce.
+                </p>
+                <h4>Priorities of my first four weeks</h4>
+                <p>
+                    Just as I had planned to do, I put the bulk of my effort into the main mechanic of the game: dashing and slashing. My biggest priority throughout the project was, and is, to make sure that this feels responsive and satisfying to the player. For this reason, I have also put some time into making VFX to support the look and feel of the bladework. Adding these VFX made the game look and feel more fluid and also helped with readability, making for a sizable improvement.
+                    <br><br>
+                    My reasoning behind this is simple. I feel that a solid core mechanic allows the game to remain uncomplicated and elegant in it’s design while still having intricacy and depth for the player to improve and grow in. It also gives me a very solid base to expand on the game from, should I wish to. I could make any number of gamemodes for this specific game later on.
+                    <br><br>
+                    In the end, I was not able to create a complete game in the timeframe. I am, however, very happy with the proof of concept I have made, and would say that the game is currently in a sort of “beta” state. Though it does not have all the polish I would have hoped, it is fully functional, and I am very happy with the state of the slash- and dash mechanic. 
+                    <br><br>
+                    I decided to skip on creating things like an options menu, background music, art and such “fluff” as I like to call it. While the fluff is absolutely a relevant (and indeed quite important) factor for finished games, I was not willing to skimp on the core mechanics of the game to prioritize such aspects within these four weeks. I had plans to implement temporary sound effects, enemy models, environments for everything that would benefit from it, as well as plans to make a more appealing HUD and menus, but never found the time. Rather, I focused on the core of the game.
+                </p>
+                <h4>Conclusion</h4>
+                <p>
+                    Throughout this project, I have made deliberate design choices to ensure that the core mechanics shine, even at the expense of adding "fluff" elements such as background music or extensive visual assets. While these aspects were not prioritized within the project's scope, they remain opportunities for future development and polish.
+                    <br><br>
+                    Looking ahead, I see immense potential for expanding 'Edge of Divinity' into a more complete and fully realized game. The foundation I have established provides a solid base for adding additional content, such as new game modes, enemy types, and environments, that could further enhance the gameplay experience.
+                    <br><br>
+                    'Edge of Divinity' stands as a proof of concept, a testament to the joy of precise swordplay, and a stepping stone towards the realization of a fully-fledged game that captures the essence of becoming a godlike force of tranquil destruction.
+                </p>
+                <h4>Resources</h4>
+                <p>
+                    Splash art by <a href="https://www.midjourney.com/home/">Midjourney</a> AI image generator.
+                    <br>
+                    <a href="https://sketchfab.com/3d-models/jade-sword-e17b04ace1f6446a9d7080ffd327fb4b">Jade Sword</a> by <a href="https://sketchfab.com/FrenchBaguette">Ole Gunnar Isager</a> on <a href="https://www.sketchfab.com">Sketchfab</a> (concept from <a href="https://www.artstation.com/artwork/nQLxVe">Nico Navarro</a>).
+                    <br>
+                    Free sound effects from <a href="https://pixabay.com/">Pixabay</a> and <a href="https://mixkit.co/">Mixkit</a>.
+                    <br>
+                    (I plan to replace these assets in the future.)
+                    <br><br>
+                    Previous game projects: copying and referencing my old code.
+                    <br>
+                    All the rest was made by me using my own brain power.
+                </p>
             </div>
             <hr style="width: 85vw; margin: 64px;">
+        </div>
+    </section>
+    <section id="how-to-eod">
+        <div class="eod-canvas">
+        <!-- Content for How To EoD -->
+            <div class="game-section">
+                <p>This page is under development.</p> 
+            </div>
+            <a class="button clicker" href="#eod">Back to EoD</a>
         </div>
     </section>
 

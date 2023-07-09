@@ -603,6 +603,9 @@ section {
     .about-canvas h1 {
         font-size: 8vw;
     }
+    .games-i-like h3 {
+        font-size: calc(1em + 0.5vw);
+    }
 }
 
 @media screen and (max-width: 540px) {
@@ -694,6 +697,11 @@ section {
         position: relative;
     }
 }
+@media screen and (max-width: 800px) {
+    .flexer {
+        align-items: start;
+    }
+}
 
 /*--- Allgames Section ---*/
 
@@ -723,12 +731,37 @@ section {
     flex-direction: column;
     align-items: center;
     position: relative;
+    margin: 10px;
+    margin-left: calc(10px + 2%);
 }
 
 .game-display a {
     width: 90%;
     border-radius: 10px;
     position: relative;
+}
+
+.game-display .button {
+    width: auto;
+    height: auto;
+    margin: 16px;
+    font-size: 1em;
+    visibility: hidden;
+    margin-top: -20%;
+    transition: 0.1s;
+}
+
+@media screen and (max-width: 1420px) {
+    .game-display .button {
+        visibility: visible;
+        margin-top: 16px;
+    }  
+}
+
+@media screen and (max-width: 540px) {
+    .game-display .button {
+        font-size: 3.8vw;
+    }
 }
 
 .game-display #game-wide {
@@ -1024,10 +1057,6 @@ a:hover .portfolio-link {
     .burglarnarrow img {
         width: 90vw !important;
     }
-
-    .button {
-        font-size: 5.8vw;
-    }
 }
 
 .burglar-canvas h1 {
@@ -1038,7 +1067,7 @@ a:hover .portfolio-link {
 }
 
 .burglar-canvas h2 {
-    color: rgb(42, 54, 214);
+    color: rgb(85, 94, 212);
     font-size: 2em;
 }
 
@@ -1075,6 +1104,81 @@ a:hover .portfolio-link {
     }
 }
 
+
+/*--- EOD Game ---*/
+
+.eod-canvas {
+    margin: 20px;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+}
+
+.eod-canvas video, .eod-canvas-img {
+    max-width: 1280px;
+    height: auto;
+}
+
+@media screen and (max-width: 1420px) {
+    .eod-canvas video {
+        max-width: 90vw;
+    }
+    .eod-canvas-img {
+        max-width: 90vw;
+    }
+}
+
+.eod-logo {
+    padding: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+    .eod-logo {
+        width: 80vw;
+    }
+}
+
+.eodnarrow {
+    display: flex;
+    justify-content: center;
+    height: 760px;
+}
+
+@media screen and (max-width: 540px) {
+    .eodnarrow img {
+        width: 90vw !important;
+    }
+}
+
+.eod-canvas h1 {
+    font-size: 2.5em;
+    line-height: 1em;
+    color: white;
+    margin-bottom: 64px;
+}
+
+.eod-canvas h2 {
+    color: rgb(166, 72, 179);
+    font-size: 2em;
+}
+
+.eod-canvas h4 {
+    color: rgb(240, 119, 119);
+    font-size: 1em;
+    margin-top: 48px;
+    margin-bottom: -20px;
+}
+
+.eod-canvas .highlight {
+    font-weight: bold;
+}
+
+.eod-canvas .underscore {
+    text-decoration: underline;
+}
 
 
 /*--- CV Section ---*/
