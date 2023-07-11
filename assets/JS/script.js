@@ -15,17 +15,36 @@ function handleSectionDisplay() {
         activeSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 }
+
 // handle the display when the page loads
 document.addEventListener('DOMContentLoaded', handleSectionDisplay);
+
+
 // handle the display when the hash changes
 window.addEventListener('hashchange', handleSectionDisplay);
 
+
+/* Move to new section */
 window.addEventListener('hashchange', function () {
     var hash = window.location.hash.substr(1);
 
     var sections = document.getElementsByTagName('section');
     for (var i = 0; i < sections.length; i++) {
         sections[i].style.display = 'none';
+        
+        // Pause any videos in the section
+        var videos = sections[i].getElementsByTagName('video');
+        for (var j = 0; j < videos.length; j++) {
+            videos[j].pause();
+        }
+
+        // Find any iframes (YouTube videos) and reload them
+        var iframes = sections[i].getElementsByTagName('iframe');
+        for (var j = 0; j < iframes.length; j++) {
+            var iframe = iframes[j];
+            var iframeSrc = iframe.src;
+            iframe.src = iframeSrc; 
+        }
     }
 
     var activeSection = document.getElementById(hash);
@@ -33,10 +52,6 @@ window.addEventListener('hashchange', function () {
 
     // Scroll to top of active section
     activeSection.scrollIntoView({ behavior: "smooth", block: "start" });
-    var videos = document.getElementsByTagName('video');
-    for (var i = 0; i < videos.length; i++) {
-        videos[i].pause();
-    }
 });
 
 window.location.hash = '#home';
