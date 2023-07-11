@@ -1165,6 +1165,10 @@ a:hover .portfolio-link {
     font-size: 2em;
 }
 
+.eod-canvas h3 {
+    line-height: 0.8em;
+}
+
 .eod-canvas h4 {
     color: rgb(240, 119, 119);
     font-size: 1em;
@@ -1176,10 +1180,23 @@ a:hover .portfolio-link {
     font-weight: bold;
 }
 
-.eod-canvas .underscore {
+.underscore {
     text-decoration: underline;
 }
 
+.eod-tutorial {
+    margin-top: 32px;
+    border-radius: 16px;
+    border-style: dashed;
+    border-width: 2px;
+    border-color: white;
+}
+
+.eod-segment {
+    font-size: 1.6em !important;
+    margin-top: 64px !important;
+    margin-bottom: 0px !important;
+}
 
 /*--- CV Section ---*/
 
