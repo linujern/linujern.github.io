@@ -15,21 +15,18 @@
         <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
         <p>Linus Jernström</p>
         <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#allgames">All Games</a>
         <a href="#morris">Morris</a>
         <a href="#burglar">Burglar</a>
         <a href="#eod">Edge of Divinity</a>
-        <a href="#allgames">All Games</a>
+        <a href="#about">About</a>
         <a href="dev_diary/Home.html" target="_blank">Dev Logs</a>
         <a href="#cv">CV</a>
         <!-- Add more links as needed -->
     </div>
 
     <nav id="navbar">
-        <a href="#home">Linus Jernström</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#home">Home</a>
         <div class="dropdown">
             <button class="dropbtn">Work
                 <i class="fa fa-caret-down"></i>
@@ -41,6 +38,7 @@
                 <a href="#allgames">All Games</a>
             </div>
         </div>
+        <a href="#about">About</a>
         <a href="dev_diary/Home.html" target="_blank">Dev Logs</a>
         <a href="#cv">CV</a>
 
@@ -109,13 +107,14 @@
                         <br><br>
                         I am also a *massive* nerd, currently sporting around 30 fully optimized DND characters in my roster, all of which I hope against hope that I will 
                         some day get to take for a spin. When my friends found out I write python scripts to simulate combat scenarios and calculate average damage numbers 
-                        for my builds, I was even dubbed 'the biggest nerd'. One of my more specialized character builds (and one I'm quite proud of) is able to 100-0 Vecna 
-                        on turn the first turn of combat in 99.99989% of the 10 million combats I simulated (with no prep time!). ~ Told you I was a nerd ~
+                        for my builds, I was even dubbed 'the biggest nerd' (yes, I see that as a compliment). One of my more specialized character builds 
+                        (and one I'm quite proud of) is able to 100-0 Vecna on turn the first turn of combat in 99.99989% of the 10 million combats I simulated (with no prep time!). 
+                        ~ Told you I was a nerd ~ Recently, I also started assembling my first WH40k army, the equally golden, shiny and mighty Custodes!
                         <br><br>
                         In essence, I am someone who cherishes the process of learning, loves the challenge of problem-solving, 
                         and is always excited to bring ideas to life through game design.
                     </p>
-                    <a class="button clicker" href="#contact">Contact Me!</a>
+                    <a class="button clicker" id="scrollToBottom">Contact Me!</a>
                 </div>
                 
                 <div class="games-i-like">
@@ -204,38 +203,9 @@
                         In conclusion, despite its flaws, League of Legends is a deeply complex and rewarding game. Its intense, team-centric gameplay married with the continual demand for self-improvement and adaptation, cements it as an engaging experience. It's evolved to more than a game - it's a nexus of friendship, shared triumph, and a test of one's strategic prowess.
                     </p>
                 </div>
+                <div style="height: 64px"></div>
             </div>
         </div>   
-    </section>
-    
-    <section id="contact">
-        <!-- Content for Contact page -->
-        <div class="contact-canvas">
-            <div class="flexer">
-                <h1>You can reach me via these methods!</h1>
-                <div class="contact-icons">
-                    <a href="tel:+46727203180"><img src="images/phone-icon-white.png">
-                        <p>Phone Number<br>+46 (0)72 720 3180</p>
-                    </a>
-                    <a href="mailto:linus@braincurrent.se"><img src="images/email-icon-white.png">
-                        <p>Email Address<br>linus@braincurrent.se</p>
-                    </a>
-                    <a href="https://discordapp.com/users/lyens" target="_blank"><img src="images/discord-mark-white.png">
-                        <p>Discord<br>Lyens</p>
-                    </a>
-                    <a href="https://www.linkedin.com/in/linus-jernstr%C3%B6m/" target="_blank"><img
-                            src="images/linkedin-icon_white.png">
-                        <p>LinkedIn<br>Linus Jernström</p>
-                    </a>
-                    <!--<a href="https://www.instagram.com/linusjernstrom/" target="_blank"><img src="images/instagram-icon-white.png">
-                        <p>Instagram<br>linusjernstrom</p>-->
-                    </a>
-                    <a href="https://github.com/linujern" target="_blank"><img src="images/github-mark-white.png">
-                        <p>GitHub<br>linujern</p>
-                    </a>
-                </div>
-            </div>
-        </div>
     </section>
     
     <section id="allgames">
@@ -552,7 +522,7 @@
             <div class="game-section">
                 <h2>My Team</h2>
                 <p>
-                    Trough this nine week project I had the honor of workomg alongside the wonderful team Silent Partner Interactive (SPI), a group of 14 
+                    Through this nine week project I had the honor of workomg alongside the wonderful team Silent Partner Interactive (SPI), a group of 14 
                     other students from PSQ and 3 Sound and Media students from Högskolan Dalarna. I could not be more proud of what we managed to accomplish together, 
                     and I couldn't have asked for better teammates to experience this game project with.
                     <br><br>
@@ -873,5 +843,37 @@
             <p></p>
         </div>
     </section>
+
+    <section id="contact">
+        <!-- Content for Contact page -->
+        <div class="contact-canvas">
+            <div class="flexer">
+                <h1>You can reach me via these methods!</h1>
+                <div class="contact-icons">
+                    <a href="tel:+46727203180"><img src="images/phone-icon-white.png">
+                        <p>Phone Number<br>+46 (0)72 720 3180</p>
+                    </a>
+                    <a href="mailto:linus@braincurrent.se"><img src="images/email-icon-white.png">
+                        <p>Email Address<br>linus@braincurrent.se</p>
+                    </a>
+                    <a href="https://discordapp.com/users/lyens" target="_blank"><img src="images/discord-mark-white.png">
+                        <p>Discord<br>Lyens</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/linus-jernstr%C3%B6m/" target="_blank"><img
+                            src="images/linkedin-icon_white.png">
+                        <p>LinkedIn<br>Linus Jernström</p>
+                    </a>
+                    <!--<a href="https://www.instagram.com/linusjernstrom/" target="_blank"><img src="images/instagram-icon-white.png">
+                        <p>Instagram<br>linusjernstrom</p>-->
+                    </a>
+                    <a href="https://github.com/linujern" target="_blank"><img src="images/github-mark-white.png">
+                        <p>GitHub<br>linujern</p>
+                    </a>
+                </div>
+            </div>
+            <div style="height: 64px"></div>
+        </div>
+    </section>
+
 </body>
 </html>

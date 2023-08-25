@@ -5,7 +5,8 @@ function handleSectionDisplay() {
     
     var sections = document.getElementsByTagName('section');
     for (var i = 0; i < sections.length; i++) {
-        sections[i].style.display = hash === sections[i].id ? 'block' : 'none';
+        // Always show the contact section, hide others based on the hash
+        sections[i].style.display = (hash === sections[i].id || sections[i].id === 'contact') ? 'block' : 'none';
     }
 
     var activeSection = document.getElementById(hash);
@@ -16,34 +17,28 @@ function handleSectionDisplay() {
     }
 }
 
-// handle the display when the page loads
-document.addEventListener('DOMContentLoaded', handleSectionDisplay);
-
-
-// handle the display when the hash changes
-window.addEventListener('hashchange', handleSectionDisplay);
-
-
-/* Move to new section */
 window.addEventListener('hashchange', function () {
     var hash = window.location.hash.substr(1);
 
     var sections = document.getElementsByTagName('section');
     for (var i = 0; i < sections.length; i++) {
-        sections[i].style.display = 'none';
-        
-        // Pause any videos in the section
-        var videos = sections[i].getElementsByTagName('video');
-        for (var j = 0; j < videos.length; j++) {
-            videos[j].pause();
-        }
+        // If the section is not the active section or the contact section, hide it.
+        if (sections[i].id !== hash && sections[i].id !== 'contact') {
+            sections[i].style.display = 'none';
+            
+            // Pause any videos in the section
+            var videos = sections[i].getElementsByTagName('video');
+            for (var j = 0; j < videos.length; j++) {
+                videos[j].pause();
+            }
 
-        // Find any iframes (YouTube videos) and reload them
-        var iframes = sections[i].getElementsByTagName('iframe');
-        for (var j = 0; j < iframes.length; j++) {
-            var iframe = iframes[j];
-            var iframeSrc = iframe.src;
-            iframe.src = iframeSrc; 
+            // Find any iframes (YouTube videos) and reload them
+            var iframes = sections[i].getElementsByTagName('iframe');
+            for (var j = 0; j < iframes.length; j++) {
+                var iframe = iframes[j];
+                var iframeSrc = iframe.src;
+                iframe.src = iframeSrc; 
+            }
         }
     }
 
@@ -54,7 +49,18 @@ window.addEventListener('hashchange', function () {
     activeSection.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
+// handle the display when the page loads
+document.addEventListener('DOMContentLoaded', handleSectionDisplay);
+// handle the display when the hash changes
+window.addEventListener('hashchange', handleSectionDisplay);
+
 window.location.hash = '#home';
+
+// scroll to bottom of page
+document.getElementById("scrollToBottom").addEventListener("click", function() {
+    window.scrollTo(0, document.body.scrollHeight);
+});
+
 
 
 /* responsive navbar */

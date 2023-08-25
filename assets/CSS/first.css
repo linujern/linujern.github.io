@@ -2,6 +2,9 @@
     --color: #141414;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 @font-face{
     font-family: Lato;
@@ -425,7 +428,7 @@ section {
 /*--- About Section ---*/
 
 .about-container {
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
     width: 98%;
@@ -434,7 +437,7 @@ section {
 .about-canvas {
     margin: 20px;
     top: 128px;
-    position: absolute;
+    position: relative;
     max-width: 1060px;
 }
 
@@ -631,8 +634,6 @@ section {
 
 .contact-canvas {
     margin: 20px;
-    top: 128px;
-    position: absolute;
     width: 98%;
 }
 
@@ -708,7 +709,7 @@ section {
 .allgames-container {
     margin: 0;
     padding-top: 96px;
-    position: absolute;
+    position: relative;
     width: 98%;
 }
 
