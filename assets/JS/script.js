@@ -106,7 +106,7 @@ $(document).ready(function(){
         $(this).text("Show");
       }
     });
-  });
+});
   
 
 /* Enlarge CV */
