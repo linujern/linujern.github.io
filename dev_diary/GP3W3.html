@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Game Project 3 Week _</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 style="font-size: 32px;" id="logo"><a href="../index.html">LJ</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="Home.html">Home</a></li>
+							<li>
+								<a href="GP-Overview.html">Dev diaries</a>
+								<ul>
+									<li>
+										<a href="GP1.html">Game Project One</a>
+										<ul>
+											<li><a href="GP1W1.html">Week 1</a></li>
+											<li><a href="GP1W2.html">Week 2</a></li>
+											<li><a href="GP1W3.html">Week 3</a></li>
+											<li><a href="GP1W4.html">Week 4</a></li>
+											<li><a href="GP1W5.html">Week 5</a></li>
+											<li><a href="GP1_W6.html">Week 6</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="GP2.html">Game Project Two</a>
+									<ul>
+											<li><a href="GP2W1.html">Week 1</a></li>
+											<li><a href="GP2W2.html">Week 2</a></li>
+											<li><a href="GP2W3.html">Week 3</a></li>
+											<li><a href="GP2W4.html">Week 4</a></li>
+											<li><a href="GP2W5.html">Week 5</a></li>
+											<li><a href="GP2W6.html">Week 6</a></li>
+											<li><a href="GP2W7.html">Week 7</a></li>
+											<li><a href="GP2W8.html">Week 8</a></li>
+											<li><a href="GP2W9.html">Week 9</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="GP3.html">Game Project Three</a>
+									<!--
+										<ul>
+											<li><a href="GP3W1.html">Week 1</a></li>
+										</ul>
+									-->
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Loomie Land week nr 40</h2>
+							<p>Third week of game project 3</p>
+						</header>
+
+						<!-- Content -->
+							<section id="content">
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="GP2.html" class="button">Back to Week Overview</a></li>
+									</ul>
+								</footer>
+								<!-- DAY 1 -->
+								<h3>Monday, October 2nd</h3>
+								<p>I had and interview with Tension, and then spent much of the day wrestling with Unreal Engine, 
+								which was throwing a massive tantrum. I then started prototyping world interactables using Unreal interfaces.</p>
+								<!-- DAY 2 -->
+								<hr>
+								<h3>Tuesday, October 3rd</h3>
+								<p>I made a system which causes the player to "target" the nearest Interactable Object, which will be the base 
+								for creating interaction logic. Only the currently targeted interactable can be interacted with.</p>
+								<!-- DAY 3 -->
+								<hr>
+								<h3>Wednesday, October 4th</h3>
+								<p>I implemented interaction widgets and outlines for the Interactables, so the player can clearly see when they
+								are interacting with something. I also started working on multiplayer-compatible interaction logic.</p>
+								<a class="image fit"><img src="loomie_pics/InteractionPreview.gif" alt="" /></a>
+								<!-- DAY 4 -->
+								<hr>
+								<h3>Thursday, October 5th</h3>
+								<p>I finished the first working iteration of the interaction system. I temporarily used a parent class which 
+								holds all the logic for interactions (because I was more comfortable with it and wanted to test my idea). 
+								Using this method, all interactables would need to inherit from this parent class, which is not ideal since 
+								some classes need to have other parents. Thus, I started reworking the system to be ActorComponent based instead.</p>
+								<!-- DAY 5 -->
+								<hr>
+								<h3>Friday, October 6th</h3>
+								<p>I successfully converted the system to be ActorComponent based, and then *also* made a parent class which contains 
+								some base functionality. This way, my fellow designers can simply make their actors inherit from the InteractableParent 
+								and the important code is pre-written for them. This should make it easier to implement interactions quickly.
+								<br><br>
+								Additionally, I introduced a Component that I call a Receiver. It gets notified whenever its connected interactbles 
+								(easily selected via drag-and-drop from the viewport) are interacted with. By putting this Receiver on something like a
+								door and selecting a couple of button interactables as required to open it, 
+								we very quickly have a customizable locking door system!
+								</p>
+								<a class="image fit"><img src="loomie_pics/DoorPreview.gif" alt="" /></a>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="GP3.html" class="button">Back to Week Overview</a></li>
+									</ul>
+								</footer>
+							</section>
+					</div>
+				</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/linus-jernstr%C3%B6m-28b782253/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://www.instagram.com/linusjernstrom/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="https://github.com/linujern" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="mailto:linus@braincurrent.se" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>Linus Jernström</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
