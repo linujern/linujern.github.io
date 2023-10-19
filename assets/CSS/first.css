@@ -521,8 +521,8 @@ section {
     transition: 0.1s;
 }
 .clicker:hover {
-    background-color: rgb(15, 15, 15);
-    color: rgb(224, 228, 23) !important;
+    background-color: rgb(225, 225, 225);
+    color: rgb(26, 26, 26) !important;
     box-shadow: 0px 12px 0px 0px rgb(255 255 255 / 40%) !important;
     margin-top: 4px !important;
     margin-bottom: 12px !important;
@@ -530,8 +530,8 @@ section {
     transition: 0.1s;
 }
 .clicker:active {
-    background-color: rgb(15, 15, 15);
-    color: rgb(224, 228, 23) !important;
+    background-color: rgb(225, 225, 225);
+    color: rgb(26, 26, 26) !important;
     box-shadow: 0px 2px 0px 0px rgb(255 255 255 / 40%) !important;
     margin-top: 14px !important;
     margin-bottom: 2px !important;
@@ -1222,6 +1222,27 @@ a:hover .portfolio-link {
     font-size: 1.6em !important;
     margin-top: 64px !important;
     margin-bottom: 0px !important;
+}
+
+.eod-qs {
+    width: 600px;
+}
+
+@media screen and (max-width: 800px) {
+    .eod-qs {
+        width: 80%;
+    }
+    .eod-title {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .eod-qs, .eod-title {
+        width: 95%;
+    }
+    .eod-title {
+        width: 95%;
+    }
 }
 
 /*--- CV Section ---*/
