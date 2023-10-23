@@ -29,7 +29,7 @@ body, input, select, textarea, button, .dropdown .dropbtn {
     line-height: 1.75em;
 }
 
-h1, h2, h3, a:-webkit-any-link {
+h1, h2, h3, a {
     font-family: "Lato";
     color:white;
 }
@@ -775,7 +775,7 @@ section {
     transition: 0.5s;
 }
 
-.game-display #game-wide:hover {
+.game-display a:hover > #game-wide, .game-display a ~ div:hover > #game-wide {
     transition: 0.5s;
     filter: blur(2px);
     border-color: rgba(0, 0, 0, 0.2)
@@ -830,7 +830,7 @@ section {
     transform: translate(-50%, -50%);
 }
 
-.game-display img:hover + h3 {
+.game-display a:hover > h3 {
     opacity: 100%;
     transition: 0.5s;
 }
