@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pokémon Type Matchups</title>
+  <style>
+    /* ---------- Theme ---------- */
+    :root {
+      --bg-0: #0e1114;
+      --bg-2: #11151a;
+      --ink: #eef2f6;
+      --ink-2: #c5cdda;
+      --line: #232a33;
+
+      --glass: rgba(255,255,255,0.06);
+      --glass-strong: rgba(255,255,255,0.09);
+      --shadow: 0 8px 28px rgba(0,0,0,.35);
+
+      --ok: #22c55e;
+      --warn: #f59e0b;
+      --bad: #ef4444;
+
+      --ease: cubic-bezier(.2,.8,.2,1);
+      --dur-fast: 220ms;
+      --dur: 340ms;
+      --dur-slow: 480ms;
+
+      --radius: 16px;
+      --radius-sm: 12px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font: 14px/1.45 Inter, ui-sans-serif, system-ui, "Segoe UI", Roboto, Ubuntu, Cantarell, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background:
+        radial-gradient(1200px 700px at 0% -10%, #12161b 0%, transparent 60%),
+        radial-gradient(1000px 600px at 120% -10%, #0f1419 0%, transparent 60%),
+        linear-gradient(180deg, var(--bg-0), var(--bg-2));
+      transition: background var(--dur-slow) var(--ease), color var(--dur) var(--ease);
+    }
+
+    .wrap { max-width: 1080px; margin: 44px auto; padding: 0 20px; transition: opacity var(--dur) var(--ease); }
+    header { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+    h1 { margin: 0; font-size: 24px; letter-spacing: .2px; font-weight: 700; }
+    .sub { margin: 2px 0 0; color: var(--ink-2); }
+
+    /* Panels */
+    .panel { background: var(--glass); border: 1px solid transparent; border-radius: var(--radius); box-shadow: var(--shadow); backdrop-filter: blur(10px) saturate(120%); -webkit-backdrop-filter: blur(10px) saturate(120%); transition: background var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur-fast) var(--ease); }
+    .section-title { padding: 12px 14px; border-bottom: 1px solid var(--line); font-weight: 700; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .section-body { padding: 14px; }
+
+    .grid { display: grid; gap: 14px; transition: gap var(--dur) var(--ease); }
+
+    /* Segmented control */
+    .segmented { display: inline-flex; background: var(--glass-strong); border-radius: 12px; padding: 3px; box-shadow: inset 0 1px 0 rgba(255,255,255,.02); transition: background var(--dur) var(--ease); }
+    .segmented button { appearance: none; border: 0; background: transparent; color: var(--ink-2); font-weight: 800; padding: 6px 10px; border-radius: 10px; cursor: pointer; transition: color var(--dur-fast) var(--ease), transform 120ms var(--ease), background var(--dur-fast) var(--ease), filter var(--dur-fast) var(--ease); }
+    .segmented button:hover { color: #f2f6fb; }
+    .segmented button.active { background: rgba(255,255,255,.08); color: #f2f6fb; }
+
+    /* ---------- Type palette ---------- */
+    .types-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 10px; transition: gap var(--dur) var(--ease); }
+    .type-badge {
+      --type-color: #6b7280;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 10px 12px; border-radius: 999px;
+      background: var(--type-color);
+      color: #fff; border: none;
+      cursor: grab; user-select: none; font-weight: 900; letter-spacing: .2px;
+      transition: transform var(--dur-fast) var(--ease), filter var(--dur) var(--ease), box-shadow var(--dur) var(--ease), opacity var(--dur-fast) var(--ease);
+      box-shadow: 0 6px 14px rgba(0,0,0,.28);
+      will-change: transform, filter, opacity;
+    }
+    .type-badge:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(255,255,255,.18), 0 6px 16px rgba(0,0,0,.35); }
+    .type-badge:hover { transform: translateY(-1px) scale(1.02); filter: brightness(1.06); }
+    .type-badge:active { transform: translateY(0) scale(.98); cursor: grabbing; filter: brightness(.98); }
+
+    .type-badge.is-disabled { opacity: .45; filter: grayscale(.15) saturate(.85) contrast(.9); pointer-events: none; }
+
+    .ico { font-size: 14px; line-height: 1; display: inline-block; filter: drop-shadow(0 1px 0 rgba(0,0,0,.18)); }
+
+    /* ---------- Slots ---------- */
+    .two-col { grid-template-columns: 1.05fr 2fr; }
+    .slots-grid { display: grid; grid-template-columns: repeat(2, minmax(200px, 1fr)); gap: 10px; }
+    .slot {
+      position: relative; min-height: 120px; padding: 0;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,.03); border: 1px dashed rgba(255,255,255,.08);
+      color: var(--ink-2);
+      transition: border-color var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+      overflow: hidden;
+    }
+    .slot.filled { border-style: solid; border-color: rgba(255,255,255,.08); background: rgba(255,255,255,.04); color: var(--ink); }
+    .slot.over { background: rgba(255,255,255,.06); transform: translateY(-1px); }
+
+    .slot .label { position: absolute; top: 8px; left: 10px; font-size: 12px; opacity: .95; z-index: 3; transition: opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease); }
+    .slot .clear-btn { position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,.28); border: none; color: #fff; border-radius: 9px; padding: 4px 6px; cursor: pointer; font-weight: 800; font-size: 12px; z-index: 3; transition: background var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease); }
+    .slot .clear-btn:hover { background: rgba(0,0,0,.36); transform: translateY(-1px); }
+
+    .slot .value { position: relative; z-index: 1; height: 100%; display: grid; place-items: center; font-weight: 900; font-size: 16px; transition: opacity var(--dur-fast) var(--ease); }
+
+    .slot-fill {
+      position: absolute; inset: 0; border-radius: var(--radius-sm);
+      background: var(--type-color); color: #fff; display: grid; place-items: center;
+      font-weight: 900; font-size: 16px; text-align: center;
+      transform: scale(.84); opacity: 0;
+      transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+      box-shadow: 0 12px 28px rgba(0,0,0,.32), inset 0 0 0 1px rgba(255,255,255,.14);
+      pointer-events: none;
+    }
+    .slot-fill.in { transform: scale(1); opacity: 1; }
+
+    .slot-actions { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+    .btn { background: rgba(255,255,255,.06); color: var(--ink); border: 1px solid rgba(255,255,255,.08); border-radius: 10px; padding: 8px 10px; cursor: pointer; font-weight: 900; letter-spacing: .2px; transition: transform var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease); }
+    .btn:hover { background: rgba(255,255,255,.1); transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    /* ---------- Buckets ---------- */
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; transition: grid-template-columns var(--dur) var(--ease), gap var(--dur) var(--ease), opacity var(--dur-fast) var(--ease); }
+    .bucket { border-radius: 12px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); opacity: 0; transform: translateY(6px); transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease), background var(--dur) var(--ease); }
+    .bucket.in { opacity: 1; transform: none; }
+    .bucket h3 { margin: 0; padding: 10px 12px; border-bottom: 1px solid var(--line); font-size: 13px; letter-spacing: .2px; }
+    .bucket .body { padding: 10px; display: flex; flex-wrap: wrap; gap: 8px; min-height: 44px; transition: padding var(--dur-fast) var(--ease); }
+
+    .chip { --type-color: #6b7280; display: inline-flex; flex-grow: 1; justify-content: center; align-items: center; gap: 8px; font-weight: 900; padding: 6px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,.08); color: var(--ink); background: var(--type-color); transform: scale(.96); opacity: 1; transition: transform var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease); }
+    .chip.in { transform: none; opacity: 1; }
+
+    .muted { color: var(--ink-2); transition: color var(--dur-fast) var(--ease); }
+
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0 0; }
+    .meta .selected { font-weight: 900; display: inline-flex; gap: 6px; align-items: center; }
+
+    .table-wrap { padding: 12px 14px; }
+    details { border-top: 1px solid var(--line); transition: border-color var(--dur-fast) var(--ease); }
+    details > summary { list-style: none; cursor: pointer; padding: 12px 14px; color: var(--ink-2); font-weight: 800; transition: color var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease); }
+    details[open] > summary { color: var(--ink); }
+    .table { width: 100%; border-collapse: collapse; }
+    .table th, .table td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; transition: background var(--dur-fast) var(--ease); }
+    .table th { color: var(--ink-2); font-weight: 900; }
+    .k { font-variant-numeric: tabular-nums; padding: 2px 8px; border-radius: 8px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.05); transition: background var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease); }
+
+    .type-Normal  { --type-color: #A8A77A; }
+    .type-Fire    { --type-color: #EE8130; }
+    .type-Water   { --type-color: #6390F0; }
+    .type-Electric{ --type-color: #F7D02C; }
+    .type-Grass   { --type-color: #7AC74C; }
+    .type-Ice     { --type-color: #96D9D6; }
+    .type-Fighting{ --type-color: #C22E28; }
+    .type-Poison  { --type-color: #A33EA1; }
+    .type-Ground  { --type-color: #E2BF65; }
+    .type-Flying  { --type-color: #A98FF3; }
+    .type-Psychic { --type-color: #F95587; }
+    .type-Bug     { --type-color: #A6B91A; }
+    .type-Rock    { --type-color: #B6A136; }
+    .type-Ghost   { --type-color: #735797; }
+    .type-Dragon  { --type-color: #6F35FC; }
+    .type-Dark    { --type-color: #705746; }
+    .type-Steel   { --type-color: #B7B7CE; }
+    .type-Fairy   { --type-color: #D685AD; }
+
+    @media (max-width: 880px) {
+      header { flex-direction: column; align-items: flex-start; }
+      .two-col { grid-template-columns: 1fr; }
+      .slots-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Type Matchups</h1>
+        <p class="sub">Drag up to two types. See defensive multipliers and offensive coverage in real time.</p>
+      </div>
+      <div class="segmented" role="tablist" aria-label="Label display mode">
+        <button id="mode-name" class="active" role="tab" aria-selected="true" title="Show names only">Name</button>
+        <button id="mode-icon" role="tab" aria-selected="false" title="Show icons only">Icon</button>
+        <button id="mode-both" role="tab" aria-selected="false" title="Show both name and icon">Both</button>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="section-title">Types</div>
+      <div class="section-body">
+        <div id="typesGrid" class="types-grid" aria-label="Type palette"></div>
+      </div>
+    </section>
+
+    <div class="grid two-col" style="margin-top: 14px;">
+      <section class="panel">
+        <div class="section-title">Selection</div>
+        <div class="section-body">
+          <div class="slots-grid">
+            <div class="slot" id="slot1" data-index="0" aria-label="Type slot 1" tabindex="0">
+              <div class="label">Type 1</div>
+              <div class="value muted">Drag here</div>
+              <button class="clear-btn" hidden>Clear</button>
+            </div>
+            <div class="slot" id="slot2" data-index="1" aria-label="Type slot 2" tabindex="0">
+              <div class="label">Type 2</div>
+              <div class="value muted">Optional</div>
+              <button class="clear-btn" hidden>Clear</button>
+            </div>
+          </div>
+          <div class="slot-actions">
+            <button class="btn" id="swapBtn" title="Swap types">Swap</button>
+            <button class="btn" id="clearBtn" title="Clear both">Clear</button>
+          </div>
+          <div class="meta" aria-live="polite">
+            <span class="muted">Current</span>
+            <span id="selectedLabel" class="selected">—</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-title">Defense</div>
+        <div class="section-body">
+          <div class="results-grid" id="defBuckets"></div>
+          <p class="muted" style="margin:8px 0 0; font-size:12px;">Incoming damage multipliers by attacking type.</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="panel" style="margin-top:14px;">
+      <div class="section-title">Offense</div>
+      <div class="section-body">
+        <div class="results-grid" id="offBuckets"></div>
+        <p class="muted" style="margin:8px 0 0; font-size:12px;">Best multiplier your selected attack types can deal against each single type.</p>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:14px;">
+      <div class="section-title">Tables</div>
+      <div class="table-wrap">
+        <details>
+          <summary>Defensive multipliers table</summary>
+          <table class="table" id="matchTableDef" aria-label="Full defensive matchup table">
+            <thead>
+              <tr><th>Attacking type</th><th>×</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </details>
+        <details style="margin-top:8px;">
+          <summary>Offensive multipliers table</summary>
+          <table class="table" id="matchTableOff" aria-label="Full offensive matchup table">
+            <thead>
+              <tr><th>Defending type</th><th>Best ×</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </details>
+      </div>
+    </section>
+
+    <details class="panel" style="margin-top:14px;">
+      <summary class="section-title">Developer tests</summary>
+      <div class="section-body" id="testOutput" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px;"></div>
+    </details>
+  </div>
+
+  <script>
+    // ---------- Data ----------
+    const TYPES = [
+      "Normal","Fire","Water","Electric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Rock","Ghost","Dragon","Dark","Steel","Fairy"
+    ];
+
+    const ICON = {
+      Normal: "⚪", Fire: "🔥", Water: "💧", Electric: "⚡", Grass: "🍃", Ice: "❄️",
+      Fighting: "🥊", Poison: "☠️", Ground: "⛰️", Flying: "🕊️", Psychic: "👁️",
+      Bug: "🐛", Rock: "🪨", Ghost: "👻", Dragon: "🐉", Dark: "🌑", Steel: "⚙️", Fairy: "✨"
+    };
+
+    const N = 1, SE = 2, NV = 0.5, IMM = 0;
+    const chart = {};
+    for (const a of TYPES) { chart[a] = {}; for (const d of TYPES) chart[a][d] = N; }
+    chart.Normal.Rock = NV; chart.Normal.Steel = NV; chart.Normal.Ghost = IMM;
+    for (const d of ["Grass","Ice","Bug","Steel"]) chart.Fire[d] = SE; for (const d of ["Fire","Water","Rock","Dragon"]) chart.Fire[d] = NV;
+    for (const d of ["Fire","Ground","Rock"]) chart.Water[d] = SE; for (const d of ["Water","Grass","Dragon"]) chart.Water[d] = NV;
+    for (const d of ["Water","Flying"]) chart.Electric[d] = SE; for (const d of ["Electric","Grass","Dragon"]) chart.Electric[d] = NV; chart.Electric.Ground = IMM;
+    for (const d of ["Water","Ground","Rock"]) chart.Grass[d] = SE; for (const d of ["Fire","Grass","Poison","Flying","Bug","Dragon","Steel"]) chart.Grass[d] = NV;
+    for (const d of ["Grass","Ground","Flying","Dragon"]) chart.Ice[d] = SE; for (const d of ["Fire","Water","Ice","Steel"]) chart.Ice[d] = NV;
+    for (const d of ["Normal","Ice","Rock","Dark","Steel"]) chart.Fighting[d] = SE; for (const d of ["Poison","Flying","Psychic","Bug","Fairy"]) chart.Fighting[d] = NV; chart.Fighting.Ghost = IMM;
+    for (const d of ["Grass","Fairy"]) chart.Poison[d] = SE; for (const d of ["Poison","Ground","Rock","Ghost"]) chart.Poison[d] = NV; chart.Poison.Steel = IMM;
+    for (const d of ["Fire","Electric","Poison","Rock","Steel"]) chart.Ground[d] = SE; for (const d of ["Grass","Bug"]) chart.Ground[d] = NV; chart.Ground.Flying = IMM;
+    for (const d of ["Grass","Fighting","Bug"]) chart.Flying[d] = SE; for (const d of ["Electric","Rock","Steel"]) chart.Flying[d] = NV;
+    for (const d of ["Fighting","Poison"]) chart.Psychic[d] = SE; for (const d of ["Psychic","Steel"]) chart.Psychic[d] = NV; chart.Psychic.Dark = IMM;
+    for (const d of ["Grass","Psychic","Dark"]) chart.Bug[d] = SE; for (const d of ["Fire","Fighting","Poison","Flying","Ghost","Steel","Fairy"]) chart.Bug[d] = NV;
+    for (const d of ["Fire","Ice","Flying","Bug"]) chart.Rock[d] = SE; for (const d of ["Fighting","Ground","Steel"]) chart.Rock[d] = NV;
+    for (const d of ["Psychic","Ghost"]) chart.Ghost[d] = SE; chart.Ghost.Dark = NV; chart.Ghost.Normal = IMM;
+    chart.Dragon.Dragon = SE; chart.Dragon.Steel = NV; chart.Dragon.Fairy = IMM;
+    for (const d of ["Psychic","Ghost"]) chart.Dark[d] = SE; for (const d of ["Fighting","Dark","Fairy"]) chart.Dark[d] = NV;
+    for (const d of ["Ice","Rock","Fairy"]) chart.Steel[d] = SE; for (const d of ["Fire","Water","Electric","Steel"]) chart.Steel[d] = NV;
+    for (const d of ["Fighting","Dragon","Dark"]) chart.Fairy[d] = SE; for (const d of ["Fire","Poison","Steel"]) chart.Fairy[d] = NV;
+
+    // ---------- Element helper ----------
+    const el = (tag, props = {}, ...children) => {
+      const node = document.createElement(tag);
+      // Assign properties safely; handle dataset and style specially
+      for (const [k, v] of Object.entries(props)) {
+        if (k === 'dataset' && v && typeof v === 'object') {
+          for (const [dk, dv] of Object.entries(v)) node.dataset[dk] = dv;
+          continue;
+        }
+        if (k === 'style' && v && typeof v === 'object') {
+          Object.assign(node.style, v);
+          continue;
+        }
+        // Try property assignment first; fallback to setAttribute
+        try {
+          if (k in node) node[k] = v; else node.setAttribute(k, v);
+        } catch {
+          node.setAttribute(k, v);
+        }
+      }
+      for (const c of children) node.append(c);
+      return node;
+    };
+
+    const typesGrid = document.getElementById('typesGrid');
+    const slotEls = [document.getElementById('slot1'), document.getElementById('slot2')];
+    const selectedLabel = document.getElementById('selectedLabel');
+    const defBuckets = document.getElementById('defBuckets');
+    const offBuckets = document.getElementById('offBuckets');
+    const matchTableDef = document.getElementById('matchTableDef').querySelector('tbody');
+    const matchTableOff = document.getElementById('matchTableOff').querySelector('tbody');
+
+    let selected = [null, null];
+    let labelMode = 'name'; // 'name' | 'icon' | 'both'
+
+    const ICO = (t) => el('span', { className: 'ico', ariaHidden: 'true' }, ICON[t] || '•');
+
+    function labelParts(t) {
+      const parts = [];
+      if (labelMode === 'icon' || labelMode === 'both') parts.push(ICO(t));
+      if (labelMode === 'name' || labelMode === 'both') parts.push(document.createTextNode(t));
+      return parts;
+    }
+
+    function makeBadge(t) {
+      const badge = el('button', { className: `type-badge type-${t}`, draggable: true, title: t, type: 'button', dataset: { type: t } });
+      badge.append(...labelParts(t));
+      badge.addEventListener('dragstart', e => { e.dataTransfer.setData('text/type', t); e.dataTransfer.effectAllowed = 'copy'; });
+      badge.addEventListener('click', () => addType(t));
+      return badge;
+    }
+
+    function makeChip(t) { const chip = el('span', { className: `chip type-${t}` }); chip.append(...labelParts(t)); return chip; }
+    function makeFill(t) { const fill = el('div', { className: `slot-fill type-${t}` }); fill.append(...labelParts(t)); return fill; }
+
+    // ---------- Palette ----------
+    function renderPalette() {
+      typesGrid.replaceChildren();
+      for (const t of TYPES) typesGrid.appendChild(makeBadge(t));
+      setBadgeDisabledStates();
+    }
+
+    function setBadgeDisabledStates() {
+      const disabled = new Set(selected.filter(Boolean));
+      for (const btn of typesGrid.children) {
+        const t = btn.dataset.type;
+        const isDis = disabled.has(t);
+        btn.classList.toggle('is-disabled', isDis);
+        btn.setAttribute('aria-disabled', isDis ? 'true' : 'false');
+      }
+    }
+
+    // ---------- Drag handlers for slots ----------
+    function addDnDHandlers(slot) {
+      slot.addEventListener('dragover', e => { e.preventDefault(); slot.classList.add('over'); e.dataTransfer.dropEffect = 'copy'; });
+      slot.addEventListener('dragleave', () => slot.classList.remove('over'));
+      slot.addEventListener('drop', e => { e.preventDefault(); slot.classList.remove('over'); const t = e.dataTransfer.getData('text/type'); if (t) setType(slot.dataset.index|0, t); });
+      slot.addEventListener('click', () => { const idx = slot.dataset.index|0; if (selected[idx]) clearType(idx); });
+    }
+
+    function setType(idx, type) {
+      if (!TYPES.includes(type)) return;
+      const other = idx === 0 ? 1 : 0;
+      if (selected[other] === type) return; // block duplicates
+      selected[idx] = type;
+      updateSlots();
+      renderAll();
+      setBadgeDisabledStates();
+    }
+    function addType(type) { if (selected[0] == null) setType(0, type); else if (selected[1] == null) setType(1, type); else setType(1, type); }
+    function clearType(idx) { selected[idx] = null; updateSlots(); renderAll(); setBadgeDisabledStates(); }
+    function swapTypes() { [selected[0], selected[1]] = [selected[1], selected[0]]; updateSlots(); renderAll(); setBadgeDisabledStates(); }
+    function clearBoth() { selected = [null, null]; updateSlots(); renderAll(); setBadgeDisabledStates(); }
+
+    function updateSlots() {
+      slotEls.forEach((slot, i) => {
+        const t = selected[i];
+        const valEl = slot.querySelector('.value');
+        const clearBtn = slot.querySelector('.clear-btn');
+        if (t) {
+          slot.classList.add('filled');
+          valEl.replaceWith(valEl.cloneNode());
+          const v = slot.querySelector('.value');
+          v.replaceChildren();
+          const fill = makeFill(t);
+          v.append(fill);
+          requestAnimationFrame(() => fill.classList.add('in'));
+          clearBtn.hidden = false; clearBtn.onclick = e => { e.stopPropagation(); clearType(i); };
+        } else {
+          slot.classList.remove('filled');
+          slot.querySelector('.value').textContent = i === 0 ? 'Drag here' : 'Optional';
+          clearBtn.hidden = true;
+        }
+      });
+
+      // Update Current indicator
+      const sel = selected.filter(Boolean);
+      selectedLabel.replaceChildren();
+      if (sel.length) {
+        for (let i = 0; i < sel.length; i++) {
+          if (i > 0) selectedLabel.append(el('span', { className: 'muted', style: 'padding:0 6px' }, '+'));
+          selectedLabel.append(makeChip(sel[i]));
+        }
+      } else {
+        selectedLabel.textContent = '—';
+      }
+    }
+
+    // ---------- Math ----------
+    function computeDefense() { const sel = selected.filter(Boolean); const mult = {}; for (const atk of TYPES) { let m = 1; for (const def of sel) m *= chart[atk][def]; mult[atk] = m; } return mult; }
+    function computeOffense() { const sel = selected.filter(Boolean); const mult = {}; for (const def of TYPES) { if (!sel.length) { mult[def] = 1; continue; } let best = 0; for (const atk of sel) best = Math.max(best, chart[atk][def]); mult[def] = best || 0; } return mult; }
+
+    // ---------- Render ----------
+    function animateBucket(box) { requestAnimationFrame(() => box.classList.add('in')); }
+    function animateChips(container) { const chips = container.querySelectorAll('.chip'); chips.forEach(c => requestAnimationFrame(() => c.classList.add('in'))); }
+
+    function renderBuckets(mult, container) {
+      const by = { 4: [], 2: [], 1: [], 0.5: [], 0.25: [], 0: [] };
+      for (const t of Object.keys(mult)) { const k = String(mult[t]); (by[k] ?? by['1']).push(t); }
+      const defs = [
+        { title: '×4 Weak', key: '4', tone: 'bad' },
+        { title: '×2 Weak', key: '2', tone: 'warn' },
+        { title: '×½ Resist', key: '0.5', tone: 'ok' },
+        { title: '×¼ Resist', key: '0.25', tone: 'ok' },
+        { title: '×0 Immune', key: '0', tone: 'ok' },
+        { title: 'Neutral ×1', key: '1', tone: '' },
+      ];
+      container.replaceChildren();
+      for (const b of defs) {
+        const box = el('div', { className: 'bucket' });
+        const h = el('h3');
+        h.textContent = b.title;
+        h.style.color = b.tone === 'bad' ? 'var(--bad)' : b.tone === 'warn' ? 'var(--warn)' : b.tone === 'ok' ? 'var(--ok)' : 'var(--ink)';
+        const body = el('div', { className: 'body' });
+        const list = by[b.key];
+        if (list && list.length) { for (const t of list) body.append(makeChip(t)); } else { body.append(el('span', { className: 'muted' }, 'None')); }
+        box.append(h, body); container.append(box);
+        animateBucket(box); animateChips(body);
+      }
+    }
+
+    function renderTable(mult, tbody) {
+      tbody.replaceChildren();
+      for (const t of TYPES) {
+        const tr = el('tr');
+        const tdA = el('td'); const tdM = el('td');
+        tdA.append(makeChip(t));
+        tdM.append(el('span', { className: 'k' }, `×${strip(mult[t])}`));
+        tr.append(tdA, tdM); tbody.append(tr);
+      }
+    }
+
+    function strip(n) { const s = String(n); return s.includes('.') ? s.replace(/0+$/,'').replace(/\.$/,'') : s; }
+
+    function renderAll() {
+      const hasAny = selected.some(Boolean);
+      if (!hasAny) {
+        defBuckets.replaceChildren(); offBuckets.replaceChildren();
+        defBuckets.append(el('div', { className: 'muted', style: 'padding:6px 2px 10px;' }, 'Choose at least one type.'));
+        offBuckets.append(el('div', { className: 'muted', style: 'padding:6px 2px 10px;' }, 'Choose at least one type.'));
+        matchTableDef.replaceChildren(); matchTableOff.replaceChildren();
+        return;
+      }
+      const mDef = computeDefense(); const mOff = computeOffense();
+      renderBuckets(mDef, defBuckets); renderBuckets(mOff, offBuckets);
+      renderTable(mDef, matchTableDef); renderTable(mOff, matchTableOff);
+    }
+
+    // ---------- Controls ----------
+    document.getElementById('swapBtn').addEventListener('click', swapTypes);
+    document.getElementById('clearBtn').addEventListener('click', clearBoth);
+
+    const btnName = document.getElementById('mode-name');
+    const btnIcon = document.getElementById('mode-icon');
+    const btnBoth = document.getElementById('mode-both');
+    function setMode(mode) {
+      labelMode = mode;
+      for (const b of [btnName, btnIcon, btnBoth]) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); }
+      const active = mode === 'name' ? btnName : mode === 'icon' ? btnIcon : btnBoth;
+      active.classList.add('active'); active.setAttribute('aria-selected', 'true');
+      renderPalette(); updateSlots(); renderAll();
+    }
+    btnName.addEventListener('click', () => setMode('name'));
+    btnIcon.addEventListener('click', () => setMode('icon'));
+    btnBoth.addEventListener('click', () => setMode('both'));
+
+    // ---------- Tests ----------
+    function logTest(name, ok) {
+      const out = document.getElementById('testOutput');
+      const line = document.createElement('div');
+      line.textContent = `${ok ? '✔' : '✖'} ${name}`;
+      line.style.color = ok ? '#22c55e' : '#ef4444';
+      out.appendChild(line);
+    }
+
+    async function runTests() {
+      const saved = [...selected];
+      const clearUI = () => { document.getElementById('testOutput').replaceChildren(); };
+      clearUI();
+
+      // Test 1: Current indicator starts empty
+      logTest('Current indicator starts as em dash', document.getElementById('selectedLabel').textContent.trim() === '—');
+
+      // Test 2: Set Type 1 to Fire
+      setType(0, 'Fire');
+      logTest('Setting slot 1 to Fire works', selected[0] === 'Fire');
+
+      // Test 3: Fire badge becomes disabled
+      const fireBtn = [...typesGrid.children].find(b => b.dataset.type === 'Fire');
+      logTest('Fire badge disabled after selection', fireBtn && fireBtn.classList.contains('is-disabled'));
+
+      // Test 4: Duplicate Fire in slot 2 is blocked
+      setType(1, 'Fire');
+      logTest('Duplicate selection blocked', selected[1] !== 'Fire');
+
+      // Test 5: Set slot 2 to Flying and indicator shows two chips
+      setType(1, 'Flying');
+      const chipCount = document.getElementById('selectedLabel').querySelectorAll('.chip').length;
+      logTest('Current indicator shows two chips', chipCount === 2);
+
+      // Cleanup: restore previous state
+      selected = saved;
+      updateSlots();
+      renderAll();
+      setBadgeDisabledStates();
+    }
+
+    // ---------- Init ----------
+    renderPalette();
+    slotEls.forEach(addDnDHandlers);
+    updateSlots();
+    renderAll();
+
+    // expose tests
+    window.runTests = runTests;
+  </script>
+</body>
+</html>
