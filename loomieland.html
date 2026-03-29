@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trouble in Loomie Land — Linus Jernström</title>
+    <link rel="stylesheet" href="assets/CSS/first.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/JS/script.js" defer></script>
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+        <p>Linus Jernström</p>
+        <a href="index.html" onclick="toggleNav()">Home</a>
+        <a href="index.html#games" onclick="toggleNav()">Games</a>
+        <a href="index.html#about" onclick="toggleNav()">About Me</a>
+        <a href="index.html#cv" onclick="toggleNav()">CV</a>
+        <a href="dev_diary/Home.html" target="_blank">PSQ Dev Logs</a>
+    </div>
+
+    <nav id="navbar">
+        <a href="index.html">Home</a>
+        <a href="index.html#games">Games</a>
+        <a href="index.html#about">About Me</a>
+        <a href="index.html#cv">CV</a>
+        <a href="dev_diary/Home.html" target="_blank">PSQ Dev Logs</a>
+        <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+            <img src="images/menu.png" alt="Menu" id="sidenavIcon">
+        </a>
+    </nav>
+
+    <div class="fg-canvas loomieland">
+
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube-nocookie.com/embed/coZOnCt3xkU"
+                title="Trouble in Loomie Land trailer" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+
+        <h1>Trouble in Loomie Land<br>3D Co-op Platformer</h1>
+
+        <div class="game-section-container game-section">
+            <div class="half-section">
+                <h2>Project Summary</h2>
+                <p>
+                    Trouble in Loomie Land is a cutesy 3D platformer that can be played solo or
+                    co-op with a friend. Players explore colourful islands, collect items, interact
+                    with the local Loomie inhabitants, and find secrets hidden across the levels.
+                    Masks can be collected and equipped to customise your character, and a shop
+                    lets you spend collectibles on new ones.
+                </p>
+                <h2>Project Breakdown</h2>
+                <p>
+                    9 Week Group Project<br>
+                    17 Team Members<br>
+                    Powered by Unreal Engine 5<br>
+                    Playgroundsquad, Falun
+                </p>
+            </div>
+            <div class="half-section">
+                <h2>My Responsibilities</h2>
+                <p>
+                    <span class="highlight">Interaction System:</span> designed and programmed the component-based interaction framework used for every interactable in the game.
+                </p>
+                <p>
+                    <span class="highlight">GDD Programming:</span> wrote the programming specifications for most systems in the design document.
+                </p>
+                <p>
+                    <span class="highlight">Generalist:</span> level design, voiceline system, VFX, UI, shop, optimisation, and whatever needed doing.
+                </p>
+            </div>
+        </div>
+
+        <hr style="width: 85vw; margin: 64px;">
+
+        <div class="game-section">
+            <h2>My Contributions</h2>
+
+            <h4>Interaction System</h4>
+            <p>
+                Everything in the game that has "hold E to interact" behaviour runs on a system I designed
+                and built from scratch. It is component-based — three Actor Components that communicate
+                via interfaces, each going on a different type of actor:
+            </p>
+            <p>
+                <span class="highlight">AC_InteractionTrace</span> lives on the player. It continuously
+                scans for nearby InteractionObjects, tells the closest one that it is being focused,
+                and triggers activation when the player holds the interaction key long enough.
+            </p>
+            <p>
+                <span class="highlight">AC_InteractionObject</span> goes on any interactable — a lever,
+                a button, a pressure plate, an NPC. It handles the hold-to-interact timer, the outline
+                and widget feedback, line-of-sight checking so objects can't be activated through walls,
+                and outgoing signals to any connected Receivers. It supports multiplayer-specific
+                variables, so a lever can stay active for 10 seconds in singleplayer but only 1 in co-op.
+            </p>
+            <p>
+                <span class="highlight">AC_InteractionReceiver</span> goes on anything that should respond
+                to interactables — doors, cages, anything that takes input. Designers drag-and-drop
+                the interactables that should trigger it directly in the viewport. Receivers can be
+                inverted (so an off-signal becomes an on-signal), require multiple inputs simultaneously,
+                and one interactable can send to multiple receivers. The combination of these three
+                components covers every interaction in the game.
+            </p>
+            <p>
+                I went through two significant iterations on this system during the project. I started
+                with a parent class approach for speed, then converted it fully to Actor Components when
+                it became clear that some actors needed other parents. Every component is extensively
+                documented.
+            </p>
+            <div class="games-scroll">
+                <img src="dev_diary/loomie_pics/InteractionPreview.gif">
+                <img src="dev_diary/loomie_pics/DoorPreview.gif">
+                <img src="dev_diary/loomie_pics/LoomieTalkPreview.gif">
+                <img src="dev_diary/loomie_pics/DoorsShowcase.gif">
+                <img src="dev_diary/loomie_pics/MovingObjectShowcase.gif">
+            </div>
+
+            <h4>Voiceline System</h4>
+            <p>
+                I built the Loomie NPC voiceline system with enough flexibility that designers could
+                express complex narrative behaviour without touching code. Voicelines are organised into
+                sets, each with its own properties: ordered or random playback, activation conditions,
+                and easy switching between sets based on game state. In practice this let a Loomie
+                speak random gibberish until a door opened, then switch to an ordered set explaining
+                how to find collectibles, then switch again to idle chatter once the collectible
+                was picked up.
+            </p>
+
+            <h4>Night Island</h4>
+            <p>
+                The night island level was behind schedule and had serious performance problems when
+                I took it on. I finished the gameplay implementation, placed assets, fixed collisions,
+                and did a significant round of optimisation; including a roughly 300% performance
+                improvement to the MovingObject blueprint. I also focused on shaping a winding path
+                that takes the player through the whole level in a way that feels intentional and rewarding.
+            </p>
+
+            <h4>Generalist Work</h4>
+            <p>
+                Beyond the above: I wrote the programming specifications for most systems in the GDD,
+                built a teleporter blueprint for moving players between levels, created a tag minigame,
+                implemented a player customisation shop, integrated player animations that hadn't been
+                hooked up, helped with a cloud shader material function alongside programmer André,
+                and shipped a lot of builds on the final day. Not a boring project!
+            </p>
+        </div>
+
+        <hr style="width: 85vw; margin: 64px;">
+        <a class="button clicker" href="https://snabkol.itch.io/loomieland" target="_blank">Check it out on itch!</a>
+        <div style="height: 64px;"></div>
+
+    </div>
+
+    <!-- ======== CONTACT ======== -->
+    <section id="contact">
+        <div class="contact-canvas">
+            <div class="flexer">
+                <h1>You can reach me via these methods!</h1>
+                <div class="contact-icons">
+                    <a href="tel:+46727203180"><img src="images/phone-icon-white.png">
+                        <p>Phone Number<br>+46 (0)72 720 3180</p>
+                    </a>
+                    <a href="mailto:linus@braincurrent.se"><img src="images/email-icon-white.png">
+                        <p>Email Address<br>linus@braincurrent.se</p>
+                    </a>
+                    <a href="https://discordapp.com/users/lyens" target="_blank"><img src="images/discord-mark-white.png">
+                        <p>Discord<br>Lyens</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/linus-jernstrom/" target="_blank"><img src="images/linkedin-icon_white.png">
+                        <p>LinkedIn<br>Linus Jernström</p>
+                    </a>
+                    <a href="https://github.com/linujern" target="_blank"><img src="images/github-mark-white.png">
+                        <p>GitHub<br>linujern</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

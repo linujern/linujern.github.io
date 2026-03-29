@@ -432,7 +432,7 @@ h1, h2, h3, a {
     gap: 0;
     padding: 16px 5vw;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
+    scrollbar-width: thick;
     scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
 }
 
@@ -1489,6 +1489,8 @@ a:hover .portfolio-link {
 .fg-canvas.okrhams h4   { color: rgb(200, 140, 255); }
 .fg-canvas.suboptimal h2 { color: rgb(60, 160, 230); }
 .fg-canvas.suboptimal h4 { color: rgb(120, 200, 255);}
+.fg-canvas.loomieland h2 { color: rgb(240, 180, 60); }
+.fg-canvas.loomieland h4 { color: rgb(255, 220, 120);}
 
 @media screen and (max-width: 1420px) {
     .fg-canvas .video-wrapper {
