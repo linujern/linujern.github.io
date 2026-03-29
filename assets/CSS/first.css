@@ -18,7 +18,8 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: #2c2c2c; /* #2c2c2c */
+    background-color: #2c2c2c;
+    overflow-x: hidden;
 }
 
 body, input, select, textarea, button, .dropdown .dropbtn {
@@ -223,32 +224,14 @@ h1, h2, h3, a {
     cursor: pointer;
 }
 
-/*--- Sections ---*/
-/*
-section {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-#home {
-    opacity: 1;
-}
-*/
-
-
 /*--- Home Page ---*/
 
 .video-container {
     display: flex;
     justify-content: center;
-    /* This will center the video horizontally */
     align-items: center;
-    /* This will center the video vertically */
     height: 700px;
-    /* This now sets the video container to be 70% of the viewport height */
     overflow: hidden;
-    /* This will hide the parts of the video that are outside the container */
-    /* This will blur the video. Adjust the pixel value to increase or decrease the blur */
     width: 100%;
     position: relative;
 }
@@ -265,6 +248,12 @@ section {
     filter: blur(8px);
 }
 
+@media screen and (max-height: 900px) {
+    .video-container {
+        max-height: 80vh;
+    }
+}
+
 .text-container {
     position: absolute;
     bottom: 2vw;
@@ -274,7 +263,6 @@ section {
 }
 
 .text-container h1 {
-    /*font-size: min(calc(4vw + 50px), 128px);*/
     font-size: clamp(48px, 6vw, 96px);
     line-height: 1.2;
     margin: 0;
@@ -298,7 +286,6 @@ section {
     width: 50px;
     height: 50px;
     background-image: url('../../images/volume-mute.png');
-    /* Path to your mute image */
     background-size: cover;
     cursor: pointer;
     position: absolute;
@@ -306,16 +293,7 @@ section {
     right: 12%;
 }
 
-/* Blackbox */
-
-.blackBox {
-    width: 100%;
-    height: 2160px;
-    margin: 0;
-    background-color: transparent;
-}
-
-/* Featured Game */
+/*--- Featured / Button styles ---*/
 
 .featured-game .background-gradient {
     position: absolute;
@@ -406,8 +384,6 @@ section {
 }
 
 @media screen and (max-width: 1500px) {
-
-    /* adjust this as needed */
     .featured-text,
     .featured-image {
         flex-basis: 100%;
@@ -425,17 +401,76 @@ section {
     position: relative;
 }
 
+/*--- Games Section - Horizontal Scroll ---*/
+
+.games-section {
+    padding-top: 96px;
+    padding-bottom: 32px;
+}
+
+.games-section > h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 0 0 8px 0;
+    padding: 0 20px;
+}
+
+.games-section > p.section-subtitle {
+    text-align: center;
+    margin: 0 0 0 0;
+    padding: 0 20px;
+    opacity: 0.6;
+    font-size: 0.9em;
+}
+
+.games-scroll {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow-x: auto;
+    gap: 0;
+    padding: 48px 5vw;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+
+.games-scroll::-webkit-scrollbar {
+    height: 5px;
+}
+
+.games-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.games-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 3px;
+}
+
+.games-scroll .game-display {
+    flex-shrink: 0;
+}
+
 /*--- About Section ---*/
 
 .about-container {
     position: relative;
     display: flex;
     justify-content: center;
+    padding-top: 96px;
+}
+
+.about-container > h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 0 0 8px 0;
+    padding: 0 20px;
 }
 
 .about-canvas {
     margin: 20px;
-    top: 128px;
     position: relative;
     max-width: 1060px;
 }
@@ -538,51 +573,59 @@ section {
     transition: 0.2s;
 }
 
-.games-i-like {
-    margin: 0;
-    margin-top: 32px;
-    margin-bottom: 32px;
-    justify-content: left;
-    padding: 128px;
-    border-radius: 150px;
-    background-color: #5c5c5c;
+.recommendations {
+    justify-content: center;
+    padding: 32px 0;
     position: relative;
-    transition: 0.5s;
 }
 
-.collapse-button {
-    background-color: #242424;
-    border: none;
-    color: white;
-    padding: 4px 24px;
-    text-align: center;
-    text-decoration: none; /* No underline */
-    display: inline-block;
-    font-size: 0.8em;
-    margin: 10px 2px;
-    cursor: pointer;
-    border-radius: 12px;
-    transition: all 0.5s ease;
-  }
-  
-  .collapse-button:hover {
-    background-color: #ffffff;
-    color: #242424;
-    text-decoration: underline;
-  }
+.recommendation-canvas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 16px;
+}
 
-.games-i-like h3 {
+.recommendation-block {
+    background-color: #5c5c5c;
+    border-radius: 16px;
+    padding: 16px;
+    min-width: 240px;
+}
+
+.recommendations h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 0 0 8px 0;
+    padding: 0 20px;
+}
+
+.recommendations h3 {
     color:rgb(18, 218, 191);
     font-size: 1.3em;
+    margin: 0px !important;
 }
 
-.games-i-like p {
-    display: none;
+.recommendation-subtitle {
+    font-size: 1em;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin: 0px !important;
+}
+
+.quote {
+    padding: 10px;
+    margin: 0px;
+    background-color: rgba(59, 59, 59, 0.95);
+    border-radius: 8px;
 }
 
 @media screen and (max-width: 1200px) {
     .about-canvas {
         max-width: 720px;
+        margin: 40px;
     }
     .about-header {
         height: 200px;
@@ -595,9 +638,8 @@ section {
         margin-top: -112px;
         padding-top: 128px;
     }
-    .games-i-like {
-        border-radius: 100px;
-        padding: 64px;
+    .recommendations {
+        padding: 32px 0;
     }
 }
 
@@ -605,29 +647,59 @@ section {
     .about-canvas h1 {
         font-size: 8vw;
     }
-    .games-i-like h3 {
+    .recommendations h3 {
         font-size: calc(1em + 0.5vw);
     }
 }
 
 @media screen and (max-width: 540px) {
+    body, input, select, textarea, button {
+        font-size: 13pt;
+    }
+    .about-canvas {
+        margin: 12px;
+    }
     .about-header {
-        padding-left: 32px;
-        height: 100px;
-        border-radius: 50px;
+        padding-left: 24px;
+        height: 80px;
+        border-radius: 40px;
     }
     .about-text {
-        padding: 32px;
-        border-radius: 50px;
-        margin-top: -32px;
-        padding-top: 48px;
+        padding: 24px;
+        border-radius: 40px;
+        margin-top: -24px;
+        padding-top: 40px;
     }
-    .games-i-like {
-        padding: 32px;
-        border-radius: 50px;
+    .recommendations {
+        padding: 16px 0;
+    }
+    .recommendation-block {
+        min-width: 0;
+        width: 100%;
+        flex: unset;
     }
 }
 
+.collapse-button {
+    background-color: #242424;
+    border: none;
+    color: white;
+    padding: 4px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.5s ease;
+}
+  
+.collapse-button:hover {
+    background-color: #ffffff;
+    color: #242424;
+    text-decoration: underline;
+}
 
 /*--- Contact Section ---*/
 
@@ -702,7 +774,7 @@ section {
     }
 }
 
-/*--- Allgames Section ---*/
+/*--- Allgames Section (kept for compatibility) ---*/
 
 .allgames-container {
     margin: 0;
@@ -881,8 +953,10 @@ section {
 }
 
 .game-section p {
-    color: white;
+    color: rgba(255, 255, 255, 0.75);
 }
+
+/*--- Team Display ---*/
 
 .team-display {
     align-self: center;
@@ -990,11 +1064,20 @@ a:hover .portfolio-link {
 }
 
 @media screen and (max-width: 540px) {
-    .morrisnarrow img{
+    .morrisnarrow img {
         width: 90vw !important;
     }
-    .button {
+    .morris-canvas .button {
         font-size: 5.8vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .games-scroll .game-display {
+        width: 78vw;
+        max-width: 340px;
+        margin-left: 8px;
+        padding: 20px;
     }
 }
 

@@ -6,261 +6,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linus Jernström</title>
     <link rel="stylesheet" href="assets/CSS/first.css">
-    <script src="assets/JS/script.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/JS/script.js" defer></script>
 </head>
-<body class="is-preload">
+<body>
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
         <p>Linus Jernström</p>
-        <a href="#home">Home</a>
-        <a href="#allgames">All Games</a>
-        <a href="#morris">Morris</a>
-        <a href="#burglar">Burglar</a>
-        <a href="#eod">Edge of Divinity</a>
-        <a href="#smallprojects">Small Projects</a>
-        <a href="#about">About</a>
-        <a href="dev_diary/Home.html" target="_blank">Dev Logs</a>
-        <a href="#cv">CV</a>
-        <!-- Add more links as needed -->
+        <a href="#home" onclick="toggleNav()">Home</a>
+        <a href="#games" onclick="toggleNav()">Games</a>
+        <a href="#about" onclick="toggleNav()">About Me</a>
+        <a href="#cv" onclick="toggleNav()">CV</a>
+        <a href="dev_diary/Home.html" target="_blank">PSQ Dev Logs</a>
     </div>
 
     <nav id="navbar">
         <a href="#home">Home</a>
-        <div class="dropdown">
-            <a class="dropbtn" href="#allgames">Work
-                <i class="fa fa-caret-down"></i>
-            </a>
-            <div class="dropdown-content">
-                <a href="#morris">Morris: Mortality Rate</a>
-                <a href="#burglar">Burglar</a>
-                <a href="#eod">Edge of Divinity</a>
-                <a href="#allgames">All Games</a>
-                <a href="#smallprojects">Small Projects</a>
-            </div>
-        </div>
-        <a href="#about">About</a>
-        <a href="dev_diary/Home.html" target="_blank">Dev Logs</a>
+        <a href="#games">Games</a>
+        <a href="#about">About Me</a>
         <a href="#cv">CV</a>
-
-    <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
-        <img src="images/menu.png" alt="Menu" id="sidenavIcon">
-    </a>
+        <a href="dev_diary/Home.html" target="_blank">PSQ Dev Logs</a>
+        <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+            <img src="images/menu.png" alt="Menu" id="sidenavIcon">
+        </a>
     </nav>
-    
-    
+
+
+    <!-- ======== HERO ======== -->
     <section id="home">
-        <!-- Content for Home page -->
         <div class="video-container">
             <video id="background-video" autoplay loop muted>
                 <source src="images/MorrisVideo.mp4" type="video/mp4">
             </video>
             <div class="text-container">
-                <h1>LINUS<br>JERNSTRÖM</h1>
-                <p>GAME DESIGNER</p>
-            </div>
-        </div>
-        <div class="featured-game">
-            <img class="background-gradient" src="images/BackgroundGradientSplash.png">
-            <h1>Featured Game</h1>
-            <div class="featured-showcase">
-                <div class="featured-text">
-                    <p><span class="highlight">Edge of Divinity</span> is a top-down <span class="highlight">movement slasher</span> focused on 
-                    precise character control and <br><span class="highlight">split-second decisionmaking</span>!
-                    </p>
-
-                    <a class="button" href="#eod-breakdown">Find Out More!</a>
-                </div>
-                <div class="featured-image">
-                    <img src="images/EoDWide.png">
-                </div>
+                <h1>LINUS JERNSTRÖM</h1>
+                <p>Game Designer and Programmer</p>
             </div>
         </div>
     </section>
 
-    <section id="about">
-        <!-- Content for About page -->
-        <div class="about-container">
-            <div class="about-canvas">
-                <div class="about-header">
-                    <h1>Hi! I'm Linus!</h1>
-                    <img src="images/linus_headshot.jpg">
-                </div>
-                <div class="about-text">
-                    <p>
-                        My name is Linus Jernström, and I'm a game developer based in Dalarna, Sweden.
-                        <br><br>
-                        My journey into game design began with a childhood love for video games, sparked by watching my dad's playthroughs of Diablo 3 
-                        and Age of Empires 3 over his shoulder. Those memories ignited a passion in me that's been growing ever since.
-                        Nowadays, I really enjoy the process of learning and exploring all sorts of concepts in game development and design! 
-                        <br><br>
-                        I've done a lot of generalist work, but I specialize in the more programming-adjacent technical side of design, mostly as it relates 
-                        to UI and Gameplay design! I also really enjoy working on UX and systems design, and I've recently been doing a lot more QA work.
-                        <br><br>
-                        Further, I have found that cultivating an environment where making games is fun and exciting for the whole team always shines through to the final product.
-                        <br><br>
-                        Outside of work, I try to maintain some semblance of balance in my life. Of course I like to get some gaming in when I have the time, I also try to 
-                        exercise regularly, whether that's going to the gym, going for a run, shooting hoops or going for a climbing session.
-                        <br><br>
-                        I am also a *massive* nerd, currently sporting around 30 fully optimized and unused DND characters with written backstories and all. 
-                        I know I'll never use most of them, but I guess I just can't help myself. One of my silliest character builds to date was created specifically to
-                        nuke Vecna in a single turn of combat, which it does in 99.99989% of the 10 million combats I simulated (with no prep time!). Top class nerd stuff.
-                        I also recently started assembling my first WH40k army, the ever shiny Adeptus Custodes!
-                        <br><br>
-                        I want to find work at a studio that puts emphasis on being a team, on collaborating and helping each other out. Where the culture is about being 
-                        friendly and making the workplace a fun environment. A close-knit bunch that feels as much like friends as co-workers.
-                        <br><br>
-                        If you know of a place like that in need of a charming young developer, please let me know.
-                    </p>
-                    <a class="button clicker" id="scrollToBottom">Contact Me!</a>
-                </div>
-                
-                <div class="games-i-like">
-                    <h2>
-                        A few games I adore and the reasons why
-                    </h2>
-                    <h3 class="collapsible">
-                        Cube World (alpha)
-                        <br>
-                        <button class="collapse-button">Show</button>
-                    </h3>
-                    <p>
-                        With its simplistic voxel aesthetic, Cube World captures the hearts of players with a distinct charm and a profound sense of accomplishment. The game's open world design fosters an air of exploration and discovery, making every venture an adventure in its vast, procedurally generated landscape.
-                        <br><br>
-                        At the heart of Cube World is a rewarding progression system, which allows for a palpable sense of growth. The triumph of revisiting starting areas and easily defeating once formidable enemies is a direct testament to your journey and resilience in the face of adversity.
-                        <br><br>
-                        Challenging boss battles, particularly those against foes significantly higher in level, yield some of Cube World's most exciting experiences. The thrill of victory, driven by a strategic mix of well-acquired gear and skillful execution of combat mechanics, is a high unlike any other.
-                        <br><br>
-                        Cube World's combat isn't just about strength, but also strategy. Mastering dodges, interrupting channels, and timely strikes create an intense rhythm that's incredibly satisfying. Each victory feels genuinely earned, a result of understanding and exploiting your enemies' patterns and weaknesses.
-                        <br><br>
-                        Despite its outward simplicity, Cube World's colorful and vibrant universe injects a touch of whimsy into the gaming experience, fostering a sense of wonder throughout the journey.
-                        <br><br>
-                        To sum it up, Cube World is a uniquely enchanting experience, combining open-world freedom, rewarding progression, strategic combat, and charming visuals. Its allure lies not in a single element, but in the seamless blend of these components, making it the game that continues to resonate most fondly in my gaming memories.
-                    </p>
-                    <h3 class="collapsible">
-                        Minecraft
-                        <br>
-                        <button class="collapse-button">Show</button>
-                    </h3>
-                    <p>
-                        A game that needs no introduction, a monolith in the gaming landscape. While it is easy to praise Minecraft for its sandbox-like gameplay and near infinite possibilities for the player, it's not what I will be focusing on.
-                        <br><br>
-                        I consider Minecraft the first game engine I ever used. Through Minecraft, I learned boolean logic, programming, game design, level design, cooperation, and probably a bunch of other things I don't even remember where I picked up.
-                        <br><br>
-                        When I started playing Minecraft back in 2012, I found the most fun playing around with redstone. I experimented and created different kinds of logic gates (long before I knew what a logic gate was), and started making small contraptions. I found endless joy in this kind of logical problem solving, iterating and testing my designs. When I later started working with electrical circuitry during my Technical Education, I realized how valuable my redstone tinkering had actually been; as I recognized everything that we were doing, allowing me to excel during the course.
-                        <br><br>
-                        I had a similar discovery when we started programming in Python and C#, also during my Technical Education. The majority of what our teacher went through was already known to me, either consciously or subliminally. I had been working with Data Packs for some time, using Minecraft's built in system. It allowed me to alter the game however I pleased by writing code and making textures/models. I mostly used my Data Packs for the several minigames I created, most of which were PvP base-defending games using resources and upgrades, reminiscent of Bed Wars and SkyBlock.
-                        <br><br>
-                        This is what I see as Minecraft's real magic. While most sandboxes will let you build your sandcastles and create racetracks for your toy cars, Minecraft is a super sandbox on crack that lets you rewrite the laws of the universe.
-                        <br><br>
-                        Minecraft's beauty lies in its unassuming potential. In the ability to inspire, educate, and transform its players in ways that extend beyond the screen.
-                    </p>
-                    <h3 class="collapsible">
-                        Subnautica
-                        <br>
-                        <button class="collapse-button">Show</button>
-                    </h3>
-                    <p>
-                        An underwater survival adventure which delivers a uniquely eerie experience that exceeds typical gaming conventions. Despite not being branded as horror, Subnautica generates a level of suspense and unease that rivals any traditional horror game.
-                        <br><br>
-                        From the moment you're stranded on an alien aquatic planet, you're immersed in a world that effortlessly stokes fear of the unknown. As you venture deeper, the omnipresent shadows become a canvas for your imagination, painting a threatening picture of unseen horrors. The haunting echoes of distant sea beasts constantly remind you of lurking dangers, keeping your nerves on edge.
-                        <br><br>
-                        Sudden attacks in deep, oxygen-deprived zones incite genuine panic. Encounters with terrifying creatures, like the Reaper Leviathan, amplify your sense of vulnerability, making survival feel like a truly monumental task. Yet, it's this relentless challenge that makes the game so captivating.
-                        <br><br>
-                        Balancing this fear is a sense of awe for the game's alien ocean. Bioluminescent lifeforms create an enchanting spectacle within the chilling darkness, highlighting the beauty in this perilous underwater world.
-                        <br><br>
-                        Subnautica is more than a game; it's an immersive, fear-touched journey that's as rewarding as it is terrifying. This potent blend of fear and fascination, of survival against the odds, is what makes Subnautica such a standout and adored title in my gaming chronicles.    
-                    </p>
-                    <h3 class="collapsible">
-                        Rust
-                        <br>
-                        <button class="collapse-button">Show</button>
-                    </h3>
-                    <p>
-                        Rust elevates itself to a realm beyond most games - it's an exhilarating voyage that seizes you with an unparalleled level of engagement. Its captivating graphics blend with intense gameplay to redefine the expectations from a survival game.
-                        <br><br>
-                        At the forefront is the game's extraordinary attention to detail. Expansive landscapes, ever-changing weather, and lifelike lighting construct an immersive environment. Whether you're traversing dense forests, uncovering secrets of deserted structures, or beholding the vast ocean, Rust's visual portrayal is a consistent spectacle.
-                        <br><br>
-                        Yet, the aesthetics are merely the stage for Rust's true masterpiece - its gameplay. As a survivor in a harsh post-apocalyptic world, you're pitched into a relentless pursuit of resources and survival. The game's mechanics harmoniously balance difficulty and gratification. Crafting tools, constructing shelters, forming alliances - each decision you make in Rust etches a unique path in your survival tale.
-                        <br><br>
-                        The defining hallmark of Rust is its fluid player interaction. Its online multiplayer ecosystem is akin to a social laboratory, where you cross paths with others who could just as easily become your allies or your adversaries. From defending against threats together, making strategic trades, to engaging in epic battles - the spectrum of interaction is vast. The erratic element of human behavior introduces an added thrill to the already intense gameplay.
-                        <br><br>
-                        Lastly, Rust's progression system stands apart. Starting with bare essentials - a rock and a torch, you embark on a journey of transformation. Exploration, resource gathering, and skill enhancement help you evolve into a force to reckon with. The thrill of unlocking new technologies and amplifying your capabilities serves as a driving force, continually feeding your sense of achievement and progress.
-                        <br><br>
-                        Rust is not just a survival game - it's an intense, exhilarating journey that tests your wits and survival instincts. The combination of immersive visuals, finely-tuned mechanics, dynamic player interaction, and a rewarding progression system creates an unforgettable gaming experience. Rust truly stands as a testament to what survival games can aspire to be - not just a challenge of survival, but a fascinating exploration of human nature and the lengths we'll go to thrive.
-                    </p>
-                    <h3 class="collapsible">
-                        League of Legends
-                        <br>
-                        <button class="collapse-button">Show</button>
-                    </h3>
-                    <p>
-                        I find that the games we love the most also have the unique ability to frustrate us the most. This sentiment rings especially true with League of Legends, a game that's been a constant in my life since 2014. This captivating game can be likened to high-octane chess, a whirlwind blend of reaction-time tests, tactical decision-making, and collaborative strategy that is under constant transformation.
-                        <br><br>
-                        The beauty of League is deeply rooted in its layered strategic depth. The unpredictability of matches keeps you constantly alert and engaged, with each game becoming a fresh challenge to conquer. It's not just about controlling your champion; it's about masterfully navigating a complex strategic landscape that turns every single decision into a potential game-changing moment.
-                        <br><br>
-                        Mechanical skill is an equally crucial component. Mastery of a champion's capabilities, clever utilization of the extensive item system, and the drive to continuously improve forms a rich tapestry of gratifying gameplay. It's the sense of personal growth and achievement that becomes a powerful motivator to keep playing.
-                        <br><br>
-                        But arguably the most gratifying part of League is it's emphasis on teamwork. Forming strategies with your team, communicating effectively, playing to your collective strengths while mitigating your weaknesses - the game provides a platform to experience the thrill of collaboration and shared victory. And when you get to share these intense, joyous moments with friends, the game transforms from a simple pastime into a binding social experience.
-                        <br><br>
-                        In conclusion, despite its flaws, League of Legends is a deeply complex and rewarding game. Its intense, team-centric gameplay married with the continual demand for self-improvement and adaptation, cements it as an engaging experience. It's evolved to more than a game - it's a nexus of friendship, shared triumph, and a test of one's strategic prowess.
-                    </p>
-                </div>
-                <div style="height: 64px"></div>
-            </div>
-        </div>   
-    </section>
-    
-    <section id="allgames">
-        <div class="allgames-container"> 
-            <div class="allgames-canvas">
-            <!-- Content for All Games page -->
+
+    <!-- ======== GAMES ======== -->
+    <section id="games" class="games-section">
+        <h2>Games</h2>
+        <p class="section-subtitle">Scroll to explore →</p>
+        <div class="games-scroll">
+
+            <!-- Suboptimal -->
             <div class="game-display">
-                <a href="#morris">
-                    <img id="game-wide" src="images/MorrisWide.png">
+                <a href="suboptimal.html">
+                    <img id="game-wide" src="images/SuboptimalWide.png">
                     <div class="learn-more">
-                        <h3>Learn More</h3>  
+                        <h3>Learn More</h3>
                     </div>
                     <div class="project-length">
-                        <p>6 Weeks</p>
+                        <p>4 Weeks</p>
                     </div>
                     <div class="team-size">
                         <p>9</p><img src="images/people-icon.png">
                     </div>
                 </a>
                 <p id="flavor-text">
-                    Morris: Mortality Rate is an isometric roguelite shoot-em-up crawler with procedurally generated levels. 
+                    Suboptimal is a 4-player online co-op game centered around a submarine and the hunt for treasure.
                     <br><br>
-                    For this project, I had the role of lead designer.
+                    I worked mostly with bugfixing and repairing broken designer code.
                 </p>
-                <a class="button" href="#morris">Read More</a>
+                <a class="button" href="suboptimal.html">Read More</a>
             </div>
+
+            <!--  -->
+
+            <!-- Edge of Divinity -->
             <div class="game-display">
-                <a href="#burglar">
-                    <img id="game-wide" src="images/BurglarWide.png">
-                    <div class="learn-more">
-                        <h3>Learn More</h3>  
-                    </div>
-                    <div class="project-length">
-                        <p>9 Weeks</p>
-                    </div>
-                    <div class="team-size">
-                        <p>18</p><img src="images/people-icon.png">
-                    </div>
-                </a>
-                <p id="flavor-text">
-                    Burglar is a VR stealth game with horror elements where you break into homes and steal valuables.
-                    <br><br>
-                    My main responsibility was UX and UI design.
-                </p>
-                <a class="button" href="#burglar">Read More</a>
-            </div>
-            <div class="game-display">
-                <a href="#eod">
+                <a href="eod.html">
                     <img id="game-wide" src="images/EoDWide.png">
                     <div class="learn-more">
-                        <h3>Learn More</h3>  
+                        <h3>Learn More</h3>
                     </div>
                     <div class="project-length">
                         <p>4 Weeks</p>
@@ -272,707 +94,208 @@
                 <p id="flavor-text">
                     Edge of Divinity is a top-down game all about maximizing your momentum with precise inputs.
                     <br><br>
-                    I made (nearly) everything myself!
+                    I made everything myself!<br>(except some of the art)
                 </p>
-                <a class="button" href="#eod">Read More</a>
+                <a class="button" href="eod.html">Read More</a>
             </div>
-        </div>
-        <p> </p>
-    </section>
 
-    <section id="morris">
-        <div class="morris-canvas">
-            <!-- Content for Morris page -->
-            <!--<img src="images/sidesplatter.png" style="position: absolute; top: 0; right: 0; z-index: -2; transform: scaleX(1); filter: blur(2px) opacity(75%);">-->
-            <video autoplay controls muted>
-                <source src="images/MorrisVideo.mp4" type="video/mp4">
-            </video>
-            <img src="images/GameLogoShort.png" class="game-logo">
-            
-            <h1>Roguelite Twin-Stick Shooter</h1>
-            <div class="game-section-container game-section">
-                <div class="half-section">
-                    <h2>Project Summary</h2>
-                    <p>
-                        Morris: Mortality Rate is an isometric dungeon crawler shoot 'em up game all about strategic decision making and fast
-                        paced gunplay. Take control of the teddy bear Morris and battle your way through a huge factory by surviving through a
-                        sprawling series of rooms filled with dangerous robot enemies. Improve your arsenal of weapons and your physical
-                        attributes along the way to aid you in your battle against the evil AI terrorizing humanity.
-                        <br><br>
-                        Our goal for this project was to produce a polished game with as much content as possible for the players to enjoy. 
-                        Given our time constraints, we felt that a procedural rogue-lite game would offer the greatest amount of mechanical 
-                        replayability possible. 
-                    </p>
-                    <h2>Project Breakdown</h2>
-                    <p>6 Week Group Project</p>
-                    <p>9 Team Members</p>
-                    <p>Powered by Unreal Engine 5</p>
-                    <p>Platforms: Windows</p>
-                </div>
-                <div class="half-section morrisnarrow">
-                    <img src="images/MorrisNarrow.png">
-                </div>
-            </div>
-            <a class="button" href="https://linujern.itch.io/morris" style="margin: 32px" target="_blank">Check it out on itch!</a>
-            <hr style="width: 85vw; margin: 64px;">
-            <div class="game-section">
-                <h2>My Responsibilities</h2>
-                <p><span class="highlight">Lead designer:</span> game vision, meetings, decision-making and presentations, as well as scrum master.</p>
-                <p><span class="highlight">Hands-on-Designing:</span> prototyping, iterative gameplay- and user experience design.</p>
-                <p><span class="highlight">Systems Implementation:</span> responsible for integration of integral gameplay systems and elements.</p>
-            </div>
-            <div class="game-section">
-                <h2>My Contributions</h2>
-                <p>
-                    This six-week project was all about teamwork. We had an ambitions scope and we needed to work efficiently to get the game 
-                    where we wanted it in the few weeks we had.
-                    My role in this venture saw me wearing many hats, each one challenging yet rewarding in its own unique way. 
-                    It was a very stressful experence, but it resulted in a project that I feel proud of.
-                </p>
-                <h4>Game Design</h4>
-                <p>
-                    The project began with a blank canvas and the excitement of possibility. I was entrusted with the responsibility of designing 
-                    the game from scratch and writing the Game Design Document (GDD). Though I had final say on our decisions, the team had a lot of 
-                    interesting and exciting ideas for features, mechanics, animations, guns, and more. Everyone had suggestions and was involved 
-                    in shaping the game.
-                    My co-designer Hari (who was unfortunately absent for much of the project) 
-                    created most of the rooms used in the level, and I was responsible for the rest of the design work, 
-                    like designing and balancing the 37 guns that we have in the game. It was a lot of very intense work in many different disciplines, 
-                    and it 
-                </p>
-                <h4>Project Management</h4>
-                <p>
-                    In the role of project manager, I found myself in the position of a guiding hand, ensuring the team remained focused and efficient. I was the scrum leader every morning, 
-                    and I also handled the task of balancing resources, managing timelines, and coordinating efforts with humility and respect for each team member's unique contributions.
-                </p>
-                <h4>Gameplay Mechanics and User Interface</h4>
-                <p>
-                    Diving into gameplay mechanics and UI design allowed me to bring some creativity to problem-solving. 
-                    I helped devise a functioning door system, contributed to an immersive sound system, and designed an intuitive HUD, 
-                    all of which contributed to the gameplay polish.
-                </p>
-                <h4>Testing and Debugging</h4>
-                <p>
-                    Quietly crucial in its role, testing and debugging became an area where I could contribute significantly to the game's polish. 
-                    Spotting and fixing bugs (and there were a lot), ensuring that our final product was as seamless as possible, was a rewarding, 
-                    behind-the-scenes role that I was happy to fill.
-                </p>
-                <h4>Sound Design and Dialogue Writing</h4>
-                <p>
-                    Finally, my explorations in sound design and dialogue writing were quite the adventure. Curating a collection of sounds and 
-                    even writing the voice lines for our shopkeeper NPC felt like another step in giving life to our game. 
-                    Seeing (and hearing!) these elements in the final product was a joyous moment for me.
-                </p>
-                <h4>Conclusion</h4>
-                <p>
-                    All in all, my contributions to the project were wide spanning and focused a lot on both the team and my individual work. 
-                    I ended up having to take a lot of responsibility for the game, stepping in to help wherever we were struggling in the process. 
-                    The satisfaction and pride I feel are less about the specific tasks I accomplished, and more about the successful result of 
-                    our teamwork and the rewarding journey we embarked on together.
-                </p>
-                <a class="button clicker" href="dev_diary/GP1.html" target="_blank">Read More!</a>
-            </div>
-            <hr style="width: 85vw; margin: 64px;">
-            <div class="game-section">
-                <h2>My Team</h2>
-                <p>
-                    During this six-week project, I had the privilege of collaborating with the talented group of students making up our team What The
-                    Dog Doin' Studios. Their creativity, technical acumen, and commitment to teamwork were key drivers behind the success of
-                    our project.
-                    <br><br>
-                    Each member brought unique skills and perspectives to the table. We faced numerous challenges together,
-                    one of the most significant being the integration of our procedural generation system together with hand-made sections.
-                    This task turned out to be more complex than we initially anticipated. However, with our collective problem-solving
-                    capabilities, we managed to overcome this hurdle and produce our intended result.
-                    <br><br>
-                    A standout moment of our project was the last day, when our Tick function unexpectedly stopped running. Faced with
-                    this (very critical) issue, the team showed impressive resilience and dedication. We pulled together, working tirelessly to not
-                    only fix the issue but ensure the overall functionality of the game, resulting in a fully functional product for our
-                    deadline the next day.
-                    <br><br>
-                    Working with such an exceptional team has not only resulted in a successful game project but has also been an
-                    enriching experience. It enhanced my understanding of the power of effective collaboration and deepened my appreciation
-                    for diverse skill sets.
-                </p>
-            </div>
-            <h3>The other members of the team:</h3>
-            <div class="game-section team-display">
-                <a href="https://harimurali07.wixsite.com/portfolio" target="_blank">
-                    <img src="images/WTDD/hari.jpg" class="team-img">
-                    <p>Hari Murali</p>
-                    <img class="portfolio-link" src="images/website-icon-white.png">
-                </a>
-                <a href="https://eoneon.artstation.com/" target="_blank">
-                    <img src="images/WTDD/oskar.jpg" class="team-img">
-                    <p>Oskar Lindahl</p>
-                    <img class="portfolio-link" src="images/artstation-icon-white.png">
-                </a>
-                <a href="https://felicialindgren.artstation.com/" target="_blank">
-                    <img src="images/WTDD/felicia.jpg" class="team-img">
-                    <p>Felicia Lindgren</p>
-                    <img class="portfolio-link" src="images/artstation-icon-white.png">
-                </a>
-                <a href="https://victornjd.artstation.com/" target="_blank">
-                    <img src="images/WTDD/victor.jpg" class="team-img">
-                    <p>Victor Fröjd</p>
-                    <img class="portfolio-link" src="images/artstation-icon-white.png">
-                </a>
-                <a href="https://ellinorlevin.artstation.com/" target="_blank">
-                    <img src="images/WTDD/ellinor.jpg" class="team-img">
-                    <p>Ellinor Levin</p>
-                    <img class="portfolio-link" src="images/artstation-icon-white.png">
-                </a>
-                <a href="https://portal.playgroundsquad.com/studenter/Tore-Andre-Valand-Bru/" target="_blank">
-                    <img src="images/WTDD/andré.jpg" class="team-img">
-                    <p>André Valand</p>
-                    <img class="portfolio-link" src="images/psq-icon-white.png">
-                </a>
-                <a href="https://portal.playgroundsquad.com/studenter/Anton-Winqvist/" target="_blank">
-                    <img src="images/WTDD/anton.jpg" class="team-img">
-                    <p>Anton Winqvist</p>
-                    <img class="portfolio-link" src="images/psq-icon-white.png">
-                </a>
-                <a href="https://portal.playgroundsquad.com/studenter/David-Bern/" target="_blank">
-                    <img src="images/WTDD/david.jpg" class="team-img">
-                    <p>David Bern</p>
-                    <img class="portfolio-link" src="images/psq-icon-white.png">
-                </a>
-            </div>
-            <img src="images/WTDDLogoTransparent.png" class="team-logo">
-        </div>
-    </section>
-
-    <section id="burglar">
-        <div class="burglar-canvas">
-            <!-- Content for Burglar page -->
-            <video autoplay controls muted>
-                <source src="images/BurglarTrailer.mp4" type="video/mp4">
-            </video>
-            <img src="images/BurglarShortLogo.png" class="burglar-logo">
-        
-            <h1>Stealth Horror Thievery Game</h1>
-            <div class="game-section-container game-section">
-                <div class="half-section">
-                    <h2>Project Summary</h2>
-                    <p>
-                        Burglar is a VR stealth and thievery game with horror elements. As a novice 
-                        burglar, your task is to break into homes to liberate as many goods as possible without getting caught, 
-                        and try to escape with your freedom (and life)!
-                        <br><br>
-                        With this game, we wanted to leverage the immersion and emotion that comes with the VR platform and use it to elevate 
-                        the player's experence. A big part of the game is in the atmosphere and environment which our team spent 
-                        a lot of our time getting just right.
-                    </p>
-                    <h2>Project Breakdown</h2>
-                    <p>9 Week Group Project</p>
-                    <p>18 Team Members</p>
-                    <p>Powered by Unreal Engine 5</p>
-                    <p>Platforms: PSVR2</p>
-                </div>
-                <div class="half-section burglarnarrow">
-                    <img src="images/BurglarNarrow.png">
-                </div>
-            </div>
-            <hr style="width: 85vw; margin: 64px;">
-            <div class="game-section">
-                <h2>My Responsibilities</h2>
-                <p><span class="highlight">UX and UI Design:</span> crafting functional, immersive and engaging user interfaces for a seamless player experience.</p>
-                <p><span class="highlight">Implementation:</span> responsible for programming and implementing interactive gameplay elements.</p>
-            </div>
-            <div class="game-section">
-                <h2>My Contributions</h2>
-                <p>
-                    The journey of this nine-week game project turned out to be as much a test of effective collaboration as it was about creating 
-                    an immersive gaming experence. With a team size much larger than what any of us were used to, we had to put more focus on efficient 
-                    communication and teamwork. It was difficult at times, but we managed to pull together and create a game I feel proud to have been a part of.
-                </p>
-                <h4>User Experience and User Interface Design</h4>
-                <div class="burglar-show">
-                    <video autoplay controls muted>
-                        <source src="images/Burglar-Clipboard-Showcase.mp4" type="video/mp4">
-                    </video>
-                    <div>
-                    <p>
-                        My main responsibility was designing and implementing the User Interface. 
-                        Note that I'm going to lump UX in with UI as I worked with both fluidly. Yes, they are different
-                        disciplines, yes I'll do it anyway.
-                        <br>
-                        A couple of specific principles dictated my choices for the UI.
-                        </p>
-                        <ol>
-                            <li>First off, I decided that I wanted it to be diegetic. As diegetic as I could make it.</li>
-                            <li>Second, I wanted to minimize clutter in the UI as much as possible.</li>
-                        </ol>
-                    </div>
-                </div>
-                <div>
-                    <p>
-                    So why make it diegetic? Well, interacting with a physical object rather than some weird floating text 
-                    boxes tends to feel more natural in a VR environment. Not only can this help reduce motion sickness, 
-                    it also adds to the immersion of the game. 
-                    <br><br>
-                    Alright, but what do I mean by "minimize clutter"? By clutter I mean disorganized and/or overcomplicated UI. 
-                    It can be confusing and overwhelming for the player if too much information is displayed in one space. 
-                    But, it can also be irritating if the UI isn't easily accessible when the player needs it. This can turn out 
-                    to be a bit of a balancing act, where readability and conciseness often compete with comprehensiveness. 
-                    <br><br>
-                    I chose to combine the Menus and the Mission Information UI into a physical object that the player always 
-                    carries with them, a Clipboard. Everything that the player could need on the fly is centralized in this single 
-                    location. This way, the player has only a single object they need to keep track of for the most important UI, 
-                    and it's always right on their person when they need it. I chose specifically a Clipboard because it makes intuitive 
-                    sense for important information to be on them. This worked out well as all our playtesters instinctively referred to 
-                    it for menus and information even without being prompted to.
-                    <br><br>
-                    Actually creating the Clipboard, which I wanted to behave like an actual clipboard, presented some challenges. 
-                    To keep it looking as natural as possible, I wanted the pages to flip and contort like paper would.
-                    In order to interact with the UI, I would need a Widget (Unreal's UI elements) to lay against the page of the clipboard. 
-                    The page serves as a backdrop, and the Widget allows us to interact, so we now have a menu on a clipboard, right? 
-                    Well, yes, but actually no. Since Widgets are projected on a flat plane, the widget cannot contort with our pages 
-                    as they bend and flip over. Widgets just don't bend like that. But I need the widgets, because a regular mesh (like a page)
-                    can't be interacted with like UI. And if I just remove the Widget when the page turns, then the page will turn white as it flips.
-                    Not very realistic, is it? I needed the visuals of the Widget to stay on the page even as the page turned over.
-                    <br><br>
-                    I looked around online for a few days but could not find any methods for how to accomplish this. I don't know, maybe 
-                    I'm the first to ever have this issue. My solution was to utilize something called SceneCaptureComponents and RenderTargets 
-                    alongside Dynamic Materials. Right above my page I put a WidgetComponent, the actual UI itself. Above it, a SceneCaptureComponent2D 
-                    sits in wait for a signal. As I flip the page, the SceneCapture takes a picture of the Widget. This picture is broadcast to a 
-                    RenderTarget2D, basically storing the visual information of the UI. I pass this RenderTarget's texture to a Dynamic Material 
-                    which I can apply to the page's mesh. I can then safely remove the Widget, and the page will look identical.
-                    <br>
-                    In summary; I take a photo of the UI and stick that onto the page as it flips, thus making it look like the UI contorts.
-                    <br><br>
-                    I worked closely with artist (and part-time speed demon) Felicia to create all the functional elements such as the meshes and 
-                    animations needed for the clipboard, as my technique requires very exact tolerances. We also worked together to make the 
-                    icons for the UI.
-                    <br><br>
-                    Designing and programming the clipboard UI was an iterative and arduous process, spanning nearly the entire project.
-                    It was a fun learing experience and I'm proud of the end result.
-                    </p>
-                </div>
-                <h4>Project Coordination</h4>
-                <p>
-                    As one of the main coordinators in the team, I helped direct the workflow, ensuring our efforts were organized and productive. 
-                    I helped our code wizard Casper in handling any technical issues we faced with Unreal, as well as designing and programming a comprehensive save system. 
-                    This role allowed me to balance resources, manage timelines, and harmonize our efforts.
-                </p>
-                <h4>Testing and Debugging</h4>
-                <p>
-                    The task of spotting and fixing bugs, ensuring that our final product was as smooth and immersive as possible, was a responsibility I embraced. 
-                    From coordinating playtesting sessions to refining the logic for saving and loading game data, these behind-the-scenes contributions were essential 
-                    in enhancing the game's overall quality.
-                </p>
-                <h4>Sound Design and Game Environment Enhancement</h4>
-                <p>
-                    When a team member was absent for a long period of time, I had to fill in by working with and implementing sound into the game. 
-                    This role stretched my skills and allowed me to add another layer of life to our game. It was a fun change of pace from what I had been doing. 
-                    I worked on the dynamic walking sounds, the overall sound environment, and also designed and created a hub area for the player.
-                </p>
-                <h4>Project Completion</h4>
-                <p>
-                    In the final stages of our project, I developed a system for unlockable cosmetics and a hover display system for enhanced UI interaction. 
-                    My focus also involved refining the puzzles and win/lose conditions, ensuring they were engaging and well-defined. 
-                    There were quite a few late nights, but it was a lot of fun.
-                </p>
-                <h4>Conclusion</h4>
-                <p>
-                    Throughout this nine-week project, I had the privilege of wearing many hats and contributing to various aspects of our game. 
-                    The responsibilities I undertook were as much about the collective effort as my individual role. Having to step in and help wherever we faced difficulties, 
-                    I am grateful for the many opportunities to learn and the opportunity to contribute in meaningful ways. 
-                    The pride I feel is not just for the tasks I accomplished but more so for the successful result of our teamwork and the rewarding journey we navigated together.
-                </p>
-                <a class="button clicker" href="dev_diary/GP2.html" target="_blank">Read More!</a>
-            </div>
-            <hr style="width: 85vw; margin: 64px;">
-            <div class="game-section">
-                <h2>My Team</h2>
-                <p>
-                    Through this nine week project I had the honor of working alongside the wonderful team Silent Partner Interactive (SPI), a group of 14 
-                    other students from PSQ and 3 Sound and Media students from Högskolan Dalarna. I could not be more proud of what we managed to accomplish together, 
-                    and I couldn't have asked for better teammates to experience this game project with.
-                    <br><br>
-                    For their hard work and their commitment, I am truly grateful. The game wouldn't have been anywhere near what it is today without it. 
-                    I cannot thank all of them enough for the nine weeks we had together; it was a truly wonderful experience even through the ups and downs. 
-                    In spite of the bugs, the crashing packages (%#¤%@!) and broken navmesh's, we delivered a really freakin' solid game. 
-                    And of that, I am proud.
-                    <br><br>
-                    In fighting through the high amount of absences that we undfortunately had to deal with, those that were present showed tremendous heart and effort. 
-                    Eventhough it was difficult, and eventhough it was unfair, the team pushed through together and worked tirelessly to create the best game we could.
-                    <br><br>
-                    I remember one time, in particular, when we were very stressed for time and my office neighbour Melinda was busy implementing sounds. Suddenly, 
-                    she put her hands in her face before looking to me with a panicked expression. The sound effects had all started making strange noises! 
-                    They sounded muffled and they were crackling! I scooted over to her and tried her headset on; and she was right! Something sounded very off. 
-                    When I went back to my computer to check if the issue was present in my version of the project too,  everything sounded perfectly fine on my end. 
-                    Melinda feared she would have to reimplement all the sound effects, which would take several hours. Things were not looking good. 
-                    After some more panic, Melinda realize what the issue was. She hadn't plugged her headphones in properly. 
-                    That was the only reason that the sound effects were strange. 
-                    In a mixture of embarrasment and relief, she cried for a couple of seconds before we both burst out laughing.
-                    <br><br>
-                    There were some moments like those, where it felt like the team was actually more like a family. I cannot express enough how much 
-                    I appreciate everybody's hard work. Their unwavering support, endless creativity, and unyielding work ethic helped shape Burglar
-                    into the experience it is today.
-                    While the completion of the game marked the end of an intense journey, it was also the start of countless new ones. 
-                    I am proud of what we have accomplished and looking forward to our next adventures.
-                </p>
-            </div>
-            <h3>The other members of the team:</h3>
-            <div class="game-section team-display">
-                <a href="https://melieman.wixsite.com/melindaemanuelsson" target="_blank">
-                    <img src="images/SPI/melinda.jpg" class="team-img">
-                    <p>Melinda Emanuelsson</p>
-                    <img class="portfolio-link" src="images/website-icon-white.png">
-                </a>
-                <a href="https://www.linkedin.com/in/kevin-buda-andersson-175628280/" target="_blank">
-                    <img src="images/SPI/kevin.jpg" class="team-img">
-                    <p>Kevin Buda Andersson</p>
-                    <img class="portfolio-link" src="images/linkedin-icon_white.png">
-                </a>
-                <a href="https://emmatethrain.weebly.com/dev-diary" target="_blank">
-                    <img src="images/SPI/emma.jpg" class="team-img">
-                    <p>Emma Tethrain</p>
-                    <img class="portfolio-link" src="images/website-icon-white.png">
-                </a>
-                <a href="https://portal.playgroundsquad.com/studenter/Casper-Juvas/" target="_blank">
-                    <img src="images/SPI/casper.jpg" class="team-img">
-                    <p>Casper Juvas</p>
-                    <img class="portfolio-link" src="images/psq-icon-white.png">
-                </a>
-                <a href="https://portal.playgroundsquad.com/studenter/Viktor-Niemela/" target="_blank">
-                    <img src="images/SPI/viktor.jpg" class="team-img">
-                    <p>Viktor Niemelä</p>
-                    <img class="portfolio-link" src="images/psq-icon-white.png">
-                </a>
-                <a href="https://portal.playgroundsquad.com/studenter/David-Bern/" target="_blank">
-                    <img src="images/SPI/david.jpg" class="team-img">
-                    <p>David Bern</p>
-                    <img class="portfolio-link" src="images/psq-icon-white.png">
-                </a>
-                <a href="https://portal.playgroundsquad.com/studenter/Dennis-Lov/" target="_blank">
-                    <img src="images/SPI/dennis.jpg" class="team-img">
-                    <p>Dennis Löv</p>
-                    <img class="portfolio-link" src="images/psq-icon-white.png">
-                </a>
-                <a href="https://lucestre.artstation.com/" target="_blank">
-                    <img src="images/SPI/lucas.jpg" class="team-img">
-                    <p>Lucas Andersson Lundvik</p>
-                    <img class="portfolio-link" src="images/artstation-icon-white.png">
-                </a>
-                <a href="https://felicialindgren.artstation.com/" target="_blank">
-                    <img src="images/SPI/felicia.jpg" class="team-img">
-                    <p>Felicia Lindgren</p>
-                    <img class="portfolio-link" src="images/artstation-icon-white.png">
-                </a>
-                <a href="https://lokeig.artstation.com/" target="_blank">
-                    <img src="images/SPI/loke.jpg" class="team-img">
-                    <p>Loke Öhrström</p>
-                    <img class="portfolio-link" src="images/artstation-icon-white.png">
-                </a>
-                <a href="https://wevensson.artstation.com/" target="_blank">
-                    <img src="images/SPI/wille.jpg" class="team-img">
-                    <p>Wille Evensson</p>
-                    <img class="portfolio-link" src="images/artstation-icon-white.png">
-                </a>
-                <a href="https://ellinorlevin.artstation.com/" target="_blank">
-                    <img src="images/SPI/ellinor.jpg" class="team-img">
-                    <p>Ellinor Levin</p>
-                    <img class="portfolio-link" src="images/artstation-icon-white.png">
-                </a>
-                <a href="https://eoneon.artstation.com/" target="_blank">
-                    <img src="images/SPI/oskar.jpg" class="team-img">
-                    <p>Oskar Lindahl</p>
-                    <img class="portfolio-link" src="images/artstation-icon-white.png">
-                </a>
-                <a href="https://theodorfransson00.artstation.com/" target="_blank">
-                    <img src="images/SPI/theo.jpg" class="team-img">
-                    <p>Theodor Fransson</p>
-                    <img class="portfolio-link" src="images/artstation-icon-white.png">
-                </a>
-            </div>
-            <img src="images/SPILogoTransparent.png" class="team-logo">
-        </div>
-    </section>
-
-    <section id="eod-breakdown">
-        <div class="eod-canvas">
-            <!-- Content for Edge of Divinity page -->
-            <img src="images/EoDWide.png" class="eod-canvas-img">
-            <!-- <img src="images/EoDLogoShort.png" class="game-logo"> -->
-            <h1>Edge of Divinity</h1>
-            <h1>2D Movement Slasher</h1>
-            <div class="game-section-container game-section">
-                <div class="half-section">
-                    <h2>Project Summary</h2>
-                    <p>
-                        Edge of Divinity is an intense top-down 2D slasher where players must maintain their momentum to exceed. 
-                        The game puts players in control of a character armed with a sword, with the core mechanic focusing on 
-                        precise sword swinging to damage enemies. The amount of damage inflicted by the sword is determined by 
-                        the velocity and momentum of the swing, creating a satisfying and skill-based gameplay experience.
-                        <br><br>
-                        During the whole process of creating this game, my focus has been on refining the core mechanic, that of 
-                        momentum-based swordplay. My goal was to make it look, feel and behave just how I wanted it, to make sure 
-                        that the foundation was incredibly solid. I am very pleased with what I have thus far been able to put together!
-                    </p>
-                    <h2>Project Breakdown</h2>
-                    <p>
-                        Ongoing Project<br>
-                        Developed Solo<br>
-                        Powered by Unreal Engine 5<br>
-                        Platforms: Windows (with plans for Android)
-                    </p>
-                </div>
-                <div class="half-section eodnarrow">
-                    <img src="images/EoDNarrow.png">
-                </div>
-            </div>
-            <hr style="width: 85vw; margin: 64px;">
-            <a class="button clicker" href="#eod">Quick Start!</a>
-            <p>Check out the Quick Start for a rundown of the game mechanics!</p>
-            <hr style="width: 85vw; margin: 64px;">
-            <div class="game-section">
-                <h2>An ongoing project</h2>
-                <h4>Concept</h4>
-                <p>
-                    Edge of Divinity is an intense top-down 2D game where players must maintain their momentum to exceed. The game puts players in control of a character armed with a sword, with the core mechanic focusing on precise sword swinging to damage enemies. The amount of damage inflicted by the sword is determined by the velocity and momentum of the swing, creating a satisfying and skill-based gameplay experience.
-                </p>
-                <h4>My Plan</h4>
-                <p>
-                    First and foremost, I wanted to put my time into making the main mechanic behave and feel the way I wanted it to. I expected the biggest challenge in this would be making the momentum change feel impactful and satisfying to the player, which turned out to be correct. Once I was satisfied with the feel of core mechanics, I would look into adding more content where I felt it would improve the experience.
-                </p>
-                <h4>Thought Process</h4>
-                <p>
-                    My core philosophy throughout the project has been trying to minimize the complexity of the game whilst maximizing the skill ceiling and skill expression. I want the gist of the gameplay to be easily understood within your first minute of playing, but I want your tenth hour of playing to still feel satisfying and captivating.
-                    <br><br>
-                    The main mechanic of the game is a somewhat novel mouse-based movement system which I have found to be quickly understood even by uninitiated players. It’s simple enough to pick up on the fly and understand, and reliable enough to perform how the player expects it to. The nature of the game itself, putting a lot of emphasis on momentum, makes gameplay fast-paced and requires the player to act on split-second decisions to perform optimally. 
-                    <br><br>
-                    The playtesters I’ve been lucky enough to have aiding me through this process have given me a lot of suggestions for additions to the game. “What if you could keep a combo up even after a dash by using the Pivot ability”, “You should make slashing enemy bullets should also activate the lunge”, “Couldn’t the walls bounce you back when you dash into them?”, etc. I have carefully considered these suggestions but ultimately only implemented a select few of them. 
-                    <br><br>
-                    I considered things such as <span class="highlight">consistency</span>: making sure that the game behaves how the player expects it to, <span class="highlight">encouraging playmaking</span>: being careful to reward specifically non-stale play, which keeps the game exciting, and <span class="highlight">quality of life</span>: trying to keep a smooth and satisfying experience for the player.
-                    <br><br>
-                    Returning to a previous example, let’s say that slashing enemy projectiles gave the same effect as slashing an enemy (the ability to lunge). This change might be <span class="highlight">consistent</span> with the notion that slashing things activates the lunge, <span class="underscore">but</span> it would also be <span class="highlight">encouraging</span> the player to keep projectile enemies alive, as doing so would result in greater manoeuvrability and speed, both of which are highly desirable.
-                    <br>
-                    I decided that I did not want keeping enemies alive to be the most effective way to play the game, and so I made the decision not to include this particular change.
-                    <br><br>
-                    Through the playtesting, a lot of players expressed that the game felt highly satisfying… until you missed a strike. Doing so left you barreling toward who-knows-where, unable to do anything to rectify the unfortunate situation. While the goal of the game is of course not to make the player feel <span class="underscore">unsatisfied</span>, I was also struggling to find a good solution for this. If messing up had no consequence, good play would feel less rewarding as a result. This is where the suggestion of bouncy walls surrounding the arena presented a <span class="highlight">great quality of life</span> improvement. Though this is not <span class="highlight">consistent</span> with the other walls, giving these specific walls a different look let players know that there was something special about them. I didn’t want to <span class="highlight">encourage</span> the player to go for hail marys across the stage, so I made you lose 20% of your speed when you bounce.
-                </p>
-                <h4>Priorities of my first four weeks</h4>
-                <p>
-                    Just as I had planned to do, I put the bulk of my effort into the main mechanic of the game: dashing and slashing. My biggest priority throughout the project was, and is, to make sure that this feels responsive and satisfying to the player. For this reason, I have also put some time into making VFX to support the look and feel of the bladework. Adding these VFX made the game look and feel more fluid and also helped with readability, making for a sizable improvement.
-                    <br><br>
-                    My reasoning behind this is simple. I feel that a solid core mechanic allows the game to remain uncomplicated and elegant in it’s design while still having intricacy and depth for the player to improve and grow in. It also gives me a very solid base to expand on the game from, should I wish to. I could make any number of gamemodes for this specific game later on.
-                    <br><br>
-                    In the end, I was not able to create a complete game in the timeframe. I am, however, very happy with the proof of concept I have made, and would say that the game is currently in a sort of “beta” state. Though it does not have all the polish I would have hoped, it is fully functional, and I am very happy with the state of the slash- and dash mechanic. 
-                    <br><br>
-                    I decided to skip on creating things like an options menu, background music, art and such “fluff” as I like to call it. While the fluff is absolutely a relevant (and indeed quite important) factor for finished games, I was not willing to skimp on the core mechanics of the game to prioritize such aspects within these four weeks. I had plans to implement temporary sound effects, enemy models, environments for everything that would benefit from it, as well as plans to make a more appealing HUD and menus, but never found the time. Rather, I focused on the core of the game.
-                </p>
-                <h4>Conclusion</h4>
-                <p>
-                    Throughout this project, I have made deliberate design choices to ensure that the core mechanics shine, even at the expense of adding "fluff" elements such as background music or extensive visual assets. While these aspects were not prioritized within the project's scope, they remain opportunities for future development and polish.
-                    <br><br>
-                    Looking ahead, I see immense potential for expanding 'Edge of Divinity' into a more complete and fully realized game. The foundation I have established provides a solid base for adding additional content, such as new game modes, enemy types, and environments, that could further enhance the gameplay experience.
-                    <br><br>
-                    'Edge of Divinity' stands as a proof of concept, a testament to the joy of precise swordplay, and a stepping stone towards the realization of a fully-fledged game that captures the essence of becoming a godlike force of tranquil destruction.
-                </p>
-                <h4>An uncut gameplay video</h4>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube-nocookie.com/embed/A1ez-NQYWI4" 
-                      title="YouTube video player" frameborder="0" 
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                      allowfullscreen></iframe>
-                  </div>
-                <h4>Resources</h4>
-                <p>
-                    Splash art by <a href="https://www.midjourney.com/home/">Midjourney</a> AI image generator.
-                    <br>
-                    <a href="https://sketchfab.com/3d-models/jade-sword-e17b04ace1f6446a9d7080ffd327fb4b">Jade Sword</a> by <a href="https://sketchfab.com/FrenchBaguette">Ole Gunnar Isager</a> on <a href="https://www.sketchfab.com">Sketchfab</a> (concept from <a href="https://www.artstation.com/artwork/nQLxVe">Nico Navarro</a>).
-                    <br>
-                    Free sound effects from <a href="https://pixabay.com/">Pixabay</a> and <a href="https://mixkit.co/">Mixkit</a>.
-                    <br>
-                    (I plan to replace these assets in the future.)
-                    <br>
-                    Previous game projects: copying and referencing my old code.
-                    <br><br>
-                    All the rest was made by me using my own brain power!
-                </p>
-            </div>
-            <hr style="width: 85vw; margin: 64px;">
-        </div>
-    </section>
-    <section id="eod">
-        <div class="eod-canvas">
-        <!-- Content for How To EoD -->
-            <img src="images/EoDWide.png" class="eod-canvas-img">
-            <h1 class="eod-title">Edge of Divinity Quick Start Guide</h1>
-            <h3 class="eod-qs">
-                In Edge of Divinity, you dash around and slash enemies, 
-                dealing damage based on the speed of your swings.
-            </h3>
-                <hr style="width: 85vw; margin: 64px;">
-            <a class="button clicker" href="#eod-breakdown">Project Breakdown</a>
-            <p>Check out the Project Breakdown to learn about my plan and thought process!</p>
-                <hr style="width: 85vw; margin: 64px;">
-            <div class="game-section">
-                <h2>How To Play</h2>
-                <h4 class="eod-segment">Spinning</h4>
-                <video controls muted loop class="eod-tutorial">
-                    <source src="images/eod/1-Spinning.mp4" type="video/mp4">
-                </video>
-                <p>
-                    Your cursor dictates the direction 
-                    your sword faces. Meaning: your 
-                    sword points where you point.
-                </p>
-                <h4 class="eod-segment">Damage</h4>
-                <video controls muted class="eod-tutorial">
-                    <source src="images/eod/2-Damage.mp4" type="video/mp4">
-                </video>
-                <p>
-                    The faster you swing, the more damage 
-                    your slashes deal. Increasing your character's 
-                    speed also increases this damage!
-                </p>
-                <h4 class="eod-segment">Lunge</h4>
-                <video controls muted class="eod-tutorial">
-                    <source src="images/eod/3-Lunge.mp4" type="video/mp4">
-                </video>
-                <p>
-                    When a glowing white circle appears at your 
-                    feet, you can activate a 
-                    <span class="highlight">"Lunge"</span>. 
-                    When you stand still, 
-                    <span class="highlight">Lunging</span> 
-                    sends you flying forwards with a burst of speed. 
-                    After a short while, you will start 
-                    slowing down unless you hit a new target.
-                </p>
-                <h4 class="eod-segment">Targets</h4>
-                <video controls muted class="eod-tutorial">
-                    <source src="images/eod/4-Targets.mp4" type="video/mp4">
-                </video>
-                <p>
-                    Successfully slashing a target creates a 
-                    slowly closing white circle at your feet, 
-                    indicating that you can perform a 
-                    <span class="highlight">Lunge</span> 
-                    as long as the circle persists. 
-                    Activating the 
-                    <span class="highlight">Lunge</span>
-                    gives you a speed boost and sends you 
-                    flying toward the direction of your sword.
-                </p>
-                <h4 class="eod-segment">Pivot</h4>
-                <video controls muted class="eod-tutorial">
-                    <source src="images/eod/5-Pivot.mp4" type="video/mp4">
-                </video>
-                <p>
-                    You also have the ability 
-                    <span class="highlight">Pivot</span>, which is 
-                    a way to "fake" a hit (that means it activates your 
-                    <span class="highlight">Lunge</span>!). 
-                </p>
-                <h4 class="eod-segment">Combos</h4>
-                <video controls muted class="eod-tutorial">
-                    <source src="images/eod/6-Combos.mp4" type="video/mp4">
-                </video>
-                <p>
-                    You are able to slash several targets with a single swing.
-                    Whenever you hit a second target before the prior 
-                    one's white <span class="highlight">Lunge</span> 
-                    circle dissapears, your 
-                    <span class="highlight">Combo</span> counter increases. 
-                    <span class="highlight">Lunging</span> while you have an 
-                    active <span class="highlight">Combo</span> will end it - 
-                    and grant you a significant speed boost increasing with 
-                    the number of hits in the 
-                    <span class="highlight">Combo</span>.
-                </p>
-            </div>
-            <hr style="width: 85vw; margin: 64px;">
-            <h2>A Short Gameplay Video</h2>
-            <video controls muted class="eod-tutorial">
-                <source src="images/eod/EOD-Gameplay-Short.mp4" type="video/mp4">
-            </video>
-            <hr style="width: 85vw; margin: 64px;">
-            <a class="button clicker" href="#eod-breakdown">Project Breakdown</a>
-            <p>Check out the Project Breakdown to learn about my plan and thought process!</p>
-            <p></p>
-        </div>
-    </section>
-
-    <section id="smallprojects">
-        <div class="allgames-container"> 
-            <h2 style="padding: 0 20px; text-align: center;">
-                A selection of some small nerdy projects I've worked on
-            </h2>
-            <div class="allgames-canvas">
-            <!-- Content for Small Projects page -->
+            <!-- Loomie Land -->
             <div class="game-display">
-                <a href="https://docs.google.com/document/d/16LnqMgluT5t7OrCG8cpXc7WYxsnM8e_ASEx8kW-_FUk/edit?usp=sharing" target="_blank">
-                    <img id="game-wide" src="images/ThundersongBoy.png">
-                    <div class="learn-more">
-                        <h3>Learn More</h3>  
-                    </div>
-                    <div class="project-length">
-                        <p>Avatar: TLA</p>
-                    </div>
-                </a>
-                <p id="flavor-text">
-                    I love Fire Bending, but I've always been dissapointed with its underwhelming powers compared to the other elements.
-                    <br><br>
-                    That's why wrote this concept for a new faction for the Avatar: The Last Airbender series. I call them the Thundersong Tribe.
-                </p>
-                <a class="button" href="https://docs.google.com/document/d/16LnqMgluT5t7OrCG8cpXc7WYxsnM8e_ASEx8kW-_FUk/edit?usp=sharing" target="_blank">Read More</a>
-            </div>
-            <div class="game-display">
-                <a href="https://www.dndbeyond.com/subclasses/1739636-circle-of-savagery" target="_blank">
-                    <img id="game-wide" src="images/tithdaeron.png">
+                <a href="loomieland.html">
+                    <img id="game-wide" src="images/LoomieLandWide.png">
                     <div class="learn-more">
                         <h3>Learn More</h3>
                     </div>
                     <div class="project-length">
-                        <p>DnD 5e</p>
+                        <p>9 Weeks</p>
+                    </div>
+                    <div class="team-size">
+                        <p>17</p><img src="images/people-icon.png">
                     </div>
                 </a>
                 <p id="flavor-text">
-                    I'm tired of the treehugging Druid stereotype. So I created a subclass that embodies the law of the jungle. Only the strong survive.
+                    Trouble in Loomie Land is a cutesy 3D platformer that can be played co-op with a friend!
                     <br><br>
-                    Transform into a savage blend of humanoid and beast as you tear through enemies with fangs, claws, spikes, and magic.
+                    My responsibilities were mostly in prototyping, gameplay documentation and implementation.
                 </p>
-                <a class="button" href="https://www.dndbeyond.com/subclasses/1873626-circle-of-savagery" target="_blank">Read More</a>
+                <a class="button" href="loomieland.html">Read More</a>
             </div>
+
+            <!-- Morris -->
+            <div class="game-display">
+                <a href="morris.html">
+                    <img id="game-wide" src="images/MorrisWide.png">
+                    <div class="learn-more">
+                        <h3>Learn More</h3>
+                    </div>
+                    <div class="project-length">
+                        <p>6 Weeks</p>
+                    </div>
+                    <div class="team-size">
+                        <p>9</p><img src="images/people-icon.png">
+                    </div>
+                </a>
+                <p id="flavor-text">
+                    Morris: Mortality Rate is an isometric roguelite shoot-em-up crawler with procedurally generated levels.
+                    <br><br>
+                    I was project owner, and responsible for all design except the levels.
+                </p>
+                <a class="button" href="morris.html">Read More</a>
+            </div>
+
+            <!-- Burglar -->
+            <div class="game-display">
+                <a href="burglar.html">
+                    <img id="game-wide" src="images/BurglarWide.png">
+                    <div class="learn-more">
+                        <h3>Learn More</h3>
+                    </div>
+                    <div class="project-length">
+                        <p>9 Weeks</p>
+                    </div>
+                    <div class="team-size">
+                        <p>18</p><img src="images/people-icon.png">
+                    </div>
+                </a>
+                <p id="flavor-text">
+                    Burglar is a VR stealth game with horror elements where you break into homes and steal valuables.
+                    <br><br>
+                    My main responsibilities were UX and UI design.
+                </p>
+                <a class="button" href="burglar.html">Read More</a>
+            </div>
+
+            <!-- Planewarden -->
+            <div class="game-display">
+                <a href="https://www.dndbeyond.com/subclasses/2537896-planewarden" target="_blank">
+                    <img id="game-wide" src="images/magic-portal.jpg">
+                    <div class="learn-more">
+                        <h3>Learn More</h3>
+                    </div>
+                    <div class="project-length">
+                        <p>DnD 5.5e</p>
+                    </div>
+                </a>
+                <p id="flavor-text">
+                    I've always loved wizards, but especially Space Wizards. Clever use of portals and demiplanes is just endlessly cool to me, so I made a subclass to represent that!
+                    <br><br>
+                    This Wizard subclass dives deep into transdimensional trickery and gives a shrewd player the tools to outwit any adversary.
+                </p>
+                <a class="button" href="https://www.dndbeyond.com/subclasses/2537896-planewarden" target="_blank">Read More</a>
+            </div>
+
+            <!-- Spacetram -->
             <div class="game-display">
                 <a href="https://linujern.itch.io/spacetram" target="_blank">
                     <img id="game-wide" src="images/spacetram.png">
                     <div class="learn-more">
-                      <h3>Learn More</h3>  
+                        <h3>Learn More</h3>
                     </div>
                 </a>
                 <p id="flavor-text">
-                    Spacetram is a tiny infinite runner game I created by myself in a single week. 
+                    Spacetram is a tiny infinite runner game I created by myself in a single week.
                     <br><br>
-                    I wanted to try to challenge myself to create a complete game in Unity with limited time and still get all the necessary bits in there.
+                    I wanted to challenge myself to create a complete game in Unity with limited time and still get all the necessary bits in there.
                 </p>
                 <a class="button" href="https://linujern.itch.io/spacetram" target="_blank">Read More</a>
             </div>
+
         </div>
-        <p> </p>
     </section>
 
+
+    <!-- ======== ABOUT ======== -->
+    <section id="about">
+        <div class="about-container">
+            <div class="about-canvas">
+                <div class="about-header">
+                    <h1>Hi! I'm Linus!</h1>
+                    <img src="images/linus_headshot.jpg">
+                </div>
+                <div class="about-text">
+                    <p>
+                        My name is Linus Jernström, and I'm a game programmer and technical game designer based in Stockholm!
+                        The part of game development I enjoy most is when someone on the team has an idea they're excited about,
+                        and I get to be the one who brings it to life.
+                        I'm at my best when I get to bridge the gap between design intent and technical implementation.
+                        <br><br>
+                        I got my game design degree at Playgroundsquad in Falun, as part of which I did my LIA at Rightsized Games where I worked on and helped release Undead Inc.
+                        Now I study gameplay programming at Futuregames in Hammarby Sjöstad, sharpening the technical skills to fortify my design foundation.
+                        <br><br>
+                        I have broad, hands-on experience across the development pipeline.
+                        On Undead Inc, I owned the game's tutorial design, handled extensive QA and playtesting, and built a wide range of UI in both Blueprints and C++.
+                        Across other projects I've contributed to systems, tools, and gameplay programming.
+                        Early on I gravitated toward prototyping, but as my programming has matured I've moved into optimization and polish.
+                        <br><br>
+                        What I bring beyond technical skills is energy and coachability.
+                        I'm laid back by nature, but I actively seek out feedback and take direction well.
+                        Not to say that I lack opinions, but rather that I've found learning from others helps me grow.
+                        I'm just as happy jumping in on someone else's task or helping realize another person's vision as I am working on my own.
+                        To me, how a team functions together matters just as much as any individual's output,
+                        and I always put effort into being the kind of teammate who makes the people around them feel like their work is easier because I'm there.
+                        Writing clean and readable code is absolutely important, but in my experience it's always secondary to being easy to work with.
+                        <br><br>
+                        Outside of work, I'm into all the classic nerd stuff. I grew up on Harry Potter, Lord of the Rings, Star Wars, Narnia.
+                        I have dozens of D&D characters just waiting to be played. I collect and paint Warhammer Miniatures
+                        (specifically Custodes, but I really want to get some Knights too!), and perhaps unsurprisingly, I play a lot of video games.
+                    </p>
+                    <a class="button clicker" href="#contact">Contact Me!</a>
+                </div>
+
+                <div class="recommendations">
+                    <h2>Recommendations</h2>
+                    <div class="recommendation-canvas">
+                        <div class="recommendation-block">
+                        <a href="https://www.linkedin.com/in/alexwilczek/" target="_blank"><h3>Alexander Wilczek</h3></a>
+                        <p class="recommendation-subtitle">
+                            Project Manager at Rightsized Games
+                        </p>
+                        <p class="quote">
+                            "Linus proved a valuable asset to the team right from the start of his internship with Rightsized Games. 
+                            With his can do-attitude and happy demeanor he took on a variety of tasks including but not being limited to UI implementation & design, QA testing, tutorial and gameplay design.
+                            <br><br>
+                            He never shied away from a task, big or small, and in doing so helped identify and resolve several issues, both critical and non-critical. 
+                            I would gladly recommend Linus for any team as I believe he will provide both value and camraderie for them as he did us!"
+                        </p>
+                        </div>
+                        
+                        <div class="recommendation-block">
+                            <a href="https://www.linkedin.com/in/doru-apreotesei-0771462/" target="_blank"><h3>Doru Apreotesei</h3></a>
+                            <p class="recommendation-subtitle">
+                                CEO at Rightsized Games
+                            </p>
+                            <p class="quote">
+                                "Linus did his internship with us at Rightsized Games and was very helpful, 
+                                completing both QA and game design tasks on time and to spec. 
+                                I would recommend him for any junior game design role."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======== CV ======== -->
     <section id="cv">
         <div class="cv-canvas">
-            <!-- Content for CV page -->
             <div class="cv-image">
-                <img class="cv-doc" src="images/linusjernstrom.png">
+                <img class="cv-doc" src="images/LinusJernstromCV.png">
                 <a class="enlarge-button">
                     <img src="images/enlarge-icon.png">
                 </a>
             </div>
             <p></p>
-            <a class="button clicker" href="documents/linusjernstromcv.pdf" download target="_blank">Download</a>
+            <a class="button clicker" href="documents/linusjernstromcv.pdf" download target="_blank">Download CV as PDF</a>
             <p></p>
         </div>
     </section>
 
+
+    <!-- ======== CONTACT ======== -->
     <section id="contact">
-        <!-- Content for Contact page -->
         <div class="contact-canvas">
             <div class="flexer">
                 <h1>You can reach me via these methods!</h1>
@@ -986,19 +309,14 @@
                     <a href="https://discordapp.com/users/lyens" target="_blank"><img src="images/discord-mark-white.png">
                         <p>Discord<br>Lyens</p>
                     </a>
-                    <a href="https://www.linkedin.com/in/linus-jernstrom/" target="_blank"><img
-                            src="images/linkedin-icon_white.png">
+                    <a href="https://www.linkedin.com/in/linus-jernstrom/" target="_blank"><img src="images/linkedin-icon_white.png">
                         <p>LinkedIn<br>Linus Jernström</p>
-                    </a>
-                    <!--<a href="https://www.instagram.com/linusjernstrom/" target="_blank"><img src="images/instagram-icon-white.png">
-                        <p>Instagram<br>linusjernstrom</p>-->
                     </a>
                     <a href="https://github.com/linujern" target="_blank"><img src="images/github-mark-white.png">
                         <p>GitHub<br>linujern</p>
                     </a>
                 </div>
             </div>
-            <div style="height: 64px"></div>
         </div>
     </section>
 
