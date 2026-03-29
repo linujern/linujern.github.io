@@ -650,13 +650,16 @@ h1, h2, h3, a {
         font-size: calc(1em + 1vw);
     }
     .recommendations h2 {
-        font-size: calc(1.5em + 2vw);
+        font-size: calc(1.5em + 1vw);
     }
 }
 
 @media screen and (max-width: 540px) {
-    body, input, select, textarea, button {
+    body, input, select, textarea {
         font-size: 13pt;
+    }
+    .button {
+        font-size: calc(1em + 1vw);
     }
     .about-canvas {
         margin: 12px;
@@ -680,6 +683,9 @@ h1, h2, h3, a {
         min-width: 0;
         width: 100%;
         flex: unset;
+    }
+    .recommendations h2{
+        font-size: calc(1em + 1vw)
     }
 }
 
@@ -777,6 +783,17 @@ h1, h2, h3, a {
         align-items: start;
     }
 }
+@media screen and (max-width: 400px) {
+    .contact-icons img {
+        height: calc(2em + 2vw);
+        width: calc(2em + 2vw);
+    }
+    .contact-icons p {
+        font-size: 0.8em;
+        margin-top: -48px;
+        margin-left: calc(-.5em - 4vw);
+    }
+}
 
 /*--- Allgames Section (kept for compatibility) ---*/
 
@@ -853,7 +870,7 @@ h1, h2, h3, a {
     border-color: rgba(0, 0, 0, 0.2)
 }
 
-.game-display .project-length, .game-display .team-size {
+.game-display .project-length, .game-display .team-size, .game-display .organization {
     position: absolute;
     padding: 5px 20px 5px 20px;
     background-color: #444444;
@@ -878,9 +895,18 @@ h1, h2, h3, a {
     bottom: 0px;
     transform: translate(-20% , 10%);
 }
-.game-display .team-size img{
+.game-display .team-size img {
     height: 24px;
     width: 24px;
+}
+
+.game-display .organization{
+    left: 0px;
+    top: 0px;
+    padding: 0px !important;
+    transform: translate(-35%, -35%);
+    height: 48px;
+    width: 48px;
 }
 
 .game-display p {
@@ -1411,7 +1437,6 @@ a:hover .portfolio-link {
 
 @media screen and (max-width: 500px) {
     #cv .button {
-        max-width: 100px;
-        font-size: 0.5em;
+        font-size: 1em;
     }
 }
