@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suboptimal — Linus Jernström</title>
+    <link rel="stylesheet" href="assets/CSS/first.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/JS/script.js" defer></script>
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+        <p>Linus Jernström</p>
+        <a href="index.html" onclick="toggleNav()">Home</a>
+        <a href="index.html#games" onclick="toggleNav()">Games</a>
+        <a href="index.html#about" onclick="toggleNav()">About Me</a>
+        <a href="index.html#cv" onclick="toggleNav()">CV</a>
+        <a href="dev_diary/Home.html" target="_blank">PSQ Dev Logs</a>
+    </div>
+
+    <nav id="navbar">
+        <a href="index.html">Home</a>
+        <a href="index.html#games">Games</a>
+        <a href="index.html#about">About Me</a>
+        <a href="index.html#cv">CV</a>
+        <a href="dev_diary/Home.html" target="_blank">PSQ Dev Logs</a>
+        <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+            <img src="images/menu.png" alt="Menu" id="sidenavIcon">
+        </a>
+    </nav>
+
+    <div class="fg-canvas suboptimal">
+
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube-nocookie.com/embed/SMASByXMQdw"
+                title="Suboptimal trailer" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+
+        <h1>Suboptimal<br>4-Player Online Co-op</h1>
+
+        <div class="game-section-container game-section">
+            <div class="half-section">
+                <h2>Project Summary</h2>
+                <p>
+                    Suboptimal is an online co-op game for up to four players. A crew of hapless sailors
+                    pilot a submarine across the ocean floor in search of treasure, managing the vessel
+                    from inside and outside while keeping each other alive. It's silly, chaotic, and 
+                    overall just a good time.
+                </p>
+                <h2>Project Breakdown</h2>
+                <p>
+                    4 Week Group Project<br>
+                    9 Team Members<br>
+                    Powered by Unreal Engine 5<br>
+                    Futuregames, Stockholm<br>
+                    Won the Futuregame Awards Best Multiplayer award!
+                </p>
+            </div>
+            <div class="half-section">
+                <h2>My Responsibilities</h2>
+                <p>
+                    <span class="highlight">UI:</span> custom widget components and a Blueprint function library for animations.
+                </p>
+                <p>
+                    <span class="highlight">Multiplayer Support:</span> fixing replication issues in designer Blueprints and the
+                    other programmer's C++ code.
+                </p>
+                <p>
+                    <span class="highlight">Generalist:</span> duct-taping whatever needed duct-taping in a short, fast project.
+                </p>
+            </div>
+        </div>
+
+        <hr style="width: 85vw; margin: 64px;">
+
+        <div class="game-section">
+            <h2>My Contributions</h2>
+            <p>
+                Four weeks is short. My approach was pragmatic: quick, functional solutions over
+                elegant ones, and patching holes rather than rebuilding foundations. The core systems
+                had been built by designers before the programmers joined, and they were deeply coupled —
+                refactoring them would have consumed most of my available time. So I worked with what
+                was there.
+            </p>
+            <h4>UI Components</h4>
+            <p>
+                I created custom widget wrappers for the common UI elements used across the project:
+                a button, progress bar, slider, and dropdown. Wrapping Unreal's built-in slate widgets
+                gave me full control over animations and behaviour while ensuring visual consistency
+                across the game. I also built a Blueprint function library for running widget animations
+                cleanly — handling cases where the same animation is already playing, in either direction,
+                without stuttering or interruption.
+            </p>
+            <h4>Multiplayer Fixes</h4>
+            <p>
+                A lot of my time went toward moving logic to use Unreal's intended multiplayer patterns.
+                Replacing ad-hoc state changes with OnRepNotify calls removed hard references and
+                cleaned up a surprising amount of tangled code. I used EventDispatchers for similar
+                reasons throughout. I also fixed the shark — it wasn't replicating or animating
+                correctly in multiplayer, which made it considerably less threatening than intended.
+            </p>
+            <h4>Save System</h4>
+            <p>
+                I wrote a lightweight save system in C++ using a custom GameUserSettings class,
+                a dedicated subsystem, and the GameInstance — primarily to support the game's
+                settings persistence across sessions.
+            </p>
+            <p>
+                The first time I sat down for a full playtest, I had a blast. It was silly and goofy
+                in exactly the way we'd hoped. That alone makes it a success.
+            </p>
+        </div>
+
+        <hr style="width: 85vw; margin: 64px;">
+        <a class="button clicker" href="https://futuregames.itch.io/suboptimal" target="_blank">Check it out on itch!</a>
+        <div style="height: 64px;"></div>
+
+    </div>
+
+    <!-- ======== CONTACT ======== -->
+    <section id="contact">
+        <div class="contact-canvas">
+            <div class="flexer">
+                <h1>You can reach me via these methods!</h1>
+                <div class="contact-icons">
+                    <a href="tel:+46727203180"><img src="images/phone-icon-white.png">
+                        <p>Phone Number<br>+46 (0)72 720 3180</p>
+                    </a>
+                    <a href="mailto:linus@braincurrent.se"><img src="images/email-icon-white.png">
+                        <p>Email Address<br>linus@braincurrent.se</p>
+                    </a>
+                    <a href="https://discordapp.com/users/lyens" target="_blank"><img src="images/discord-mark-white.png">
+                        <p>Discord<br>Lyens</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/linus-jernstrom/" target="_blank"><img src="images/linkedin-icon_white.png">
+                        <p>LinkedIn<br>Linus Jernström</p>
+                    </a>
+                    <a href="https://github.com/linujern" target="_blank"><img src="images/github-mark-white.png">
+                        <p>GitHub<br>linujern</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

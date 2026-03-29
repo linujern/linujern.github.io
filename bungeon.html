@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bungeon — Linus Jernström</title>
+    <link rel="stylesheet" href="assets/CSS/first.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/JS/script.js" defer></script>
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+        <p>Linus Jernström</p>
+        <a href="index.html" onclick="toggleNav()">Home</a>
+        <a href="index.html#games" onclick="toggleNav()">Games</a>
+        <a href="index.html#about" onclick="toggleNav()">About Me</a>
+        <a href="index.html#cv" onclick="toggleNav()">CV</a>
+        <a href="dev_diary/Home.html" target="_blank">PSQ Dev Logs</a>
+    </div>
+
+    <nav id="navbar">
+        <a href="index.html">Home</a>
+        <a href="index.html#games">Games</a>
+        <a href="index.html#about">About Me</a>
+        <a href="index.html#cv">CV</a>
+        <a href="dev_diary/Home.html" target="_blank">PSQ Dev Logs</a>
+        <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+            <img src="images/menu.png" alt="Menu" id="sidenavIcon">
+        </a>
+    </nav>
+
+    <div class="fg-canvas bungeon">
+
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube-nocookie.com/embed/sZBnZTdWDp8"
+                title="The Bungeon trailer" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+
+        <h1>The Bungeon<br>First Person Dungeon Crawler</h1>
+
+        <div class="game-section-container game-section">
+            <div class="half-section">
+                <h2>Project Summary</h2>
+                <p>
+                    The Bungeon is a silly first-person dungeon crawler in which the player must collect
+                    carrots to feed a demanding bunny overlord before time runs out. Explore the dungeon,
+                    solve puzzles, and don't keep the bunny waiting.
+                </p>
+                <h2>Project Breakdown</h2>
+                <p>
+                    4 Week Group Project<br>
+                    17 Team Members<br>
+                    Powered by Unity<br>
+                    Futuregames, Stockholm & Karlstad
+                </p>
+            </div>
+            <div class="half-section">
+                <h2>My Responsibilities</h2>
+                <p>
+                    <span class="highlight">Generalist Programmer:</span> systems work and general support across the project.
+                </p>
+                <p>
+                    <span class="highlight">Putting Out Fires:</span> a significant portion of my time went toward fixing broken
+                    designer scripts and keeping builds functional.
+                </p>
+            </div>
+        </div>
+
+        <hr style="width: 85vw; margin: 64px;">
+
+        <div class="game-section">
+            <h2>My Contributions</h2>
+            <p>
+                This project had some communication struggles — our designers were making placeholder
+                scripts that other systems ended up depending on before the proper implementations
+                could replace them. A good portion of my time ended up being spent working around
+                those constraints rather than building greenfield systems.
+                That said, we shipped a working game, and had the opportunity to build some fun systems.
+            </p>
+            <h4>Interaction System</h4>
+            <p>
+                The interaction system lets the player interact with world objects by holding the E key.
+                I used an IInteractable interface with default implementations and an abstract base
+                class, making it easy to add new interactables with minimal boilerplate. The player
+                side raycasts each frame, focusing and unfocusing targets as they enter and leave
+                view, and displays a progress indicator as the interaction timer fills.
+            </p>
+            <h4>Putting Out Fires</h4>
+            <p>
+                The PrototypeTimer - originally a designer script for tracking dungeon time - had
+                become the de facto game manager by the time us programmers joined the project. 
+                Attached to the player HUD, it was coupled deeply to nearly every other script the designers had made. 
+                I'm not going to pretend that was ideal. In the final week of the project we experienced
+                a string of build errors and crashes originating from this PrototypeTimer which the 
+                other programmers and myself somehow managed to get under control, though we never made the time to
+                fully understood it. It was like an eldritch being, and I was not about to tango with Cthulhu.
+                <br><br>
+                I reworked a Puzzle Manager script (origninally made by a designer) which handled 
+                puzzles and opening doors across the level. Along with refactoring to make the code 
+                readable and maintainable, I added a system to let the player see which door opened 
+                when a puzzle was solved.
+            </p>
+            <h4>Sender/Receiver System</h4>
+            <p>
+                I made this system after seeing the puzzle solution that was already in the project.
+                Using the observer pattern, senders broadcast events that receivers subscribe to,
+                completely decoupling the two sides. The receiver uses a percentage threshold across
+                multiple senders, making it easy to configure puzzles that require, say, two of
+                three pressure plates to be active simultaneously. In the end we decided not to attempt 
+                untangling the spaghetti that was already there (which would be a herculean task), so 
+                the system saw little use.
+            </p>
+            <h4>Item and Inventory System</h4>
+            <p>
+                I built a data-driven inventory system using ScriptableObjects, so designers could
+                create new items without touching code. Items sit in an ItemStack abstraction that
+                handles both single items and stackable quantities cleanly. Towards the end of the 
+                project, this system was scrapped as it was deemed unnecessary for the game concept. 
+                Nonetheless, it was good practice in building extensible systems.
+            </p>
+        </div>
+
+        <hr style="width: 85vw; margin: 64px;">
+        <a class="button clicker" href="https://futuregames.itch.io/the-bungeon" target="_blank">Check it out on itch!</a>
+        <div style="height: 64px;"></div>
+
+    </div>
+
+    <!-- ======== CONTACT ======== -->
+    <section id="contact">
+        <div class="contact-canvas">
+            <div class="flexer">
+                <h1>You can reach me via these methods!</h1>
+                <div class="contact-icons">
+                    <a href="tel:+46727203180"><img src="images/phone-icon-white.png">
+                        <p>Phone Number<br>+46 (0)72 720 3180</p>
+                    </a>
+                    <a href="mailto:linus@braincurrent.se"><img src="images/email-icon-white.png">
+                        <p>Email Address<br>linus@braincurrent.se</p>
+                    </a>
+                    <a href="https://discordapp.com/users/lyens" target="_blank"><img src="images/discord-mark-white.png">
+                        <p>Discord<br>Lyens</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/linus-jernstrom/" target="_blank"><img src="images/linkedin-icon_white.png">
+                        <p>LinkedIn<br>Linus Jernström</p>
+                    </a>
+                    <a href="https://github.com/linujern" target="_blank"><img src="images/github-mark-white.png">
+                        <p>GitHub<br>linujern</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

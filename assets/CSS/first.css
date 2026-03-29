@@ -1440,3 +1440,52 @@ a:hover .portfolio-link {
         font-size: 1em;
     }
 }
+
+/*--- Futuregames Project Pages ---*/
+
+.fg-canvas {
+    margin: 20px;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fg-canvas h1 {
+    font-size: 2.5em;
+    line-height: 1.1em;
+    color: white;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.fg-canvas h2 {
+    font-size: 2em;
+}
+
+.fg-canvas h4 {
+    font-size: 1em;
+    margin-top: 48px;
+    margin-bottom: -20px;
+}
+
+.fg-canvas .highlight {
+    font-weight: bold;
+}
+
+/* Per-game accent colours */
+.fg-canvas.vinerush h2  { color: rgb(100, 200, 90);  }
+.fg-canvas.vinerush h4  { color: rgb(180, 240, 120); }
+.fg-canvas.bungeon h2   { color: rgb(220, 140, 50);  }
+.fg-canvas.bungeon h4   { color: rgb(250, 200, 100); }
+.fg-canvas.okrhams h2   { color: rgb(160, 80, 220);  }
+.fg-canvas.okrhams h4   { color: rgb(200, 140, 255); }
+.fg-canvas.suboptimal h2 { color: rgb(60, 160, 230); }
+.fg-canvas.suboptimal h4 { color: rgb(120, 200, 255);}
+
+@media screen and (max-width: 1420px) {
+    .fg-canvas .video-wrapper {
+        width: 100%;
+    }
+}
