@@ -427,10 +427,10 @@ h1, h2, h3, a {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    align-items: center;
+    align-items: stretch;
     overflow-x: auto;
     gap: 0;
-    padding: 48px 5vw;
+    padding: 16px 5vw;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
@@ -459,7 +459,7 @@ h1, h2, h3, a {
     position: relative;
     display: flex;
     justify-content: center;
-    padding-top: 96px;
+    padding-top: 48px;
 }
 
 .about-container > h2 {
@@ -539,7 +539,6 @@ h1, h2, h3, a {
 }
 
 .about-canvas p {
-    margin-top: 16px;
     font-size: 1em;
     line-height: 1.3em;
     color: white;
@@ -807,7 +806,6 @@ h1, h2, h3, a {
     align-items: center;
     position: relative;
     margin: 10px;
-    margin-left: calc(10px + 2%);
 }
 
 .game-display a {
@@ -891,7 +889,7 @@ h1, h2, h3, a {
 }
 
 #flavor-text {
-    padding-top: 32px;
+    padding-top: 16px;
 }
 
 .game-display .learn-more {
@@ -1081,7 +1079,6 @@ a:hover .portfolio-link {
     .games-scroll .game-display {
         width: 78vw;
         max-width: 340px;
-        margin-left: 8px;
         padding: 20px;
     }
 }
@@ -1205,7 +1202,6 @@ a:hover .portfolio-link {
 
 .eod-canvas {
     margin: 20px;
-    padding-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1253,7 +1249,7 @@ a:hover .portfolio-link {
     font-size: 2.5em;
     line-height: 1em;
     color: white;
-    margin-bottom: 64px;
+    text-align: center;
 }
 
 .eod-canvas h2 {
@@ -1262,7 +1258,7 @@ a:hover .portfolio-link {
 }
 
 .eod-canvas h3 {
-    line-height: 0.8em;
+    line-height: 0.9em;
 }
 
 .eod-canvas h4 {
@@ -1306,7 +1302,7 @@ a:hover .portfolio-link {
 }
 
 .eod-tutorial {
-    margin-top: 32px;
+    margin-top: 16px;
     border-radius: 16px;
     border-style: dashed;
     border-width: 2px;
@@ -1315,7 +1311,7 @@ a:hover .portfolio-link {
 
 .eod-segment {
     font-size: 1.6em !important;
-    margin-top: 64px !important;
+    margin-top: 32px !important;
     margin-bottom: 0px !important;
 }
 
