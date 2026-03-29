@@ -955,6 +955,12 @@ h1, h2, h3, a {
     text-align: left;
 }
 
+.game-section-container video {
+    object-fit: scale-down;
+    width: 100%;
+    height: auto;
+}
+
 .game-logo {
     height: auto;
 }
@@ -1307,9 +1313,9 @@ a:hover .portfolio-link {
     padding-bottom: calc(56.25%*0.8); /* 16:9 ratio times size modifier*/
     height: 0;
     overflow: hidden;
-    width: 80%; /* change here for new size*/
+    width: 70%; /* change here for new size*/
     margin: auto;
-    margin-top: 48px;
+    margin-top: 24px;
 }
   
 .video-wrapper iframe {
