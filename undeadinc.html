@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undead Inc. — Linus Jernström</title>
+    <link rel="stylesheet" href="assets/CSS/first.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/JS/script.js" defer></script>
+</head>
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+        <p>Linus Jernström</p>
+        <a href="index.html" onclick="toggleNav()">Home</a>
+        <a href="index.html#games" onclick="toggleNav()">Games</a>
+        <a href="index.html#about" onclick="toggleNav()">About Me</a>
+        <a href="index.html#cv" onclick="toggleNav()">CV</a>
+        <a href="dev_diary/Home.html" target="_blank">PSQ Dev Logs</a>
+    </div>
+
+    <nav id="navbar">
+        <a href="index.html">Home</a>
+        <a href="index.html#games">Games</a>
+        <a href="index.html#about">About Me</a>
+        <a href="index.html#cv">CV</a>
+        <a href="dev_diary/Home.html" target="_blank">PSQ Dev Logs</a>
+        <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+            <img src="images/menu.png" alt="Menu" id="sidenavIcon">
+        </a>
+    </nav>
+
+    <div class="fg-canvas undeadinc">
+        <p></p>
+        <img class="game-logo" src="images/UndeadIncTitle.png">
+        <h1>Roguelike Resource Management Sim</h1>
+
+        <div class="game-section-container game-section">
+            <div class="half-section">
+                <h2>Project Summary</h2>
+                <p>
+                    Undead Inc. is a real-time roguelike resource management sim developed by
+                    Rightsized Games and published by Team17, released on Steam on May 2, 2024.
+                    You play as the managing director of an Endswell Medical franchise —
+                    running a legitimate medical facility above ground while secretly developing
+                    bioweapons, illegal pharmaceuticals, and worse underneath it.
+                    When the authorities close in, you extract what you can and start fresh elsewhere.
+                </p>
+                <h2>My Role</h2>
+                <p>
+                    LIA Intern at Rightsized Games<br>
+                    Unreal Engine 4 · Perforce · C++<br>
+                    Stockholm, Sweden
+                </p>
+            </div>
+            <div class="half-section">
+                <h2>My Responsibilities</h2>
+                <p>
+                    <span class="highlight">UI Implementation:</span> worked across all 661 widgets in the project.
+                </p>
+                <p>
+                    <span class="highlight">Tutorial Design:</span> designed and implemented the tutorial from scratch under tight production constraints.
+                </p>
+                <p>
+                    <span class="highlight">QA:</span> extensive playtesting, bug reporting and reproduction throughout the project.
+                </p>
+                <p>
+                    <span class="highlight">C++ Programming:</span> implemented UI elements in Unreal's Slate system, including the pause menu.
+                </p>
+                <a class="button clicker" href="#contributions">My Contributions</a>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube-nocookie.com/embed/VEFRCoLpDQY?si=5UTYoZ0TwAcqWX_3"
+                title="Undead Inc. launch trailer" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+
+        <section id="contributions"></section>
+        <p></p>
+        <div class="game-section">
+            <h2>My Contributions</h2>
+            <p>
+                Undead Inc. is my first professional shipping credit. A published title with a real
+                publisher, delivered on a real deadline. More than anything, this experience taught me
+                what professional production actually looks like: milestone-driven delivery, Jira-tracked
+                tasks with clear definitions of done, and the discipline of staying useful under
+                constantly shifting priorities.
+            </p>
+            <h4>UI</h4>
+            <p>
+                I touched every one of the 661 widgets in the project over the course of the internship.
+                This ranged from implementing new UI elements to verifying, fixing, and iterating on
+                existing ones. Working at this scale across a complex already-running codebase, without
+                having had any formal onboarding, pushed me to get comfortable fast with Unreal's
+                UI system and with reading unfamiliar code. I created art assets for UI elements, implemented 
+                changes and new designs in both Widget Blueprints and C++, and eventually also got to design 
+                some UI assets myself.
+            </p>
+            <h4>Tutorial Design</h4>
+            <p>
+                As an intern, I was in charge of the tutorial design and implementation for this complex management sim with
+                a lot of moving parts that all needed to be introduced clearly to new players. 
+                That was already quite a challange. 
+                Further, the brief came with a hard constraint: I could not ask anything of any other developer.
+                No new assets, no new systems, no borrowed time. The team had nobody to spare. 
+                Everything had to be built from what already existed in the project. 
+                Designing a tutorial that covers an entire complex game solo, within those limits, was one of the more challenging briefs I've been given. 
+                I'll be the first to admit it wasn't perfect, but given the circumstances I am very pleased with what I managed. 
+                Though the tutorial for such a game should have been prioritized earlier and had more resources allocated to it, 
+                I made the most of what I had, given the time crunch and restrictions, and delivered it on time and to spec.
+            </p>
+            <h4>QA</h4>
+            <p>
+                A significant portion of my time, especially early on, was spent in QA. I eventually got
+                quite good at it: knowing what to look for, how to reproduce issues reliably,
+                and how to write a bug report that's actually useful to whoever has to fix it.
+                Repro steps, screenshots, video captures, the right person pinged in the right channel.
+                It's not glamorous work, but doing it well makes a meaningful difference to a team
+                under deadline pressure.
+            </p>
+        </div>
+
+        <hr style="width: 85vw; margin: 64px;">
+        <a class="button clicker" href="https://store.steampowered.com/app/2104880/Undead_Inc/" target="_blank">Check it out on Steam</a>
+        <div style="height: 64px;"></div>
+
+    </div>
+
+    <!-- ======== CONTACT ======== -->
+    <section id="contact">
+        <div class="contact-canvas">
+            <div class="flexer">
+                <h1>You can reach me via these methods!</h1>
+                <div class="contact-icons">
+                    <a href="tel:+46727203180"><img src="images/phone-icon-white.png">
+                        <p>Phone Number<br>+46 (0)72 720 3180</p>
+                    </a>
+                    <a href="mailto:linus@braincurrent.se"><img src="images/email-icon-white.png">
+                        <p>Email Address<br>linus@braincurrent.se</p>
+                    </a>
+                    <a href="https://discordapp.com/users/lyens" target="_blank"><img src="images/discord-mark-white.png">
+                        <p>Discord<br>Lyens</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/linus-jernstrom/" target="_blank"><img src="images/linkedin-icon_white.png">
+                        <p>LinkedIn<br>Linus Jernström</p>
+                    </a>
+                    <a href="https://github.com/linujern" target="_blank"><img src="images/github-mark-white.png">
+                        <p>GitHub<br>linujern</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

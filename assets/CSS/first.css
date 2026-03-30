@@ -230,7 +230,7 @@ h1, h2, h3, a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 700px;
+    height: 400px;
     overflow: hidden;
     width: 100%;
     position: relative;
@@ -250,7 +250,8 @@ h1, h2, h3, a {
 
 @media screen and (max-height: 900px) {
     .video-container {
-        max-height: 80vh;
+        max-height: 40vh;
+        min-height: 300px;
     }
 }
 
@@ -795,7 +796,7 @@ h1, h2, h3, a {
     }
 }
 
-/*--- Allgames Section (kept for compatibility) ---*/
+/*--- Allgames Section ---*/
 
 .allgames-container {
     margin: 0;
@@ -970,7 +971,7 @@ h1, h2, h3, a {
         max-width: 90vw;
     }
     .game-section-container {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
     .game-logo {
         max-width: 90%;
@@ -989,6 +990,12 @@ h1, h2, h3, a {
 
 .game-section p {
     color: rgba(255, 255, 255, 0.75);
+}
+
+@media screen and (max-width: 1420px){
+    .game-section .fluff {
+        display: none;
+    }
 }
 
 /*--- Team Display ---*/
@@ -1491,6 +1498,8 @@ a:hover .portfolio-link {
 .fg-canvas.suboptimal h4 { color: rgb(120, 200, 255);}
 .fg-canvas.loomieland h2 { color: rgb(240, 180, 60); }
 .fg-canvas.loomieland h4 { color: rgb(255, 220, 120);}
+.fg-canvas.undeadinc h2  { color: rgb(55, 207, 207);  }
+.fg-canvas.undeadinc h4  { color: rgb(30, 163, 224); }
 
 @media screen and (max-width: 1420px) {
     .fg-canvas .video-wrapper {
