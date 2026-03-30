@@ -438,7 +438,7 @@ h1, h2, h3, a {
 }
 
 .games-scroll::-webkit-scrollbar {
-    height: 5px;
+    height: 10px;
 }
 
 .games-scroll::-webkit-scrollbar-track {
