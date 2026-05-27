@@ -56,8 +56,18 @@
 
     <div class="fg-canvas interactionsystem">
 
+        <div style="margin: 32px;"></div>
+        <img src="images/InteractionSystemWide.jpg" class="eod-canvas-img">
+
         <h1>Extensible Interaction System</h1>
         <h2>A Multiplayer Plugin for Unreal Engine 5</h2>
+
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube-nocookie.com/embed/Of_NwmECVNM"
+                title="Extensible Interaction System demo" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
 
         <div class="game-section-container game-section">
             <div class="half-section">
@@ -74,7 +84,7 @@
                 </p>
                 <h2>Project Breakdown</h2>
                 <p>
-                    Interactable System Solo Project<br>
+                    Solo Project<br>
                     Powered by Unreal Engine 5<br>
                     C++ Plugin with Blueprint Integration<br>
                     Focus on ease of use, structure and extensibility.
@@ -94,22 +104,14 @@
                     <span class="highlight">Extensibility Without Complexity:</span> additional features are opt-in.
                     A trivial interactable needs no configuration; a complex one can swap any part of the pipeline.
                 </p>
-                <a class="button clicker" href="#contributions">Technical Breakdown</a>
+                <a class="button clicker" href="#breakdown">Technical Breakdown</a>
                 <a class="button clicker" href="https://github.com/linujern/MultiplayerPlugin" target="_blank">View on GitHub</a>
             </div>
         </div>
 
-        
-        <div class="video-wrapper">
-            <iframe src="https://www.youtube-nocookie.com/embed/Of_NwmECVNM"
-                title="Extensible Interaction System demo" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-        </div>
+        <hr style="width: 85vw; margin: 64px;">
 
-        <section id="contributions"></section>
-        <p></p>
-        <div class="game-section">
+        <div class="game-section" id="breakdown">
             <h2>Technical Breakdown</h2>
 
             <h4>The Core Components</h4>
@@ -155,10 +157,10 @@
                 Used for cooldowns, prerequisites, world-state checks. When an interaction attempt is denied by the regulationhandler, it returns a 
                 <span class="highlight">FInteractionDeniedContext</span> struct explaining the reason why, so presentation handlers can react with appropriately specific feedback.
             </p>
-            <div class="games-scroll">
-                <img src="images/switch.gif" style="border-style: ridge; border-width: thick;">
-                <img src="images/globalcooldown.gif" style="border-style: ridge; border-width: thick;">
-                <img src="images/localcooldown.gif" style="border-style: ridge; border-width: thick;">
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 24px 0;">
+                <img src="images/switch.gif" style="flex: 1 1 240px; max-width: 320px; border-style: ridge; border-width: thick; border-color: rgba(255,255,255,0.2);">
+                <img src="images/globalcooldown.gif" style="flex: 1 1 240px; max-width: 320px; border-style: ridge; border-width: thick; border-color: rgba(255,255,255,0.2);">
+                <img src="images/localcooldown.gif" style="flex: 1 1 240px; max-width: 320px; border-style: ridge; border-width: thick; border-color: rgba(255,255,255,0.2);">
             </div>
 
             <div class="diagram-wrapper">
